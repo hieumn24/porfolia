@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinhocngoisao Project - Nguyen Minh Hieu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #6366f1; --secondary: #8b5cf6; --accent: #ec4899;
+            --success: #10b981; --danger: #ef4444; --dark: #0f172a;
+            --gray: #64748b; --light-gray: #f1f5f9; --white: #ffffff;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.16);
+        }
+        
+        body { font-family: 'Inter', sans-serif; line-height: 1.7; color: var(--dark); background: var(--white); }
+        html { scroll-behavior: smooth; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.95);
+              backdrop-filter: blur(20px); box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 20px 0; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .nav-brand { font-family: 'Space Grotesk', sans-serif; font-size: 1.3em; font-weight: 700;
+                     color: var(--dark); text-decoration: none; }
+        
+        .project-hero { background: var(--gradient-4); color: var(--white); padding: 140px 0 80px; position: relative; overflow: hidden; }
+        .project-title { font-family: 'Space Grotesk', sans-serif; font-size: 4em; font-weight: 800; margin-bottom: 20px; }
+        .project-subtitle { font-size: 1.5em; opacity: 0.9; margin-bottom: 40px; }
+        .breadcrumb { margin-bottom: 30px; opacity: 0.9; }
+        .breadcrumb a { color: var(--white); text-decoration: none; opacity: 0.8; }
+        
+        .project-meta { display: flex; gap: 40px; flex-wrap: wrap; }
+        .meta-item { display: flex; flex-direction: column; gap: 8px; }
+        .meta-label { font-size: 0.9em; opacity: 0.8; text-transform: uppercase; letter-spacing: 1px; }
+        .meta-value { font-size: 1.2em; font-weight: 600; }
+        
+        .stats-overview { background: var(--white); margin-top: -50px; position: relative; z-index: 10; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .stat-card { background: var(--white); padding: 40px; border-radius: 20px; box-shadow: var(--shadow-lg);
+                     text-align: center; transition: transform 0.3s ease; }
+        .stat-card:hover { transform: translateY(-5px); }
+        .stat-number { font-family: 'Space Grotesk', sans-serif; font-size: 3.5em; font-weight: 800;
+                       background: var(--gradient-4); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+                       background-clip: text; margin-bottom: 10px; }
+        .stat-card:nth-child(2) .stat-number { background: var(--gradient-3); -webkit-background-clip: text;
+                                               -webkit-text-fill-color: transparent; background-clip: text; }
+        .stat-card:nth-child(3) .stat-number { background: var(--gradient-1); -webkit-background-clip: text;
+                                               -webkit-text-fill-color: transparent; background-clip: text; }
+        .stat-card:nth-child(4) .stat-number { background: var(--gradient-2); -webkit-background-clip: text;
+                                               -webkit-text-fill-color: transparent; background-clip: text; }
+        .stat-label { color: var(--gray); font-size: 1.1em; font-weight: 500; }
+        
+        section { padding: 100px 0; }
+        .section-title { font-family: 'Space Grotesk', sans-serif; font-size: 2.5em; font-weight: 800;
+                        margin-bottom: 20px; color: var(--dark); }
+        .section-subtitle { font-size: 1.2em; color: var(--gray); margin-bottom: 50px; line-height: 1.8; }
+        
+        .solution-card, .result-card { background: var(--white); padding: 40px; border-radius: 20px;
+                                       box-shadow: var(--shadow-md); margin-bottom: 30px; transition: all 0.3s ease; }
+        .solution-card { border-left: 5px solid var(--success); }
+        .solution-card:hover, .result-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-5px); }
+        .solution-card h4 { font-size: 1.4em; margin-bottom: 15px; color: var(--dark); }
+        .solution-card ul { list-style: none; padding-left: 0; }
+        .solution-card li { padding: 10px 0 10px 30px; position: relative; color: var(--gray); line-height: 1.8; }
+        .solution-card li::before { content: '✓'; position: absolute; left: 0; color: var(--success); font-weight: bold; font-size: 1.3em; }
+        
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
+        .result-card { text-align: center; padding: 35px; }
+        .result-icon { font-size: 3em; margin-bottom: 20px; }
+        .result-card h4 { font-size: 1.2em; margin-bottom: 10px; color: var(--dark); }
+        .result-card p { color: var(--gray); line-height: 1.7; }
+        
+        .cta-section { background: var(--gradient-4); color: var(--white); text-align: center;
+                      padding: 80px 0; border-radius: 30px; margin: 60px 0; }
+        .cta-section h2 { font-size: 2.5em; margin-bottom: 20px; }
+        .cta-section p { font-size: 1.2em; opacity: 0.9; margin-bottom: 40px; }
+        .cta-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .btn { padding: 16px 40px; border-radius: 50px; font-weight: 600; font-size: 1em;
+               text-decoration: none; display: inline-block; transition: all 0.3s ease; }
+        .btn-primary { background: var(--white); color: var(--primary); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(255, 255, 255, 0.3); }
+        .btn-secondary { background: rgba(255, 255, 255, 0.15); color: var(--white);
+                        border: 2px solid rgba(255, 255, 255, 0.3); backdrop-filter: blur(10px); }
+        .btn-secondary:hover { background: rgba(255, 255, 255, 0.25); transform: translateY(-3px); }
+        
+        footer { background: var(--dark); color: var(--white); text-align: center; padding: 40px 0; }
+        footer p { opacity: 0.8; }
+        
+        @media (max-width: 768px) {
+            .project-title { font-size: 2.5em; }
+            .stats-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="portfolio.html" class="nav-brand">← Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="portfolio.html">Home</a> / <a href="portfolio.html#projects">Projects</a> / <span>Tinhocngoisao</span>
+            </div>
+            <h1 class="project-title">Tinhocngoisao</h1>
+            <p class="project-subtitle">Rapid SEO Growth for Computer Education Center</p>
+            <div class="project-meta">
+                <div class="meta-item"><span class="meta-label">Client</span><span class="meta-value">Tinhocngoisao</span></div>
+                <div class="meta-item"><span class="meta-label">Duration</span><span class="meta-value">Jan 2024 - Mar 2024</span></div>
+                <div class="meta-item"><span class="meta-label">Role</span><span class="meta-value">SEO Freelancer</span></div>
+                <div class="meta-item"><span class="meta-label">Industry</span><span class="meta-value">Education / Tech Training</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-overview">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-number">11K</div><div class="stat-label">Daily Visits Achieved</div></div>
+                <div class="stat-card"><div class="stat-number">0→11K</div><div class="stat-label">Traffic Growth</div></div>
+                <div class="stat-card"><div class="stat-number">2</div><div class="stat-label">Months Duration</div></div>
+                <div class="stat-card"><div class="stat-number">550%</div><div class="stat-label">Monthly Growth Rate</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Project Overview</h2>
+            <p class="section-subtitle">
+                Tinhocngoisao is a computer training center in Vietnam. As a freelance SEO specialist, I was tasked with rapidly growing organic traffic from zero within a tight 2-month timeframe.
+            </p>
+            
+            <div class="solution-card">
+                <h4>🎯 Key Achievements</h4>
+                <ul>
+                    <li>Grew traffic from 0 to 11K daily visits in just 2 months</li>
+                    <li>Achieved 550% monthly growth rate consistently</li>
+                    <li>Comprehensive website audit and technical fixes</li>
+                    <li>UX optimization improving user engagement</li>
+                    <li>Strategic content deployment for quick wins</li>
+                </ul>
+            </div>
+
+            <div class="solution-card">
+                <h4>🔍 SEO Strategy</h4>
+                <ul>
+                    <li>Quick technical SEO wins for immediate impact</li>
+                    <li>Low-competition keyword targeting for rapid rankings</li>
+                    <li>Content optimization for computer training queries</li>
+                    <li>Local SEO optimization for Vietnam market</li>
+                    <li>User experience improvements for better engagement</li>
+                    <li>Strategic internal linking structure</li>
+                </ul>
+            </div>
+
+            <div class="solution-card">
+                <h4>⚙️ Technical Work</h4>
+                <ul>
+                    <li>Complete technical audit identifying critical issues</li>
+                    <li>Fixed crawlability and indexation problems</li>
+                    <li>Optimized site structure for better navigation</li>
+                    <li>Improved page speed and mobile experience</li>
+                    <li>Implemented schema markup for courses</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: var(--light-gray);">
+        <div class="container">
+            <h2 class="section-title">Measurable Results</h2>
+            <div class="results-grid">
+                <div class="result-card"><div class="result-icon">🚀</div><h4>Rapid Growth</h4><p>0 to 11K visits in 2 months</p></div>
+                <div class="result-card"><div class="result-icon">📈</div><h4>Growth Rate</h4><p>550% monthly increase</p></div>
+                <div class="result-card"><div class="result-icon">🎯</div><h4>Rankings</h4><p>Top 10 for target keywords</p></div>
+                <div class="result-card"><div class="result-icon">⚡</div><h4>Speed</h4><p>Fast implementation cycle</p></div>
+                <div class="result-card"><div class="result-icon">💡</div><h4>UX</h4><p>Improved user experience</p></div>
+                <div class="result-card"><div class="result-icon">🏆</div><h4>ROI</h4><p>High return on investment</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="cta-section">
+                <h2>Need Rapid SEO Results?</h2>
+                <p>Let's discuss how I can help grow your traffic quickly and effectively.</p>
+                <div class="cta-buttons">
+                    <a href="portfolio.html#projects" class="btn btn-primary">View More Projects</a>
+                    <a href="portfolio.html#hero" class="btn btn-secondary">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Nguyen Minh Hieu. All rights reserved.</p>
+            <p style="margin-top: 10px;">📧 hieumn24@gmail.com | 📱 +84 949338524</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BitJoy Global eSIM Project - Nguyen Minh Hieu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #6366f1; --secondary: #8b5cf6; --accent: #ec4899;
+            --success: #10b981; --danger: #ef4444; --dark: #0f172a;
+            --gray: #64748b; --light-gray: #f1f5f9; --white: #ffffff;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.16);
+        }
+
+        body { font-family: 'Inter', sans-serif; line-height: 1.7; color: var(--dark); background: var(--white); }
+        html { scroll-behavior: smooth; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.95);
+              backdrop-filter: blur(20px); box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 20px 0; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .nav-brand { font-family: 'Space Grotesk', sans-serif; font-size: 1.3em; font-weight: 700;
+                     color: var(--dark); text-decoration: none; }
+
+        .project-hero { background: var(--gradient-1); color: var(--white); padding: 140px 0 80px; position: relative; overflow: hidden; }
+        .project-title { font-family: 'Space Grotesk', sans-serif; font-size: 4em; font-weight: 800; margin-bottom: 20px; }
+        .project-subtitle { font-size: 1.5em; opacity: 0.9; margin-bottom: 40px; }
+        .breadcrumb { margin-bottom: 30px; opacity: 0.9; }
+        .breadcrumb a { color: var(--white); text-decoration: none; opacity: 0.8; }
+
+        .project-meta { display: flex; gap: 40px; flex-wrap: wrap; }
+        .meta-item { display: flex; flex-direction: column; gap: 8px; }
+        .meta-label { font-size: 0.9em; opacity: 0.8; text-transform: uppercase; letter-spacing: 1px; }
+        .meta-value { font-size: 1.2em; font-weight: 600; }
+
+        .stats-overview { background: var(--white); margin-top: -50px; position: relative; z-index: 10; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .stat-card { background: var(--white); padding: 40px; border-radius: 20px; box-shadow: var(--shadow-lg);
+                     text-align: center; transition: transform 0.3s ease; }
+        .stat-card:hover { transform: translateY(-5px); }
+        .stat-number { font-family: 'Space Grotesk', sans-serif; font-size: 3.5em; font-weight: 800;
+                       background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+                       background-clip: text; margin-bottom: 10px; }
+        .stat-card:nth-child(2) .stat-number { background: var(--gradient-4); -webkit-background-clip: text;
+                                               -webkit-text-fill-color: transparent; background-clip: text; }
+        .stat-card:nth-child(3) .stat-number { background: var(--gradient-3); -webkit-background-clip: text;
+                                               -webkit-text-fill-color: transparent; background-clip: text; }
+        .stat-card:nth-child(4) .stat-number { background: var(--gradient-2); -webkit-background-clip: text;
+                                               -webkit-text-fill-color: transparent; background-clip: text; }
+        .stat-label { color: var(--gray); font-size: 1.1em; font-weight: 500; }
+
+        section { padding: 100px 0; }
+        .section-title { font-family: 'Space Grotesk', sans-serif; font-size: 2.5em; font-weight: 800;
+                        margin-bottom: 20px; color: var(--dark); }
+        .section-subtitle { font-size: 1.2em; color: var(--gray); margin-bottom: 50px; line-height: 1.8; }
+
+        .solution-card, .result-card { background: var(--white); padding: 40px; border-radius: 20px;
+                                       box-shadow: var(--shadow-md); margin-bottom: 30px; transition: all 0.3s ease; }
+        .solution-card { border-left: 5px solid var(--success); }
+        .solution-card:hover, .result-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-5px); }
+        .solution-card h4 { font-size: 1.4em; margin-bottom: 15px; color: var(--dark); }
+        .solution-card ul { list-style: none; padding-left: 0; }
+        .solution-card li { padding: 10px 0 10px 30px; position: relative; color: var(--gray); line-height: 1.8; }
+        .solution-card li::before { content: '✓'; position: absolute; left: 0; color: var(--success); font-weight: bold; font-size: 1.3em; }
+        .solution-card li strong { color: var(--dark); }
+
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
+        .result-card { text-align: center; padding: 35px; }
+        .result-icon { font-size: 3em; margin-bottom: 20px; }
+        .result-card h4 { font-size: 1.2em; margin-bottom: 10px; color: var(--dark); }
+        .result-card p { color: var(--gray); line-height: 1.7; }
+
+        .table-wrap { overflow-x: auto; background: var(--white); border-radius: 20px;
+                      box-shadow: var(--shadow-md); padding: 10px; margin-bottom: 30px; }
+        table.data { width: 100%; border-collapse: collapse; min-width: 560px; }
+        table.data th { background: var(--light-gray); color: var(--dark); font-weight: 700; text-align: left;
+                        padding: 16px 20px; font-size: 0.95em; white-space: nowrap; }
+        table.data th:first-child { border-radius: 12px 0 0 12px; }
+        table.data th:last-child { border-radius: 0 12px 12px 0; }
+        table.data td { padding: 14px 20px; border-bottom: 1px solid var(--light-gray); color: var(--gray); }
+        table.data tr:last-child td { border-bottom: none; }
+        table.data td:first-child { color: var(--dark); font-weight: 500; }
+        table.data td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+        table.data .hi { color: var(--success); font-weight: 700; }
+        .kw { font-family: 'Space Grotesk', monospace; }
+
+        .note { font-size: 0.95em; color: var(--gray); font-style: italic; margin-top: -15px; margin-bottom: 40px; }
+
+        .cta-section { background: var(--gradient-1); color: var(--white); text-align: center;
+                      padding: 80px 0; border-radius: 30px; margin: 60px 0; }
+        .cta-section h2 { font-size: 2.5em; margin-bottom: 20px; }
+        .cta-section p { font-size: 1.2em; opacity: 0.9; margin-bottom: 40px; }
+        .cta-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .btn { padding: 16px 40px; border-radius: 50px; font-weight: 600; font-size: 1em;
+               text-decoration: none; display: inline-block; transition: all 0.3s ease; }
+        .btn-primary { background: var(--white); color: var(--primary); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(255, 255, 255, 0.3); }
+        .btn-secondary { background: rgba(255, 255, 255, 0.15); color: var(--white);
+                        border: 2px solid rgba(255, 255, 255, 0.3); backdrop-filter: blur(10px); }
+        .btn-secondary:hover { background: rgba(255, 255, 255, 0.25); transform: translateY(-3px); }
+
+        footer { background: var(--dark); color: var(--white); text-align: center; padding: 40px 0; }
+        footer p { opacity: 0.8; }
+
+        @media (max-width: 768px) {
+            .project-title { font-size: 2.5em; }
+            .stats-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="nav-brand">← Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / <a href="index.html#projects">Projects</a> / <span>BitJoy Global eSIM</span>
+            </div>
+            <h1 class="project-title">BitJoy Global eSIM</h1>
+            <p class="project-subtitle">Multilingual Technical SEO for a 1,769-SKU Global eSIM Store</p>
+            <div class="project-meta">
+                <div class="meta-item"><span class="meta-label">Client</span><span class="meta-value">BitJoy (thebitjoy.com)</span></div>
+                <div class="meta-item"><span class="meta-label">Duration</span><span class="meta-value">Sep 2025 - Present</span></div>
+                <div class="meta-item"><span class="meta-label">Role</span><span class="meta-value">SEO Lead / Technical SEO</span></div>
+                <div class="meta-item"><span class="meta-label">Industry</span><span class="meta-value">eSIM / E-commerce (Shopify)</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-overview">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-number">+459%</div><div class="stat-label">Organic Clicks Growth</div></div>
+                <div class="stat-card"><div class="stat-number">54K+</div><div class="stat-label">Ranking Keywords</div></div>
+                <div class="stat-card"><div class="stat-number">39.9K</div><div class="stat-label">Keywords in Top 10</div></div>
+                <div class="stat-card"><div class="stat-number">5.3M</div><div class="stat-label">Monthly Impressions</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Project Overview</h2>
+            <p class="section-subtitle">
+                BitJoy is a global eSIM store on Shopify: 1,769 products, 194 collections and 11 language locales,
+                competing against Airalo, Holafly, Saily and Nomad. Organic search is the only acquisition channel,
+                so every click, ranking and order traces back to SEO. I own strategy, technical SEO, content
+                operations and measurement end to end.
+            </p>
+
+            <div class="solution-card">
+                <h4>🎯 Key Achievements</h4>
+                <ul>
+                    <li>Organic clicks grew from <strong>5,359 to 29,947 per month (+459%)</strong> between Oct 2025 and Apr 2026</li>
+                    <li>Built a portfolio of <strong>54,258 ranking keywords</strong>, of which <strong>39,941 sit in the top 10</strong> and 11,168 in the top 3</li>
+                    <li><strong>99.98% of keywords are non-branded</strong>: only 13 branded queries in the whole set, so rankings are earned by content and technical work, not brand demand</li>
+                    <li>Ranking simultaneously in <strong>10 language markets</strong>, each producing four-digit monthly clicks</li>
+                    <li>Store revenue grew from <strong>$1,606 to an all-time high of $6,262 per month</strong>, with AOV up 4x from $8.0 to $33.5</li>
+                    <li>Published <strong>203 articles</strong> in the first 8 months, growing the live library to <strong>374 articles</strong></li>
+                </ul>
+            </div>
+
+            <div class="solution-card">
+                <h4>🔍 SEO Strategy</h4>
+                <ul>
+                    <li><strong>Carrier-term targeting</strong> instead of head terms: the generic "esim {country}" SERPs are locked by brands with 3 to 4 orders of magnitude more brand search, so I targeted local carrier names where the SERP is winnable</li>
+                    <li><strong>English-first multilingual model</strong>: optimise the English root, let the translation layer propagate to 11 locales, avoiding per-locale rewrite cost</li>
+                    <li><strong>Page-type discipline</strong>: resolved blog vs collection cannibalization across 33 commercial queries where the site was competing with itself</li>
+                    <li><strong>Long-tail collection architecture</strong>: 8 duration-modifier smart collections built from measured Search Console demand</li>
+                    <li><strong>Intent-based prioritisation</strong>: separated high-traffic informational clusters from the buy-intent subset and measured them on different KPIs</li>
+                    <li><strong>Competitive benchmarking</strong> against 4 direct competitors covering pricing, product gaps, review moat and content depth</li>
+                </ul>
+            </div>
+
+            <div class="solution-card">
+                <h4>⚙️ Technical SEO</h4>
+                <ul>
+                    <li><strong>Root-caused a site-wide 1.5 position drop</strong> to the exact date and the exact 3 theme pull requests that caused it (async CSS plus deleted font-face declarations), shipped the fix and recovered from position 9.00 back to 7.93</li>
+                    <li><strong>Rebuilt the collection schema stack</strong>: ItemList, BreadcrumbList and Organization with brand, sku and mpn, clearing 258 "No global identifier" errors in Search Console</li>
+                    <li><strong>Fixed 131 product schema image errors</strong> by tracing them to 112 products using SVG featured images, then rasterising and swapping every one</li>
+                    <li><strong>Proved a 43% analytics blind spot</strong>: order-level matching of Shopify against GA4 showed only 57% of orders were captured, disproving the accepted "payment gateway" explanation and redirecting the fix to server-side tracking</li>
+                    <li><strong>Performance diagnosis</strong>: identified the slider library as the top CPU cost at 9.3s and app-injected inline JavaScript as 64% of a 1MB page, and shipped the lazy-init fix</li>
+                    <li><strong>Diagnosed a sales drop</strong> as a pricing decision rather than a funnel fault, by isolating two wholesale repeat buyers lost to a catalog-wide price increase</li>
+                </ul>
+            </div>
+
+            <div class="solution-card">
+                <h4>🤖 Automation and Scale</h4>
+                <ul>
+                    <li>Built a Python and Shopify GraphQL pipeline to run SEO changes at catalog scale, with dry-run, backup and assertion checks before every write</li>
+                    <li><strong>144 collections</strong> rebuilt with unique carrier, city and airport level content plus 8 FAQ entries each</li>
+                    <li><strong>455 product titles</strong> corrected and <strong>1,307 meta descriptions</strong> generated from live price and plan data</li>
+                    <li><strong>1,769 products</strong> populated with Shopify standard category metafields, 7 fields each, zero errors</li>
+                    <li><strong>1,109 images across 161 articles</strong> given unique contextual alt text, replacing duplicated title-as-alt from a previous contributor</li>
+                    <li>Automated reporting pulling Search Console, GA4 and Shopify into a single monthly client deliverable</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: var(--light-gray);">
+        <div class="container">
+            <h2 class="section-title">Keyword Portfolio</h2>
+            <p class="section-subtitle">
+                Search Console, 90 day window ending 12 Aug 2026. The site ranks for more than fifty thousand
+                distinct queries, and almost none of them are brand searches.
+            </p>
+            <div class="table-wrap">
+                <table class="data">
+                    <thead>
+                        <tr><th>Metric</th><th style="text-align:right">Value</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Total ranking keywords</td><td class="num hi">54,258</td></tr>
+                        <tr><td>Keywords in top 3</td><td class="num hi">11,168</td></tr>
+                        <tr><td>Keywords in top 10</td><td class="num hi">39,941</td></tr>
+                        <tr><td>Keywords in top 20</td><td class="num">48,777</td></tr>
+                        <tr><td>Non-branded keywords</td><td class="num hi">54,245 (99.98%)</td></tr>
+                        <tr><td>Branded keywords</td><td class="num">13</td></tr>
+                        <tr><td>Clicks (90 days)</td><td class="num">83,990</td></tr>
+                        <tr><td>Impressions (90 days)</td><td class="num">17,198,038</td></tr>
+                        <tr><td>Clicks (28 days)</td><td class="num">23,280</td></tr>
+                        <tr><td>Impressions (28 days)</td><td class="num">5,313,664</td></tr>
+                        <tr><td>Average position</td><td class="num">7.83</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2 class="section-title" style="margin-top:70px">Commercial Keyword Strategy</h2>
+            <p class="section-subtitle">
+                12,493 queries containing "esim" rank for the site, 8,354 of them in the top 10. The strategic call
+                was to skip head terms owned by high authority brands and take the carrier-name variants instead.
+            </p>
+            <div class="table-wrap">
+                <table class="data">
+                    <thead>
+                        <tr><th>Keyword</th><th style="text-align:right">Position</th><th style="text-align:right">Impressions</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="kw">esim djezzy algérie</td><td class="num hi">7.3</td><td class="num">126</td></tr>
+                        <tr><td class="kw">djezzy esim</td><td class="num hi">7.8</td><td class="num">276</td></tr>
+                        <tr><td class="kw">ooredoo esim algerie</td><td class="num hi">8.0</td><td class="num">66</td></tr>
+                        <tr><td class="kw">megacom esim</td><td class="num hi">8.1</td><td class="num">25</td></tr>
+                        <tr><td class="kw">cosmote esim greece</td><td class="num hi">9.2</td><td class="num">569</td></tr>
+                        <tr><td class="kw">comprar esim tigo el salvador</td><td class="num hi">9.9</td><td class="num">18</td></tr>
+                        <tr><td class="kw">cosmote greece esim</td><td class="num hi">10.0</td><td class="num">300</td></tr>
+                        <tr><td class="kw">a1 bulgaria esim</td><td class="num hi">10.2</td><td class="num">29</td></tr>
+                        <tr><td class="kw">claro puerto rico esim</td><td class="num hi">10.7</td><td class="num">6</td></tr>
+                        <tr><td class="kw">bh telecom esim</td><td class="num">11.6</td><td class="num">248</td></tr>
+                        <tr><td class="kw">cosmote esim</td><td class="num">13.1</td><td class="num">585</td></tr>
+                        <tr><td class="kw">yesim vs airalo</td><td class="num hi">2.2</td><td class="num">213</td></tr>
+                        <tr><td class="kw">tablet con esim</td><td class="num hi">4.1</td><td class="num">735</td></tr>
+                        <tr><td class="kw">esim with vpn</td><td class="num hi">4.5</td><td class="num">771</td></tr>
+                        <tr><td class="kw">esim 전화번호</td><td class="num hi">6.5</td><td class="num">322</td></tr>
+                        <tr><td class="kw">esim с номером телефона</td><td class="num hi">6.7</td><td class="num">373</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="note">
+                For contrast, the corresponding head terms sit far outside reach: "esim algeria" at position 42 and
+                "buy esim uae" at position 57. Choosing the winnable SERP was the difference.
+            </p>
+
+            <h2 class="section-title" style="margin-top:70px">Multi-Market Performance</h2>
+            <p class="section-subtitle">
+                11 locales served from one English source. No single market carries the site: ten of them produce
+                four-digit clicks every 28 days.
+            </p>
+            <div class="table-wrap">
+                <table class="data">
+                    <thead>
+                        <tr><th>Market</th><th style="text-align:right">Clicks (28d)</th><th style="text-align:right">Impressions (28d)</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>🇮🇹 Italy</td><td class="num hi">2,467</td><td class="num">353,998</td></tr>
+                        <tr><td>🇯🇵 Japan</td><td class="num hi">1,936</td><td class="num">207,296</td></tr>
+                        <tr><td>🇺🇸 United States</td><td class="num hi">1,874</td><td class="num">738,314</td></tr>
+                        <tr><td>🇷🇺 Russia</td><td class="num hi">1,399</td><td class="num">179,846</td></tr>
+                        <tr><td>🇩🇪 Germany</td><td class="num hi">1,398</td><td class="num">269,709</td></tr>
+                        <tr><td>🇫🇷 France</td><td class="num hi">1,280</td><td class="num">177,498</td></tr>
+                        <tr><td>🇰🇷 South Korea</td><td class="num hi">1,201</td><td class="num">111,977</td></tr>
+                        <tr><td>🇪🇸 Spain</td><td class="num">972</td><td class="num">185,137</td></tr>
+                        <tr><td>🇬🇧 United Kingdom</td><td class="num">624</td><td class="num">223,534</td></tr>
+                        <tr><td>🇻🇳 Vietnam</td><td class="num">592</td><td class="num">142,120</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Measurable Results</h2>
+            <div class="results-grid">
+                <div class="result-card"><div class="result-icon">📈</div><h4>Traffic Growth</h4><p>+459% organic clicks in 7 months, 5,359 to 29,947 per month</p></div>
+                <div class="result-card"><div class="result-icon">🔑</div><h4>Keyword Portfolio</h4><p>54,258 ranking keywords, 39,941 in the top 10</p></div>
+                <div class="result-card"><div class="result-icon">🏷️</div><h4>Zero Brand Reliance</h4><p>99.98% of ranking keywords are non-branded</p></div>
+                <div class="result-card"><div class="result-icon">🌍</div><h4>Multi-Market</h4><p>10 language markets, each above 500 clicks per 28 days</p></div>
+                <div class="result-card"><div class="result-icon">💰</div><h4>Revenue</h4><p>$1,606 to $6,262 per month, AOV up 4x</p></div>
+                <div class="result-card"><div class="result-icon">🔧</div><h4>Technical Recovery</h4><p>Site-wide ranking drop root-caused and reversed</p></div>
+                <div class="result-card"><div class="result-icon">📝</div><h4>Content Library</h4><p>203 articles published, 374 live across 11 locales</p></div>
+                <div class="result-card"><div class="result-icon">⚡</div><h4>Automation</h4><p>Catalog-scale SEO pipeline across 1,769 products</p></div>
+                <div class="result-card"><div class="result-icon">📊</div><h4>Measurement</h4><p>Uncovered and fixed a 43% analytics blind spot</p></div>
+            </div>
+            <p class="note" style="margin-top:40px">
+                All figures pulled directly from Google Search Console and the Shopify Admin API. Search data as of 12 Aug 2026.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="cta-section">
+                <h2>Need SEO at Catalog Scale?</h2>
+                <p>Let's talk about growing an international e-commerce store through organic search alone.</p>
+                <div class="cta-buttons">
+                    <a href="index.html#projects" class="btn btn-primary">View More Projects</a>
+                    <a href="index.html#hero" class="btn btn-secondary">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Nguyen Minh Hieu. All rights reserved.</p>
+            <p style="margin-top: 10px;">📧 hieumn24@gmail.com | 📱 +84 949338524</p>
+        </div>
+    </footer>
+</body>
+</html>

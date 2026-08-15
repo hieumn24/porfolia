@@ -245,6 +245,53 @@ footer{ background:var(--navy); color:#c3d4ec; padding:50px 0 32px; }
   nav .wrap{ gap:10px; } nav .btn{ padding:9px 13px; font-size:.82rem; }
 }
 
+/* ---------- capabilities ---------- */
+.skillgrid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; }
+.skill{ background:var(--card); border:1px solid var(--line); border-radius:16px; padding:26px 28px;
+        box-shadow:var(--shadow); }
+.sk-top{ display:grid; grid-template-columns:auto minmax(0,1fr); gap:18px; align-items:start; margin-bottom:20px; }
+.sk-ic{ width:56px; height:56px; border-radius:50%; background:var(--blue-pale); flex:none;
+        display:flex; align-items:center; justify-content:center; }
+.sk-ic svg{ width:26px; height:26px; stroke:var(--blue-2); fill:none; stroke-width:1.7;
+            stroke-linecap:round; stroke-linejoin:round; }
+.sk-head{ display:flex; align-items:baseline; gap:11px; margin-bottom:7px; flex-wrap:wrap; }
+.sk-num{ font-family:'Space Grotesk',sans-serif; font-size:1.55rem; font-weight:700; color:var(--blue); line-height:1; }
+.sk-sl{ color:var(--line); font-weight:400; }
+.sk-head h3{ font-family:'Space Grotesk',sans-serif; font-size:1.12rem; font-weight:700; color:var(--navy);
+             letter-spacing:.02em; text-transform:uppercase; }
+.sk-desc{ font-size:.88rem; color:var(--muted); line-height:1.55; }
+.subs{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+.sub .st{ display:flex; align-items:center; gap:7px; margin-bottom:5px; }
+.sub .st svg{ width:17px; height:17px; stroke:var(--blue); fill:none; stroke-width:1.7;
+              stroke-linecap:round; stroke-linejoin:round; flex:none; }
+.sub .st b{ font-size:.855rem; font-weight:700; color:var(--navy); }
+.sub p{ font-size:.79rem; color:var(--muted); line-height:1.5; }
+.sk-tags{ margin-top:20px; padding-top:16px; border-top:1px solid var(--line);
+          display:flex; flex-wrap:wrap; gap:6px 20px; }
+.sk-tags span{ position:relative; font-size:.79rem; color:#33415c; padding-left:12px; }
+.sk-tags span::before{ content:''; position:absolute; left:0; top:8px; width:4px; height:4px;
+                       border-radius:50%; background:var(--blue); }
+.toolbar{ margin-top:22px; background:var(--card); border:1px solid var(--line); border-radius:16px;
+          box-shadow:var(--shadow); padding:22px 28px; display:grid;
+          grid-template-columns:auto minmax(0,1fr); gap:26px; align-items:center; }
+.toolbar h3{ font-family:'Space Grotesk',sans-serif; font-size:1.02rem; font-weight:700; color:var(--navy);
+             max-width:12ch; line-height:1.3; }
+.toolset{ display:flex; flex-wrap:wrap; gap:9px; border-left:1px solid var(--line); padding-left:26px; }
+.toolset span{ font-size:.82rem; font-weight:600; color:var(--navy); background:#fbfcfe;
+               border:1px solid var(--line); border-radius:8px; padding:7px 13px; }
+@media (max-width:1000px){ .skillgrid{ grid-template-columns:minmax(0,1fr); } }
+@media (max-width:700px){
+  /* 12 muc con xep doc lam trang dai them 2,3 man hinh: bo 2 cot va an mo ta,
+     nhan van du hieu vi hang tag ben duoi da noi chi tiet */
+  .subs{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:11px 14px; }
+  .sub p{ display:none; }
+  .sk-tags{ gap:5px 16px; }
+  .skill{ padding:20px 18px; }
+  .toolbar{ grid-template-columns:minmax(0,1fr); gap:14px; padding:20px 18px; }
+  .toolset{ border-left:none; padding-left:0; }
+  .toolbar h3{ max-width:none; }
+}
+
 .langsw{ display:inline-flex; border-radius:8px; overflow:hidden; flex:none; }
 .langsw a{ padding:5px 11px; font-size:.76rem; font-weight:800; letter-spacing:.06em;
            text-decoration:none; line-height:1.5; }
@@ -363,7 +410,7 @@ footer{ background:var(--navy); color:#c3d4ec; padding:50px 0 32px; }
             <div><div class="v">14,331</div><div class="k">Từ khóa có thứ hạng</div></div>
             <div><div class="v">+571%</div><div class="k">Click organic</div></div>
           </div>
-          <p>Từ 272 lên 14.331 từ khóa trong năm tháng, sau khi đã lọc 1,2 triệu impression bot.</p>
+          <p>272 to 14,331 keywords in five months, with 1.2M bot impressions stripped out first.</p>
           <span class="more">Xem case study →</span>
         </div>
       </a>
@@ -378,7 +425,7 @@ footer{ background:var(--navy); color:#c3d4ec; padding:50px 0 32px; }
             <div><div class="v">54,258</div><div class="k">Từ khóa có thứ hạng</div></div>
             <div><div class="v">+459%</div><div class="k">Click organic</div></div>
           </div>
-          <p>Organic là kênh duy nhất. Toàn bộ catalog vận hành bằng Python.</p>
+          <p>Organic is the only channel. The catalogue is maintained entirely in Python.</p>
           <span class="more">Xem case study →</span>
         </div>
       </a>
@@ -393,7 +440,7 @@ footer{ background:var(--navy); color:#c3d4ec; padding:50px 0 32px; }
             <div><div class="v">0 → 45K+</div><div class="k">Lượt truy cập/ngày</div></div>
             <div><div class="v">110%</div><div class="k">So với KPI</div></div>
           </div>
-          <p>Từ 0 đến đạt KPI trong 11 tháng, rồi năm tháng hồi phục sau khi site bị xâm nhập.</p>
+          <p>Zero to KPI in 11 months, then five months recovering from a full site compromise.</p>
           <span class="more">Xem case study →</span>
         </div>
       </a>
@@ -518,33 +565,58 @@ footer{ background:var(--navy); color:#c3d4ec; padding:50px 0 32px; }
 <section id="capabilities">
   <div class="wrap">
     <div class="head">
-      <h2>Năng lực</h2>
+      <h2>Kỹ năng chuyên môn</h2>
+      <p>Nền tảng chuyên môn giúp tôi xây chiến lược SEO và hệ thống hóa quy trình ở quy mô lớn.</p>
     </div>
-    <div class="caps">
-      <div class="cap">
-        <h3>Technical SEO</h3>
-        <p class="sub">Site lớn, nơi vấn đề là quy mô chứ không phải thiếu ý tưởng.</p>
-        <div class="tags">
-          <span>Kiến trúc site lớn</span><span>Crawl &amp; index</span><span>SEO đa quốc gia</span>
-          <span>Shopify</span><span>Schema</span><span>Core Web Vitals</span><span>Xử lý khủng hoảng</span>
+    <div class="skillgrid">
+      <div class="skill">
+        <div class="sk-top">
+          <div class="sk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3z"/><path d="M3 9h18"/><circle cx="11" cy="14" r="2.6"/><path d="m13 16 2.4 2.4"/></svg></div>
+          <div>
+            <div class="sk-head"><span class="sk-num">01</span><span class="sk-sl">/</span><h3>Technical SEO</h3></div>
+            <p class="sk-desc">Tối ưu nền tảng kỹ thuật để website được thu thập, lập chỉ mục và hiểu đúng.</p>
+          </div>
         </div>
+        <div class="subs"><div class="sub"><div class="st"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m15 15 4.5 4.5"/></svg><b>Crawl &amp; Index</b></div><p>Crawl budget, index bloat, phần Google thật sự giữ lại</p></div><div class="sub"><div class="st"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4.5" r="2.2"/><circle cx="5" cy="19" r="2.2"/><circle cx="19" cy="19" r="2.2"/><path d="M12 6.7v4.8M12 11.5 6 16.9M12 11.5l6 5.4"/></svg><b>Kiến trúc site</b></div><p>Cấu trúc collection và facet ở quy mô catalog</p></div><div class="sub"><div class="st"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.6 2.4 14.4 0 17M12 3.5c-2.4 2.6-2.4 14.4 0 17"/></svg><b>SEO đa quốc gia</b></div><p>Hreflang, đa ngôn ngữ, đa khu vực</p></div></div>
+        <div class="sk-tags"><span>Technical Audit</span><span>Canonical &amp; trùng lặp</span><span>Redirect &amp; migration</span><span>Core Web Vitals</span><span>Structured Data / Schema</span><span>XML Sitemap &amp; Robots</span><span>JavaScript SEO</span><span>Shopify SEO</span></div>
       </div>
-      <div class="cap">
-        <h3>Kỹ thuật &amp; dữ liệu</h3>
-        <p class="sub">Báo cáo tôi bảo vệ được từng dòng, dựng bằng code.</p>
-        <div class="tags">
-          <span>Python</span><span>Search Console API</span><span>GA4 API</span><span>Shopify GraphQL</span>
-          <span>Screaming Frog</span><span>Looker Studio</span><span>Kiểm bot &amp; chất lượng dữ liệu</span>
+      <div class="skill">
+        <div class="sk-top">
+          <div class="sk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/><path d="M12 3.5V1M12 23v-2.5M3.5 12H1M23 12h-2.5"/></svg></div>
+          <div>
+            <div class="sk-head"><span class="sk-num">02</span><span class="sk-sl">/</span><h3>Chiến lược &amp; Tăng trưởng</h3></div>
+            <p class="sk-desc">Chọn cái đáng đánh, và nói thẳng cái nào không hoàn vốn.</p>
+          </div>
         </div>
+        <div class="subs"><div class="sub"><div class="st"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.5 3H21v9.5l-9 9L3 12.5z"/><circle cx="16.8" cy="7.2" r="1.6"/></svg><b>Chiến lược từ khóa</b></div><p>Nghiên cứu từ SERP, khớp intent và loại trang</p></div><div class="sub"><div class="st"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/><path d="M9 12h7M9 16h7"/></svg><b>Chiến lược nội dung</b></div><p>Topic cluster, brief và chu kỳ làm mới bài</p></div><div class="sub"><div class="st"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16"/><path d="m5 15 4.5-5 3.5 3.2L19 6"/><path d="M19 6h-3.6M19 6v3.6"/></svg><b>Tăng trưởng hiệu quả</b></div><p>Quy về doanh thu, không dừng ở đếm click</p></div></div>
+        <div class="sk-tags"><span>Phân tích đối thủ &amp; SERP</span><span>Phân tích khoảng trống nội dung</span><span>Programmatic SEO</span><span>SEO thương mại điện tử</span><span>Tối ưu on-page</span><span>Dự báo</span><span>Thử nghiệm</span></div>
       </div>
-      <div class="cap">
-        <h3>Hệ thống tăng trưởng</h3>
-        <p class="sub">Cấu trúc vẫn chạy tốt sau khi tôi bàn giao.</p>
-        <div class="tags">
-          <span>Kiến trúc từ khóa</span><span>Hệ thống nội dung</span><span>Programmatic SEO</span>
-          <span>Internal link</span><span>Đo lường &amp; attribution</span>
+      <div class="skill">
+        <div class="sk-top">
+          <div class="sk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16"/><path d="M7 20v-7M12 20V6M17 20v-10"/></svg></div>
+          <div>
+            <div class="sk-head"><span class="sk-num">03</span><span class="sk-sl">/</span><h3>Dữ liệu, Tự động hóa &amp; Công cụ</h3></div>
+            <p class="sk-desc">Kéo số bằng code để bảo vệ được từng dòng khi bị hỏi.</p>
+          </div>
         </div>
+        <div class="subs"><div class="sub"><div class="st"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16"/><rect x="6" y="11" width="3" height="6"/><rect x="11" y="7" width="3" height="10"/><rect x="16" y="13" width="3" height="4"/></svg><b>Phân tích dữ liệu</b></div><p>Search Console và GA4 ở cấp query và cấp trang</p></div><div class="sub"><div class="st"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 0 1-13 5"/><path d="M4.5 12a7.5 7.5 0 0 1 13-5"/><path d="M17.5 3.4V7h-3.6M6.5 20.6V17h3.6"/></svg><b>Tự động hóa</b></div><p>Sửa hàng loạt cả catalog qua Shopify GraphQL API</p></div><div class="sub"><div class="st"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 4.5a4.5 4.5 0 0 0-6 6L4 15v4.5h4.5L13 15a4.5 4.5 0 0 0 6-6l-2.6 2.6-2.4-2.4z"/></svg><b>Công cụ riêng</b></div><p>Pipeline báo cáo may đo cho từng khách</p></div></div>
+        <div class="sk-tags"><span>Search Console API</span><span>GA4 API</span><span>Python cho SEO</span><span>Pipeline dữ liệu SEO</span><span>Báo cáo tự động</span><span>Kiểm bot &amp; chất lượng dữ liệu</span><span>Phân tích SEO quy mô lớn</span></div>
       </div>
+      <div class="skill">
+        <div class="sk-top">
+          <div class="sk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.2 2.7-5.2 6-5.2s6 2 6 5.2"/><circle cx="17.5" cy="9.5" r="2.4"/><path d="M16 14.2c3 .3 5 2.2 5 4.8"/></svg></div>
+          <div>
+            <div class="sk-head"><span class="sk-num">04</span><span class="sk-sl">/</span><h3>Dẫn dắt &amp; Triển khai</h3></div>
+            <p class="sk-desc">Biến roadmap thành pull request đã merge và trang đã xuất bản.</p>
+          </div>
+        </div>
+        <div class="subs"><div class="sub"><div class="st"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3v18M18 3v18"/><path d="M12 4v3M12 10.5v3M12 17v3"/></svg><b>Lộ trình SEO</b></div><p>Xếp thứ tự việc theo đúng khung thời gian hợp đồng</p></div><div class="sub"><div class="st"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="9" r="2.8"/><circle cx="16" cy="9" r="2.8"/><path d="M3 19c0-2.8 2.2-4.6 5-4.6s5 1.8 5 4.6M13.5 14.6c2.6-.4 5.5 1.2 5.5 4.4"/></svg><b>Phối hợp liên phòng ban</b></div><p>Dev, team nội dung và các bên phía khách</p></div><div class="sub"><div class="st"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg><b>Triển khai &amp; QA</b></div><p>Chạy thử, backup, ghi, rồi kiểm chứng đã vào</p></div></div>
+        <div class="sk-tags"><span>Đặc tả technical SEO</span><span>Làm việc với dev</span><span>Làm việc với team nội dung</span><span>QA &amp; review triển khai</span><span>Giao tiếp với các bên</span><span>Tài liệu hóa SEO</span></div>
+      </div>
+    </div>
+    <div class="toolbar">
+      <h3>Công cụ dùng hằng ngày</h3>
+      <div class="toolset"><span>Google Search Console</span><span>GA4</span><span>Looker Studio</span><span>Ahrefs</span><span>Semrush</span><span>Screaming Frog</span><span>Python</span><span>Shopify GraphQL</span><span>Google Sheets</span><span>Excel</span></div>
     </div>
   </div>
 </section>
@@ -554,7 +626,7 @@ footer{ background:var(--navy); color:#c3d4ec; padding:50px 0 32px; }
     <div class="foot">
       <div>
         <h3>Liên hệ</h3>
-        <p>Đang mở với vị trí SEO Lead và technical SEO senior. Sẵn sàng giải thích mọi con số ở đây.</p>
+        <p>Open to SEO Lead and senior technical SEO roles. Happy to walk through any number here.</p>
       </div>
       <ul class="contact">
         <li>✉️ <a href="mailto:hieumn24@gmail.com">hieumn24@gmail.com</a></li>

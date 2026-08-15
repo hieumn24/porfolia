@@ -240,6 +240,53 @@ footer{ background:var(--navy); color:#c3d4ec; padding:50px 0 32px; }
   .brand span span{ display:none; }
   nav .wrap{ gap:10px; } nav .btn{ padding:9px 13px; font-size:.82rem; }
 }
+
+/* ---------- capabilities ---------- */
+.skillgrid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; }
+.skill{ background:var(--card); border:1px solid var(--line); border-radius:16px; padding:26px 28px;
+        box-shadow:var(--shadow); }
+.sk-top{ display:grid; grid-template-columns:auto minmax(0,1fr); gap:18px; align-items:start; margin-bottom:20px; }
+.sk-ic{ width:56px; height:56px; border-radius:50%; background:var(--blue-pale); flex:none;
+        display:flex; align-items:center; justify-content:center; }
+.sk-ic svg{ width:26px; height:26px; stroke:var(--blue-2); fill:none; stroke-width:1.7;
+            stroke-linecap:round; stroke-linejoin:round; }
+.sk-head{ display:flex; align-items:baseline; gap:11px; margin-bottom:7px; flex-wrap:wrap; }
+.sk-num{ font-family:'Space Grotesk',sans-serif; font-size:1.55rem; font-weight:700; color:var(--blue); line-height:1; }
+.sk-sl{ color:var(--line); font-weight:400; }
+.sk-head h3{ font-family:'Space Grotesk',sans-serif; font-size:1.12rem; font-weight:700; color:var(--navy);
+             letter-spacing:.02em; text-transform:uppercase; }
+.sk-desc{ font-size:.88rem; color:var(--muted); line-height:1.55; }
+.subs{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+.sub .st{ display:flex; align-items:center; gap:7px; margin-bottom:5px; }
+.sub .st svg{ width:17px; height:17px; stroke:var(--blue); fill:none; stroke-width:1.7;
+              stroke-linecap:round; stroke-linejoin:round; flex:none; }
+.sub .st b{ font-size:.855rem; font-weight:700; color:var(--navy); }
+.sub p{ font-size:.79rem; color:var(--muted); line-height:1.5; }
+.sk-tags{ margin-top:20px; padding-top:16px; border-top:1px solid var(--line);
+          display:flex; flex-wrap:wrap; gap:6px 20px; }
+.sk-tags span{ position:relative; font-size:.79rem; color:#33415c; padding-left:12px; }
+.sk-tags span::before{ content:''; position:absolute; left:0; top:8px; width:4px; height:4px;
+                       border-radius:50%; background:var(--blue); }
+.toolbar{ margin-top:22px; background:var(--card); border:1px solid var(--line); border-radius:16px;
+          box-shadow:var(--shadow); padding:22px 28px; display:grid;
+          grid-template-columns:auto minmax(0,1fr); gap:26px; align-items:center; }
+.toolbar h3{ font-family:'Space Grotesk',sans-serif; font-size:1.02rem; font-weight:700; color:var(--navy);
+             max-width:12ch; line-height:1.3; }
+.toolset{ display:flex; flex-wrap:wrap; gap:9px; border-left:1px solid var(--line); padding-left:26px; }
+.toolset span{ font-size:.82rem; font-weight:600; color:var(--navy); background:#fbfcfe;
+               border:1px solid var(--line); border-radius:8px; padding:7px 13px; }
+@media (max-width:1000px){ .skillgrid{ grid-template-columns:minmax(0,1fr); } }
+@media (max-width:700px){
+  /* 12 muc con xep doc lam trang dai them 2,3 man hinh: bo 2 cot va an mo ta,
+     nhan van du hieu vi hang tag ben duoi da noi chi tiet */
+  .subs{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:11px 14px; }
+  .sub p{ display:none; }
+  .sk-tags{ gap:5px 16px; }
+  .skill{ padding:20px 18px; }
+  .toolbar{ grid-template-columns:minmax(0,1fr); gap:14px; padding:20px 18px; }
+  .toolset{ border-left:none; padding-left:0; }
+  .toolbar h3{ max-width:none; }
+}
 </style>
 </head>
 <body>
@@ -503,32 +550,57 @@ footer{ background:var(--navy); color:#c3d4ec; padding:50px 0 32px; }
   <div class="wrap">
     <div class="head">
       <h2>Capabilities</h2>
+      <p>The systems I build and operate, not a list of tools I have opened once.</p>
     </div>
-    <div class="caps">
-      <div class="cap">
-        <h3>Technical SEO</h3>
-        <p class="sub">Large sites where the problem is scale, not ideas.</p>
-        <div class="tags">
-          <span>Large-site architecture</span><span>Crawl &amp; indexation</span><span>International SEO</span>
-          <span>Shopify</span><span>Schema</span><span>Core Web Vitals</span><span>Crisis recovery</span>
+    <div class="skillgrid">
+      <div class="skill">
+        <div class="sk-top">
+          <div class="sk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3z"/><path d="M3 9h18"/><circle cx="11" cy="14" r="2.6"/><path d="m13 16 2.4 2.4"/></svg></div>
+          <div>
+            <div class="sk-head"><span class="sk-num">01</span><span class="sk-sl">/</span><h3>Technical SEO</h3></div>
+            <p class="sk-desc">Making a large site crawlable, indexable and understood.</p>
+          </div>
         </div>
+        <div class="subs"><div class="sub"><div class="st"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m15 15 4.5 4.5"/></svg><b>Crawl &amp; Indexation</b></div><p>Crawl budget, index bloat, what Google actually kept</p></div><div class="sub"><div class="st"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4.5" r="2.2"/><circle cx="5" cy="19" r="2.2"/><circle cx="19" cy="19" r="2.2"/><path d="M12 6.7v4.8M12 11.5 6 16.9M12 11.5l6 5.4"/></svg><b>Site Architecture</b></div><p>Collection and facet structure at catalogue scale</p></div><div class="sub"><div class="st"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.6 2.4 14.4 0 17M12 3.5c-2.4 2.6-2.4 14.4 0 17"/></svg><b>International SEO</b></div><p>Hreflang, multi-locale, multi-region</p></div></div>
+        <div class="sk-tags"><span>Technical Audit</span><span>Canonical &amp; Duplicate</span><span>Redirect &amp; Migration</span><span>Core Web Vitals</span><span>Structured Data / Schema</span><span>XML Sitemap &amp; Robots</span><span>JavaScript SEO</span><span>Shopify SEO</span></div>
       </div>
-      <div class="cap">
-        <h3>SEO engineering &amp; data</h3>
-        <p class="sub">Reporting I can defend line by line, built in code.</p>
-        <div class="tags">
-          <span>Python</span><span>Search Console API</span><span>GA4 API</span><span>Shopify GraphQL</span>
-          <span>Screaming Frog</span><span>Looker Studio</span><span>Bot &amp; data QA</span>
+      <div class="skill">
+        <div class="sk-top">
+          <div class="sk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/><path d="M12 3.5V1M12 23v-2.5M3.5 12H1M23 12h-2.5"/></svg></div>
+          <div>
+            <div class="sk-head"><span class="sk-num">02</span><span class="sk-sl">/</span><h3>SEO Strategy &amp; Growth</h3></div>
+            <p class="sk-desc">Choosing what to chase, and saying out loud what will not pay back.</p>
+          </div>
         </div>
+        <div class="subs"><div class="sub"><div class="st"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.5 3H21v9.5l-9 9L3 12.5z"/><circle cx="16.8" cy="7.2" r="1.6"/></svg><b>Keyword Strategy</b></div><p>SERP-first research, intent and page-type match</p></div><div class="sub"><div class="st"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/><path d="M9 12h7M9 16h7"/></svg><b>Content Strategy</b></div><p>Topic clusters, briefs and refresh cycles</p></div><div class="sub"><div class="st"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16"/><path d="m5 15 4.5-5 3.5 3.2L19 6"/><path d="M19 6h-3.6M19 6v3.6"/></svg><b>Performance Growth</b></div><p>Revenue attribution, not click counts</p></div></div>
+        <div class="sk-tags"><span>Competitor &amp; SERP Analysis</span><span>Content Gap Analysis</span><span>Programmatic SEO</span><span>E-commerce SEO</span><span>On-page Optimization</span><span>Forecasting</span><span>Experimentation</span></div>
       </div>
-      <div class="cap">
-        <h3>Growth systems</h3>
-        <p class="sub">Structures that keep working after I hand them over.</p>
-        <div class="tags">
-          <span>Keyword architecture</span><span>Content systems</span><span>Programmatic SEO</span>
-          <span>Internal linking</span><span>Measurement &amp; attribution</span>
+      <div class="skill">
+        <div class="sk-top">
+          <div class="sk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16"/><path d="M7 20v-7M12 20V6M17 20v-10"/></svg></div>
+          <div>
+            <div class="sk-head"><span class="sk-num">03</span><span class="sk-sl">/</span><h3>Data, Automation &amp; Tools</h3></div>
+            <p class="sk-desc">Pulling the numbers in code so they can be defended line by line.</p>
+          </div>
         </div>
+        <div class="subs"><div class="sub"><div class="st"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16"/><rect x="6" y="11" width="3" height="6"/><rect x="11" y="7" width="3" height="10"/><rect x="16" y="13" width="3" height="4"/></svg><b>Data Analysis</b></div><p>Search Console and GA4 at query and page level</p></div><div class="sub"><div class="st"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 0 1-13 5"/><path d="M4.5 12a7.5 7.5 0 0 1 13-5"/><path d="M17.5 3.4V7h-3.6M6.5 20.6V17h3.6"/></svg><b>Automation</b></div><p>Bulk catalogue edits through the Shopify GraphQL API</p></div><div class="sub"><div class="st"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 4.5a4.5 4.5 0 0 0-6 6L4 15v4.5h4.5L13 15a4.5 4.5 0 0 0 6-6l-2.6 2.6-2.4-2.4z"/></svg><b>Custom Tooling</b></div><p>Reporting pipelines shaped around one client</p></div></div>
+        <div class="sk-tags"><span>Search Console API</span><span>GA4 API</span><span>Python for SEO</span><span>SEO Data Pipelines</span><span>Automated Reporting</span><span>Bot &amp; Data QA</span><span>Large-scale SEO Analysis</span></div>
       </div>
+      <div class="skill">
+        <div class="sk-top">
+          <div class="sk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.2 2.7-5.2 6-5.2s6 2 6 5.2"/><circle cx="17.5" cy="9.5" r="2.4"/><path d="M16 14.2c3 .3 5 2.2 5 4.8"/></svg></div>
+          <div>
+            <div class="sk-head"><span class="sk-num">04</span><span class="sk-sl">/</span><h3>Leadership &amp; Execution</h3></div>
+            <p class="sk-desc">Turning a roadmap into merged pull requests and published pages.</p>
+          </div>
+        </div>
+        <div class="subs"><div class="sub"><div class="st"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3v18M18 3v18"/><path d="M12 4v3M12 10.5v3M12 17v3"/></svg><b>SEO Roadmap</b></div><p>Sequencing work against a fixed contract window</p></div><div class="sub"><div class="st"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="9" r="2.8"/><circle cx="16" cy="9" r="2.8"/><path d="M3 19c0-2.8 2.2-4.6 5-4.6s5 1.8 5 4.6M13.5 14.6c2.6-.4 5.5 1.2 5.5 4.4"/></svg><b>Cross-functional Work</b></div><p>Developers, content teams and client stakeholders</p></div><div class="sub"><div class="st"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg><b>Execution &amp; QA</b></div><p>Dry run, back up the field, write, assert it landed</p></div></div>
+        <div class="sk-tags"><span>Technical SEO Specs</span><span>Developer Collaboration</span><span>Content Team Collaboration</span><span>QA &amp; Implementation Review</span><span>Stakeholder Communication</span><span>SEO Documentation</span></div>
+      </div>
+    </div>
+    <div class="toolbar">
+      <h3>Tools I work in daily</h3>
+      <div class="toolset"><span>Google Search Console</span><span>GA4</span><span>Looker Studio</span><span>Ahrefs</span><span>Semrush</span><span>Screaming Frog</span><span>Python</span><span>Shopify GraphQL</span><span>Google Sheets</span><span>Excel</span></div>
     </div>
   </div>
 </section>

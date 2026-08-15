@@ -88,7 +88,7 @@ ul.pts strong{ color:var(--ink); font-weight:600; }
 .tlitem p{ font-size:.88rem; color:#33415c; }
 
 .mini{ display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:14px; }
-.mini div{ border:1px solid var(--line); border-radius:10px; padding:15px 17px; background:#fbfcfe; }
+.mini > div{ border:1px solid var(--line); border-radius:10px; padding:15px 17px; background:#fbfcfe; }
 .mini h3{ font-size:.9rem; margin-bottom:4px; }
 .mini p{ font-size:.82rem; color:var(--muted); line-height:1.5; }
 
@@ -101,7 +101,7 @@ ul.pts strong{ color:var(--ink); font-weight:600; }
 .chapter p{ font-size:.92rem; color:#c3d4ec; max-width:82ch; }
 .chapter p + p{ margin-top:11px; }
 .lessons{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; margin-top:8px; }
-.lessons div{ background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:10px; padding:15px 17px; }
+.lessons > div{ background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:10px; padding:15px 17px; }
 .lessons b{ display:block; color:#fff; font-size:.9rem; margin-bottom:4px; }
 .lessons span{ font-size:.84rem; color:#c3d4ec; }
 .pull{ font-family:'Space Grotesk',sans-serif; font-size:1.18rem; color:#fff; line-height:1.5;
@@ -114,9 +114,9 @@ footer a{ color:#fff; text-decoration:none; }
 
 @media (max-width:1080px){ .g-3{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media (max-width:860px){
-  .hero-top{ grid-template-columns:1fr; gap:28px; }
+  .hero-top{ grid-template-columns:minmax(0,1fr); gap:28px; }
   h1.title{ font-size:2.1rem; }
-  .g-2,.g-3{ grid-template-columns:1fr; }
+  .g-2,.g-3{ grid-template-columns:minmax(0,1fr); }
   .kpis{ margin-top:-18px; }
 }
 
@@ -129,7 +129,7 @@ footer a{ color:#fff; text-decoration:none; }
 .morelinks .s{ font-size:.78rem; color:var(--muted); }
 .morelinks .go{ display:block; margin-top:11px; font-size:.8rem; font-weight:700; color:var(--blue); }
 @media (max-width:1080px){ .morelinks{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
-@media (max-width:600px){ .morelinks{ grid-template-columns:1fr; } }
+@media (max-width:600px){ .morelinks{ grid-template-columns:minmax(0,1fr); } }
 </style>
 </head>
 <body>

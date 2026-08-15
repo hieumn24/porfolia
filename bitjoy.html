@@ -137,9 +137,9 @@ footer a{ color:#fff; text-decoration:none; }
 
 @media (max-width:1080px){ .g-3{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media (max-width:860px){
-  .hero-top{ grid-template-columns:1fr; gap:28px; }
+  .hero-top{ grid-template-columns:minmax(0,1fr); gap:28px; }
   h1.title{ font-size:2.1rem; }
-  .g-2,.g-3{ grid-template-columns:1fr; }
+  .g-2,.g-3{ grid-template-columns:minmax(0,1fr); }
   .kpis{ margin-top:-18px; }
   .revlabels span{ font-size:.55rem; }
 }
@@ -153,7 +153,7 @@ footer a{ color:#fff; text-decoration:none; }
 .morelinks .s{ font-size:.78rem; color:var(--muted); }
 .morelinks .go{ display:block; margin-top:11px; font-size:.8rem; font-weight:700; color:var(--blue); }
 @media (max-width:1080px){ .morelinks{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
-@media (max-width:600px){ .morelinks{ grid-template-columns:1fr; } }
+@media (max-width:600px){ .morelinks{ grid-template-columns:minmax(0,1fr); } }
 </style>
 </head>
 <body>

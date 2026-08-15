@@ -85,13 +85,18 @@ td.n b{ color:var(--navy); }
 .bar{ display:block; height:7px; border-radius:4px; background:var(--blue); opacity:.85; }
 
 /* ---------- revenue bars ---------- */
-.revchart{ display:flex; align-items:flex-end; gap:6px; height:120px; padding:0 2px;
-           border-bottom:1px solid var(--line); margin-bottom:8px; }
-.revchart div{ flex:1; background:linear-gradient(180deg,var(--indigo) 0%,#7b7bef 100%);
-               border-radius:4px 4px 0 0; min-height:3px; }
-.revchart div.peak{ background:linear-gradient(180deg,#2f2fd6 0%,var(--indigo) 100%); }
+.revchart{ display:flex; align-items:flex-end; gap:6px; padding:0 2px;
+           border-bottom:1px solid var(--line); margin-bottom:7px; }
+.revchart .col{ flex:1; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; }
+.revchart .col b{ font-family:'Space Grotesk',sans-serif; font-size:.7rem; font-weight:700; color:var(--muted);
+                  margin-bottom:4px; font-variant-numeric:tabular-nums; }
+.revchart .col i{ display:block; width:100%; border-radius:4px 4px 0 0;
+                  background:linear-gradient(180deg,var(--indigo) 0%,#8f8ff2 100%); }
+.revchart .col.peak b{ color:var(--indigo); }
+.revchart .col.peak i{ background:linear-gradient(180deg,#2b2bd0 0%,var(--indigo) 100%); }
 .revlabels{ display:flex; gap:6px; padding:0 2px; }
-.revlabels span{ flex:1; text-align:center; font-size:.62rem; color:var(--muted); }
+.revlabels span{ flex:1; text-align:center; font-size:.66rem; color:var(--muted); }
+.revlabels span.yr{ font-weight:700; color:#3d4d68; }
 
 /* ---------- number grid ---------- */
 .numgrid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px; }
@@ -311,17 +316,26 @@ footer a{ color:#fff; text-decoration:none; }
   <div class="grid g-2">
     <div class="card">
       <h2>Commerce</h2>
-      <p class="lede">Monthly revenue, Shopify Admin API. Shape shown relative to the June peak.</p>
-      <div class="revchart" role="img" aria-label="Monthly revenue from September 2025 to July 2026, dipping in November and February and peaking in June 2026">
-        <div style="height:26%"></div><div style="height:27%"></div><div style="height:15%"></div>
-        <div style="height:35%"></div><div style="height:76%"></div><div style="height:56%"></div>
-        <div style="height:79%"></div><div style="height:70%"></div><div style="height:84%"></div>
-        <div class="peak" style="height:100%"></div><div style="height:95%"></div>
+      <p class="lede">Monthly revenue, Shopify Admin API. Indexed to the June 2026 peak = 100.</p>
+      <div class="revchart" role="img" aria-label="Monthly revenue indexed to the June 2026 peak: September 26, October 27, November 15, December 35, January 76, February 56, March 79, April 70, May 84, June 100, July 95">
+        <div class="col"><b>26</b><i style="height:31px"></i></div>
+        <div class="col"><b>27</b><i style="height:32px"></i></div>
+        <div class="col"><b>15</b><i style="height:18px"></i></div>
+        <div class="col"><b>35</b><i style="height:42px"></i></div>
+        <div class="col"><b>76</b><i style="height:91px"></i></div>
+        <div class="col"><b>56</b><i style="height:67px"></i></div>
+        <div class="col"><b>79</b><i style="height:95px"></i></div>
+        <div class="col"><b>70</b><i style="height:84px"></i></div>
+        <div class="col"><b>84</b><i style="height:101px"></i></div>
+        <div class="col peak"><b>100</b><i style="height:120px"></i></div>
+        <div class="col"><b>95</b><i style="height:114px"></i></div>
       </div>
       <div class="revlabels">
-        <span>S</span><span>O</span><span>N</span><span>D</span><span>J</span><span>F</span>
-        <span>M</span><span>A</span><span>M</span><span>J</span><span>J</span>
+        <span class="yr">Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
+        <span class="yr">Jan</span><span>Feb</span><span>Mar</span><span>Apr</span>
+        <span>May</span><span>Jun</span><span>Jul</span>
       </div>
+      <p class="footnote" style="margin-top:6px">Sep to Dec 2025, Jan to Jul 2026. August is excluded, the month is not finished.</p>
       <ul class="pts" style="margin-top:18px">
         <li>Revenue up <strong>3.9x</strong> from the first month to the June peak.</li>
         <li>That came from <strong>average order value, not volume</strong>. AOV rose 5.5x while orders stayed between 95 and 238 a month with no trend. Customers moved to bigger regional and global plans.</li>

@@ -9,7 +9,8 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 
 :root{
-  --navy:#0a1f44; --navy-2:#102a55; --navy-3:#17356a;
+  --navy:#0a1f44; --navy-3:#17356a;
+  --indigo:#4949E7; --lime:#C5E10E;
   --blue:#1f6feb; --blue-soft:#4c9aff; --blue-pale:#e8f0fe;
   --ink:#0f172a; --muted:#5b6b85; --line:#e3e8f0;
   --bg:#f3f6fb; --card:#ffffff; --good:#0f9d58;
@@ -25,10 +26,11 @@ nav a{ color:#fff; text-decoration:none; font-weight:600; font-size:.95rem; opac
 nav a:hover{ opacity:1; }
 
 /* ---------- header ---------- */
-.hero{ background:linear-gradient(160deg,var(--navy) 0%,var(--navy-3) 100%); color:#fff; padding:44px 0 34px; }
+.hero{ background:linear-gradient(160deg,var(--navy) 0%,var(--navy-3) 100%); color:#fff; padding:40px 0 34px; }
 .hero-top{ display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center; }
+.logo{ width:132px; height:auto; display:block; margin-bottom:20px; }
 .eyebrow{ display:inline-block; font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
-          color:var(--blue-soft); border:1px solid rgba(76,154,255,.4); border-radius:100px; padding:5px 14px; margin-bottom:16px; }
+          color:var(--lime); border:1px solid rgba(197,225,14,.35); border-radius:100px; padding:5px 14px; margin-bottom:14px; }
 h1.title{ font-family:'Space Grotesk',sans-serif; font-size:2.9rem; font-weight:700; line-height:1.1; margin-bottom:10px; }
 .subtitle{ font-size:1.05rem; color:#b9cbe8; max-width:44ch; }
 
@@ -43,24 +45,22 @@ h1.title{ font-family:'Space Grotesk',sans-serif; font-size:2.9rem; font-weight:
 .chartbox svg{ width:100%; height:auto; display:block; }
 
 /* ---------- kpi strip ---------- */
-.kpis{ display:grid; grid-template-columns:repeat(auto-fit,minmax(178px,1fr)); gap:1px; background:var(--line);
+.kpis{ display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:1px; background:var(--line);
        border-radius:14px; overflow:hidden; box-shadow:var(--shadow); margin-top:-26px; position:relative; z-index:5; }
-.kpi{ background:var(--card); padding:22px 20px; }
-.kpi .n{ font-family:'Space Grotesk',sans-serif; font-size:2rem; font-weight:700; color:var(--navy); line-height:1.1; }
-.kpi .l{ font-size:.86rem; font-weight:600; margin-top:4px; }
-.kpi .s{ font-size:.76rem; color:var(--muted); margin-top:2px; }
+.kpi{ background:var(--card); padding:20px 18px; }
+.kpi .n{ font-family:'Space Grotesk',sans-serif; font-size:1.9rem; font-weight:700; color:var(--navy); line-height:1.1; }
+.kpi .l{ font-size:.84rem; font-weight:600; margin-top:4px; }
+.kpi .s{ font-size:.74rem; color:var(--muted); margin-top:2px; }
 
 /* ---------- layout ---------- */
 main{ padding:34px 0 0; }
 .grid{ display:grid; gap:20px; margin-bottom:20px; }
 .g-2{ grid-template-columns:repeat(2,minmax(0,1fr)); }
 .g-3{ grid-template-columns:repeat(3,minmax(0,1fr)); }
-.span-2{ grid-column:span 2; }
 
 .card{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:24px 26px; box-shadow:var(--shadow); }
 .card h2{ font-family:'Space Grotesk',sans-serif; font-size:1.12rem; font-weight:700; margin-bottom:4px; }
 .card .lede{ font-size:.88rem; color:var(--muted); margin-bottom:18px; }
-.card h2 + ul, .card h2 + .tablewrap, .card h2 + .numgrid{ margin-top:16px; }
 
 ul.pts{ list-style:none; }
 ul.pts li{ position:relative; padding:0 0 14px 26px; font-size:.9rem; color:#33415c; }
@@ -84,8 +84,17 @@ td.n b{ color:var(--navy); }
 .pos.top{ background:#e6f5ec; color:var(--good); }
 .bar{ display:block; height:7px; border-radius:4px; background:var(--blue); opacity:.85; }
 
+/* ---------- revenue bars ---------- */
+.revchart{ display:flex; align-items:flex-end; gap:6px; height:120px; padding:0 2px;
+           border-bottom:1px solid var(--line); margin-bottom:8px; }
+.revchart div{ flex:1; background:linear-gradient(180deg,var(--indigo) 0%,#7b7bef 100%);
+               border-radius:4px 4px 0 0; min-height:3px; }
+.revchart div.peak{ background:linear-gradient(180deg,#2f2fd6 0%,var(--indigo) 100%); }
+.revlabels{ display:flex; gap:6px; padding:0 2px; }
+.revlabels span{ flex:1; text-align:center; font-size:.62rem; color:var(--muted); }
+
 /* ---------- number grid ---------- */
-.numgrid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:14px; }
+.numgrid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px; }
 .num{ border:1px solid var(--line); border-radius:10px; padding:15px 16px; background:#fbfcfe; }
 .num .n{ font-family:'Space Grotesk',sans-serif; font-size:1.5rem; font-weight:700; color:var(--navy); }
 .num .l{ font-size:.8rem; font-weight:600; margin-top:1px; }
@@ -103,15 +112,13 @@ td.n b{ color:var(--navy); }
 footer{ background:var(--navy); color:#93aacd; text-align:center; padding:30px 0; margin-top:34px; font-size:.87rem; }
 footer a{ color:#fff; text-decoration:none; }
 
-@media (max-width:1080px){
-  .g-3{ grid-template-columns:repeat(2,minmax(0,1fr)); }
-}
+@media (max-width:1080px){ .g-3{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media (max-width:860px){
   .hero-top{ grid-template-columns:1fr; gap:28px; }
   h1.title{ font-size:2.1rem; }
   .g-2,.g-3{ grid-template-columns:1fr; }
-  .span-2{ grid-column:span 1; }
   .kpis{ margin-top:-18px; }
+  .revlabels span{ font-size:.55rem; }
 }
 </style>
 </head>
@@ -123,6 +130,19 @@ footer a{ color:#fff; text-decoration:none; }
   <div class="wrap">
     <div class="hero-top">
       <div>
+        <svg class="logo" viewBox="0 0 416 168" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BitJoy">
+          <g clip-path="url(#bjclip)">
+            <path d="M140.94 43.7557H122.475C122.475 43.7557 122.455 37.8258 122.436 32.6796C122.429 30.7122 123.206 28.8225 124.595 27.4288C125.984 26.0354 127.871 25.2518 129.838 25.2518H140.916L140.94 43.7557ZM140.94 119.66C140.94 121.623 140.161 123.506 138.772 124.894C137.384 126.282 135.501 127.061 133.538 127.061H122.475V59.4841H140.94V119.66Z" fill="white"/>
+            <path d="M205.687 64.109C205.687 66.0717 204.907 67.9545 203.519 69.3427C202.13 70.7304 200.247 71.5103 198.284 71.5103H187.185V127.021H168.671V71.5103H150.169V60.4083C150.169 58.4456 150.949 56.5628 152.337 55.1746C153.725 53.7869 155.608 53.0069 157.571 53.0069C162.722 53.0069 168.671 53.0069 168.671 53.0069V34.5035H187.185V53.0069H205.687V64.109Z" fill="white"/>
+            <path d="M233.45 43.7552H214.94C214.94 43.7552 214.94 37.805 214.94 32.6532C214.94 30.6904 215.72 28.8077 217.108 27.4195C218.496 26.0317 220.379 25.2518 222.342 25.2518C227.497 25.2518 233.45 25.2518 233.45 25.2518V43.7552ZM233.446 128.871C233.446 131.671 232.876 134.499 232.058 136.735C231.239 138.971 230.167 141.056 228.819 142.748C227.472 144.441 225.974 145.7 224.193 146.891C222.412 148.082 220.591 148.935 218.641 149.687C216.691 150.439 214.6 151.182 212.626 151.538C210.653 151.893 208.856 152 207.075 152H187.185V136.272H207.537C210.04 136.272 211.838 135.55 213.089 134.422C214.341 133.294 214.94 131.002 214.94 128.871V59.4831H233.446V128.871Z" fill="#C5E10E"/>
+            <path d="M316.607 104.237C316.607 107.028 316.257 109.538 315.557 111.766C314.857 113.994 313.93 115.952 312.776 117.639C311.623 119.326 310.284 120.763 308.76 121.95C307.236 123.137 305.64 124.105 303.971 124.855C302.303 125.605 300.614 126.156 298.904 126.51C297.195 126.865 295.578 127.041 294.054 127.041H265.074C262.85 127.041 260.42 126.646 257.784 125.854C255.147 125.063 252.706 123.762 250.461 121.95C248.216 120.138 246.342 117.785 244.839 114.89C243.335 111.995 242.583 108.444 242.583 104.237V82.2455C242.583 78.0804 243.335 74.5504 244.839 71.656C246.342 68.7612 248.216 66.408 250.461 64.596C252.706 62.7841 255.147 61.4824 257.784 60.6914C260.42 59.8999 262.85 59.5039 265.074 59.5039H294.054C298.173 59.5039 301.675 60.2538 304.558 61.7535C307.442 63.2527 309.769 65.1373 311.54 67.4076C313.312 69.6775 314.599 72.1454 315.402 74.8108C316.206 77.4767 316.607 79.9548 316.607 82.2455V104.237ZM298.228 82.3704C298.228 80.1213 297.672 78.4556 296.56 77.3726C295.448 76.2897 293.842 75.748 291.741 75.748H267.511C265.37 75.748 263.742 76.2999 262.63 77.4036C261.518 78.5074 260.962 80.1213 260.962 82.2455V104.237C260.962 106.362 261.518 107.986 262.63 109.111C263.742 110.235 265.37 110.798 267.511 110.798H291.741C293.924 110.798 295.551 110.235 296.622 109.111C297.693 107.986 298.228 106.362 298.228 104.237V82.3704Z" fill="#C5E10E"/>
+            <path d="M399.877 128.906C399.877 131.733 399.474 134.274 398.669 136.531C397.864 138.787 396.798 140.77 395.471 142.478C394.145 144.186 392.605 145.641 390.853 146.844C389.1 148.046 387.264 149.027 385.346 149.786C383.427 150.545 381.496 151.104 379.554 151.462C377.612 151.821 375.765 152 374.012 152H340.685L340.665 136.272H373.976C376.439 136.272 378.33 135.906 379.562 134.767C380.794 133.628 381.409 131.983 381.409 129.832V66.8845C381.409 62.7966 384.723 59.4831 388.812 59.4831C393.953 59.4831 399.884 59.4831 399.884 59.4831L399.877 128.906ZM376.752 127.021H351.884C349.232 127.021 346.565 126.897 343.557 126.095C340.549 125.294 336.909 123.304 334.304 121.469C331.698 119.635 330.457 117.925 328.752 114.993C327.047 112.062 325.976 108.119 325.976 103.859V66.8845C325.976 62.7966 329.29 59.4831 333.378 59.4831C338.52 59.4831 344.451 59.4831 344.451 59.4831L344.482 103.891C344.482 106.042 345.053 107.378 346.333 108.517C347.612 109.656 349.374 110.367 351.884 110.367H376.752V127.021Z" fill="#C5E10E"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M34.506 108.517V119.619C34.506 123.704 31.1893 127.021 27.1036 127.021H16V108.517H34.506Z" fill="#C5E10E"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M34.506 108.517V23.4015C34.506 19.3164 37.8227 16.0001 41.9084 16.0001H53.012V104.816C53.012 106.859 54.6706 108.517 56.7132 108.517H90.9494C92.992 108.517 94.6506 106.859 94.6506 104.816V75.211C94.6506 73.1687 92.992 71.5103 90.9494 71.5103H57.6385V53.0069H87.2482C91.3338 53.0069 94.6506 56.3232 94.6506 60.4083V67.8096C94.6506 69.852 96.3092 71.5103 98.3518 71.5103H105.754C109.84 71.5103 113.157 74.8266 113.157 78.9117V101.116C113.157 105.201 109.84 108.517 105.754 108.517H98.3518C96.3092 108.517 94.6506 110.175 94.6506 112.218V119.619C94.6506 123.704 91.3338 127.021 87.2482 127.021H60.4144C56.3287 127.021 53.012 123.704 53.012 119.619V112.218C53.012 110.175 51.3534 108.517 49.3108 108.517H34.506Z" fill="white"/>
+          </g>
+          <defs><clipPath id="bjclip"><rect width="384" height="136" fill="white" transform="translate(16 16.0001)"/></clipPath></defs>
+        </svg>
+
         <span class="eyebrow">Case Study</span>
         <h1 class="title">BitJoy Global eSIM</h1>
         <p class="subtitle">1,769 SKUs, 11 languages, organic search as the only channel.</p>
@@ -150,22 +170,16 @@ footer a{ color:#fff; text-decoration:none; }
             <line x1="40" y1="174"   x2="548" y2="174"/>
           </g>
           <g fill="#7f9dc9" font-size="10" font-family="Inter,sans-serif" text-anchor="end">
-            <text x="33" y="17">30K</text>
-            <text x="33" y="70.3">20K</text>
-            <text x="33" y="123.7">10K</text>
-            <text x="33" y="177">0</text>
+            <text x="33" y="17">30K</text><text x="33" y="70.3">20K</text>
+            <text x="33" y="123.7">10K</text><text x="33" y="177">0</text>
           </g>
           <path fill="url(#fill)" d="M40,171.2 L90.8,145.4 L141.6,111.8 L192.4,85.8 L243.2,58.3 L294,62.4 L344.8,36 L395.6,14.3 L446.4,21.8 L497.2,14 L548,21.6 L548,174 L40,174 Z"/>
           <polyline fill="none" stroke="#7ab4ff" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"
             points="40,171.2 90.8,145.4 141.6,111.8 192.4,85.8 243.2,58.3 294,62.4 344.8,36 395.6,14.3 446.4,21.8 497.2,14 548,21.6"/>
-          <g fill="#fff">
-            <circle cx="40" cy="171.2" r="3"/><circle cx="395.6" cy="14.3" r="3"/><circle cx="548" cy="21.6" r="3"/>
-          </g>
+          <g fill="#fff"><circle cx="40" cy="171.2" r="3"/><circle cx="395.6" cy="14.3" r="3"/><circle cx="548" cy="21.6" r="3"/></g>
           <g fill="#9fbbe4" font-size="10" font-family="Inter,sans-serif">
-            <text x="40" y="191">Sep '25</text>
-            <text x="228" y="191">Jan '26</text>
-            <text x="381" y="191">Apr '26</text>
-            <text x="524" y="191">Jul '26</text>
+            <text x="40" y="191">Sep '25</text><text x="228" y="191">Jan '26</text>
+            <text x="381" y="191">Apr '26</text><text x="524" y="191">Jul '26</text>
           </g>
         </svg>
         <p class="cap">520 → 29,947 at the April peak, then flat around 29K. Search Console, full months only.</p>
@@ -177,8 +191,9 @@ footer a{ color:#fff; text-decoration:none; }
 <div class="wrap">
   <div class="kpis">
     <div class="kpi"><div class="n">+459%</div><div class="l">Organic clicks</div><div class="s">Oct 2025 → Apr 2026</div></div>
-    <div class="kpi"><div class="n">54,258</div><div class="l">Ranking keywords</div><div class="s">90 days to 12 Aug 2026</div></div>
-    <div class="kpi"><div class="n">39,941</div><div class="l">Keywords in top 10</div><div class="s">11,168 in the top 3</div></div>
+    <div class="kpi"><div class="n">3.9x</div><div class="l">Store revenue</div><div class="s">Sep 2025 → Jun 2026 peak</div></div>
+    <div class="kpi"><div class="n">5.5x</div><div class="l">Average order value</div><div class="s">On flat order volume</div></div>
+    <div class="kpi"><div class="n">54,258</div><div class="l">Ranking keywords</div><div class="s">39,941 in the top 10</div></div>
     <div class="kpi"><div class="n">99.98%</div><div class="l">Non-branded</div><div class="s">Only 13 branded queries</div></div>
     <div class="kpi"><div class="n">5.3M</div><div class="l">Impressions</div><div class="s">Per 28 days</div></div>
     <div class="kpi"><div class="n">10</div><div class="l">Language markets</div><div class="s">None under 500 clicks</div></div>
@@ -295,17 +310,24 @@ footer a{ color:#fff; text-decoration:none; }
 
   <div class="grid g-2">
     <div class="card">
-      <h2>Doing it at catalog scale</h2>
-      <p class="lede">Every bulk change runs through Python against the Shopify GraphQL API: dry-run, back up the field,
-        write, then assert the change landed. Nothing gets edited by hand at this volume.</p>
-      <div class="numgrid">
-        <div class="num"><div class="n">144</div><div class="l">Collections rebuilt</div><div class="s">Own carriers, 5G cities and airports, plus 8 FAQ entries each</div></div>
-        <div class="num"><div class="n">455</div><div class="l">Product titles</div><div class="s">Double-brand and duplicate regional titles corrected</div></div>
-        <div class="num"><div class="n">1,307</div><div class="l">Meta descriptions</div><div class="s">Generated from live price and plan data</div></div>
-        <div class="num"><div class="n">1,769</div><div class="l">Products</div><div class="s">Shopify category metafields, seven fields each</div></div>
-        <div class="num"><div class="n">1,109</div><div class="l">Image alts</div><div class="s">Across 161 articles that all used the post title as alt</div></div>
-        <div class="num"><div class="n">374</div><div class="l">Articles live</div><div class="s">203 of them published in the first eight months</div></div>
+      <h2>Commerce</h2>
+      <p class="lede">Monthly revenue, Shopify Admin API. Shape shown relative to the June peak.</p>
+      <div class="revchart" role="img" aria-label="Monthly revenue from September 2025 to July 2026, dipping in November and February and peaking in June 2026">
+        <div style="height:26%"></div><div style="height:27%"></div><div style="height:15%"></div>
+        <div style="height:35%"></div><div style="height:76%"></div><div style="height:56%"></div>
+        <div style="height:79%"></div><div style="height:70%"></div><div style="height:84%"></div>
+        <div class="peak" style="height:100%"></div><div style="height:95%"></div>
       </div>
+      <div class="revlabels">
+        <span>S</span><span>O</span><span>N</span><span>D</span><span>J</span><span>F</span>
+        <span>M</span><span>A</span><span>M</span><span>J</span><span>J</span>
+      </div>
+      <ul class="pts" style="margin-top:18px">
+        <li>Revenue up <strong>3.9x</strong> from the first month to the June peak.</li>
+        <li>That came from <strong>average order value, not volume</strong>. AOV rose 5.5x while orders stayed between 95 and 238 a month with no trend. Customers moved to bigger regional and global plans.</li>
+        <li>Repeat customers are <strong>34-52%</strong> of orders in recent months, so the base compounds rather than churns.</li>
+        <li>Two things worth saying out loud: order volume did not grow, and a single wholesale buyer leaving can move a month by half. This is a small store, and the numbers behave like one.</li>
+      </ul>
     </div>
 
     <div class="card">
@@ -313,7 +335,7 @@ footer a{ color:#fff; text-decoration:none; }
       <p class="lede">Eleven locales, all served from one English source. Clicks per 28 days.</p>
       <div class="tablewrap">
         <table>
-          <thead><tr><th>Market</th><th style="text-align:right">Clicks</th><th style="width:34%">&nbsp;</th><th style="text-align:right">Impressions</th></tr></thead>
+          <thead><tr><th>Market</th><th style="text-align:right">Clicks</th><th style="width:30%">&nbsp;</th><th style="text-align:right">Impressions</th></tr></thead>
           <tbody>
             <tr><td>🇮🇹 Italy</td><td class="n"><b>2,467</b></td><td><span class="bar" style="width:100%"></span></td><td class="n">353,998</td></tr>
             <tr><td>🇯🇵 Japan</td><td class="n"><b>1,936</b></td><td><span class="bar" style="width:78%"></span></td><td class="n">207,296</td></tr>
@@ -332,20 +354,33 @@ footer a{ color:#fff; text-decoration:none; }
     </div>
   </div>
 
+  <div class="card">
+    <h2>Doing it at catalog scale</h2>
+    <p class="lede">Every bulk change runs through Python against the Shopify GraphQL API: dry-run, back up the field,
+      write, then assert the change landed. Nothing gets edited by hand at this volume.</p>
+    <div class="numgrid">
+      <div class="num"><div class="n">144</div><div class="l">Collections rebuilt</div><div class="s">Own carriers, 5G cities and airports, plus 8 FAQ entries each</div></div>
+      <div class="num"><div class="n">455</div><div class="l">Product titles</div><div class="s">Double-brand and duplicate regional titles corrected</div></div>
+      <div class="num"><div class="n">1,307</div><div class="l">Meta descriptions</div><div class="s">Generated from live price and plan data</div></div>
+      <div class="num"><div class="n">1,769</div><div class="l">Products</div><div class="s">Shopify category metafields, seven fields each</div></div>
+      <div class="num"><div class="n">1,109</div><div class="l">Image alts</div><div class="s">Across 161 articles that all used the post title as alt</div></div>
+      <div class="num"><div class="n">374</div><div class="l">Articles live</div><div class="s">203 of them published in the first eight months</div></div>
+    </div>
+  </div>
+
   <div class="card openwork">
     <h2>What is still open</h2>
     <p>Collections average position 28 and products 17.9. On-page is done on both, and more content has not moved
       them. The ceiling is off-page: 36 Trustpilot reviews against competitors with 22,000 to 100,000, and no press.
       That is the next problem, and it is not a content problem.</p>
-    <p>Revenue is up 3.9x, but on 4x average order value, not more orders. Order count stayed flat the whole time.
-      Worth knowing before anyone reads growth into it.</p>
+    <p>Organic clicks have been flat around 29K since April. Getting past that needs authority, not more articles.</p>
   </div>
 
 </main>
 
 <footer>
   <div class="wrap">
-    <p>Figures pulled from Google Search Console and the Shopify Admin API. Search data as of 12 Aug 2026.</p>
+    <p>Search figures from Google Search Console, revenue from the Shopify Admin API. Data as of 12 Aug 2026.</p>
     <p style="margin-top:12px">Nguyen Minh Hieu &nbsp;·&nbsp; <a href="mailto:hieumn24@gmail.com">hieumn24@gmail.com</a> &nbsp;·&nbsp; +84 949338524</p>
   </div>
 </footer>

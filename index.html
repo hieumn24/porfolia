@@ -5,6 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nguyen Minh Hieu - SEO Specialist</title>
 <meta name="description" content="SEO specialist with 6+ years scaling organic traffic for e-commerce, retail and healthcare. Case studies with real Search Console and Shopify data.">
+<link rel="canonical" href="https://hieumn24.github.io/porfolia/">
+
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hieumn24.github.io/porfolia/">
+<meta property="og:title" content="Nguyen Minh Hieu - SEO Specialist">
+<meta property="og:description" content="6+ years scaling organic traffic for e-commerce, retail and healthcare. Case studies with real Search Console and Shopify data.">
+<meta property="og:image" content="https://hieumn24.github.io/porfolia/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nguyen Minh Hieu - SEO Specialist">
+<meta name="twitter:description" content="6+ years scaling organic traffic for e-commerce, retail and healthcare.">
+<meta name="twitter:image" content="https://hieumn24.github.io/porfolia/assets/og.jpg">
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 *{ margin:0; padding:0; box-sizing:border-box; }
@@ -44,7 +62,11 @@ nav .wrap{ display:flex; align-items:center; gap:26px; height:66px; }
 .btn-ghost:hover{ border-color:var(--blue); }
 
 /* ---------- hero ---------- */
-.hero{ background:linear-gradient(180deg,#fff 0%,var(--bg) 100%); padding:66px 0 60px; }
+.hero{ background:linear-gradient(180deg,#fff 0%,var(--bg) 100%); padding:66px 0 60px;
+       position:relative; overflow:hidden; }
+.hero::before{ content:''; position:absolute; inset:0; pointer-events:none; opacity:.55;
+               background:url(assets/hero-bg.webp) right top / auto 100% no-repeat; }
+.hero .wrap{ position:relative; z-index:1; }
 .hero-grid{ display:grid; grid-template-columns:1fr 1fr; gap:52px; align-items:center; }
 .pill{ display:inline-block; background:var(--blue-pale); color:var(--blue-2); font-size:.72rem; font-weight:700;
        letter-spacing:.12em; text-transform:uppercase; padding:6px 15px; border-radius:100px; margin-bottom:20px; }
@@ -112,6 +134,8 @@ h1{ font-family:'Space Grotesk',sans-serif; font-size:3.5rem; line-height:1.04; 
 .proj{ display:block; text-decoration:none; background:var(--card); border:1px solid var(--line);
        border-radius:13px; padding:24px 26px; box-shadow:var(--shadow); transition:transform .18s ease, box-shadow .18s ease; }
 .proj:hover{ transform:translateY(-4px); box-shadow:0 6px 14px rgba(10,31,68,.1), 0 18px 40px rgba(10,31,68,.1); }
+.proj .banner{ display:block; width:calc(100% + 52px); height:auto; aspect-ratio:3/1; object-fit:cover;
+               margin:-24px -26px 18px; border-radius:12px 12px 0 0; border-bottom:1px solid var(--line); }
 .cat{ display:inline-block; background:var(--blue-pale); color:var(--blue-2); font-size:.66rem; font-weight:800;
       letter-spacing:.1em; text-transform:uppercase; padding:4px 11px; border-radius:6px; margin-bottom:13px; }
 .cat.cur{ background:#e6f5ec; color:#0f7a44; }
@@ -308,6 +332,7 @@ footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:2
     <div class="projs">
 
       <a href="bitjoy.html" class="proj">
+        <img class="banner" src="assets/card-bitjoy.webp" alt="Eleven rising bars, one per month of organic growth" width="600" height="200" loading="lazy">
         <span class="cat cur">Current project</span>
         <h3>BitJoy Global eSIM</h3>
         <p class="type">Global eSIM e-commerce</p>
@@ -321,6 +346,7 @@ footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:2
       </a>
 
       <a href="siam-thailand.html" class="proj">
+        <img class="banner" src="assets/card-siam.webp" alt="A line rising in four steps" width="600" height="200" loading="lazy">
         <span class="cat cur">Current project</span>
         <h3>SIAM Thailand</h3>
         <p class="type">Aesthetic hospital</p>
@@ -334,6 +360,7 @@ footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:2
       </a>
 
       <a href="dienmayxanh.html" class="proj">
+        <img class="banner" src="assets/card-dienmayxanh.webp" alt="A dense grid of squares, a few filled" width="600" height="200" loading="lazy">
         <span class="cat">Featured</span>
         <h3>Dienmayxanh</h3>
         <p class="type">E-commerce giant</p>
@@ -347,6 +374,7 @@ footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:2
       </a>
 
       <a href="avakid.html" class="proj">
+        <img class="banner" src="assets/card-avakid.webp" alt="Two overlapping circles" width="600" height="200" loading="lazy">
         <span class="cat">Retail</span>
         <h3>AVAKid &amp; AVASport</h3>
         <p class="type">Retail websites</p>
@@ -360,6 +388,7 @@ footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:2
       </a>
 
       <a href="tinhocngoisao.html" class="proj">
+        <img class="banner" src="assets/card-tinhocngoisao.webp" alt="A line climbing across five tick marks" width="600" height="200" loading="lazy">
         <span class="cat">Education</span>
         <h3>Tinhocngoisao</h3>
         <p class="type">Computer education</p>

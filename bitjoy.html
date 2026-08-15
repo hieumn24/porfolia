@@ -143,6 +143,17 @@ footer a{ color:#fff; text-decoration:none; }
   .kpis{ margin-top:-18px; }
   .revlabels span{ font-size:.55rem; }
 }
+
+.morelinks{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; }
+.morelinks a{ display:block; text-decoration:none; border:1px solid var(--line); border-radius:11px;
+              padding:16px 18px; background:#fbfcfe; transition:transform .16s ease, box-shadow .16s ease; }
+.morelinks a:hover{ transform:translateY(-3px); box-shadow:0 6px 16px rgba(10,31,68,.10); border-color:var(--blue); }
+.morelinks .k{ font-size:.64rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:#1557c7; }
+.morelinks h3{ font-size:.98rem; color:var(--navy); margin:6px 0 3px; font-weight:700; }
+.morelinks .s{ font-size:.78rem; color:var(--muted); }
+.morelinks .go{ display:block; margin-top:11px; font-size:.8rem; font-weight:700; color:var(--blue); }
+@media (max-width:1080px){ .morelinks{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:600px){ .morelinks{ grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -406,6 +417,37 @@ footer a{ color:#fff; text-decoration:none; }
       them. The ceiling is off-page: 36 Trustpilot reviews against competitors with 22,000 to 100,000, and no press.
       That is the next problem, and it is not a content problem.</p>
     <p>Organic clicks have been flat around 29K since April. Getting past that needs authority, not more articles.</p>
+  </div>
+
+  <div class="card">
+    <h2>More case studies</h2>
+    <p class="lede">Four other projects, from a one million visit retailer to a two month freelance sprint.</p>
+    <div class="morelinks">
+      <a href="siam-thailand.html">
+        <span class="k">Healthcare</span>
+        <h3>SIAM Thailand</h3>
+        <p class="s">0 → 45K+ daily · 110% of KPI</p>
+        <span class="go">View case study →</span>
+      </a>
+      <a href="dienmayxanh.html">
+        <span class="k">E-commerce giant</span>
+        <h3>Dienmayxanh</h3>
+        <p class="s">1M+ daily visits · 3 years</p>
+        <span class="go">View case study →</span>
+      </a>
+      <a href="avakid.html">
+        <span class="k">Retail</span>
+        <h3>AVAKid &amp; AVASport</h3>
+        <p class="s">60K+ combined · 5 PBNs</p>
+        <span class="go">View case study →</span>
+      </a>
+      <a href="tinhocngoisao.html">
+        <span class="k">Education</span>
+        <h3>Tinhocngoisao</h3>
+        <p class="s">0 → 11K daily · 2 months</p>
+        <span class="go">View case study →</span>
+      </a>
+    </div>
   </div>
 
 </main>

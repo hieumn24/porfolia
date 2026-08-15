@@ -50,7 +50,7 @@ h1.title{ font-family:'Space Grotesk',sans-serif; font-size:2.9rem; font-weight:
 .meta .k{ font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; color:#7f9dc9; margin-bottom:3px; }
 .meta .v{ font-weight:600; font-size:.96rem; }
 .artbox{ background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:18px; }
-.artbox img{ width:100%; height:auto; display:block; border-radius:9px; }
+.artbox img,.artbox svg{ width:100%; height:auto; display:block; border-radius:9px; }
 .artbox .cap{ font-size:.78rem; color:#7f9dc9; margin-top:12px; }
 
 .kpis{ display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:1px; background:var(--line);
@@ -119,6 +119,17 @@ footer a{ color:#fff; text-decoration:none; }
   .g-2,.g-3{ grid-template-columns:1fr; }
   .kpis{ margin-top:-18px; }
 }
+
+.morelinks{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; }
+.morelinks a{ display:block; text-decoration:none; border:1px solid var(--line); border-radius:11px;
+              padding:16px 18px; background:#fbfcfe; transition:transform .16s ease, box-shadow .16s ease; }
+.morelinks a:hover{ transform:translateY(-3px); box-shadow:0 6px 16px rgba(10,31,68,.10); border-color:var(--blue); }
+.morelinks .k{ font-size:.64rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:#1557c7; }
+.morelinks h3{ font-size:.98rem; color:var(--navy); margin:6px 0 3px; font-weight:700; }
+.morelinks .s{ font-size:.78rem; color:var(--muted); }
+.morelinks .go{ display:block; margin-top:11px; font-size:.8rem; font-weight:700; color:var(--blue); }
+@media (max-width:1080px){ .morelinks{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:600px){ .morelinks{ grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -140,8 +151,8 @@ footer a{ color:#fff; text-decoration:none; }
         </div>
       </div>
       <div class="artbox">
-        <img src="assets/card-avakid.webp" alt="Two overlapping circles" width="600" height="200">
-        <p class="cap">Two catalogues, two audiences, one shared technical base.</p>
+        <svg viewBox="0 0 560 200" role="img" aria-label="Two groups of bars side by side, the left group about three times the height of the right" xmlns="http://www.w3.org/2000/svg"><line x1="26" y1="168" x2="534" y2="168" stroke="rgba(255,255,255,.10)" stroke-width="1"/><rect x="26.0" y="106.0" width="22" height="62.0" rx="2" fill="#7ab4ff"/><rect x="69.0" y="96.1" width="22" height="71.9" rx="2" fill="#7ab4ff"/><rect x="112.0" y="86.2" width="22" height="81.8" rx="2" fill="#7ab4ff"/><rect x="155.0" y="76.2" width="22" height="91.8" rx="2" fill="#7ab4ff"/><rect x="198.0" y="66.3" width="22" height="101.7" rx="2" fill="#7ab4ff"/><rect x="241.0" y="56.4" width="22" height="111.6" rx="2" fill="#7ab4ff"/><rect x="297.0" y="147.0" width="22" height="21.0" rx="2" fill="none" stroke="#7ab4ff" stroke-width="2"/><rect x="340.0" y="143.6" width="22" height="24.4" rx="2" fill="none" stroke="#7ab4ff" stroke-width="2"/><rect x="383.0" y="140.3" width="22" height="27.7" rx="2" fill="none" stroke="#7ab4ff" stroke-width="2"/><rect x="426.0" y="136.9" width="22" height="31.1" rx="2" fill="none" stroke="#7ab4ff" stroke-width="2"/><rect x="469.0" y="133.6" width="22" height="34.4" rx="2" fill="none" stroke="#7ab4ff" stroke-width="2"/><rect x="512.0" y="130.2" width="22" height="37.8" rx="2" fill="none" stroke="#7ab4ff" stroke-width="2"/></svg>
+        <p class="cap">Two catalogues run side by side, one roughly three times the other, neither converging.</p>
       </div>
     </div>
   </div>
@@ -195,6 +206,37 @@ footer a{ color:#fff; text-decoration:none; }
       <div><h3>Internal linking</h3><p>A linking strategy spanning both sites.</p></div>
     </div>
   </div>
+  <div class="card">
+    <h2>More case studies</h2>
+    <p class="lede">Four other projects, from a one million visit retailer to a two month freelance sprint.</p>
+    <div class="morelinks">
+      <a href="bitjoy.html">
+        <span class="k">E-commerce</span>
+        <h3>BitJoy Global eSIM</h3>
+        <p class="s">54K+ keywords · +459% organic</p>
+        <span class="go">View case study →</span>
+      </a>
+      <a href="siam-thailand.html">
+        <span class="k">Healthcare</span>
+        <h3>SIAM Thailand</h3>
+        <p class="s">0 → 45K+ daily · 110% of KPI</p>
+        <span class="go">View case study →</span>
+      </a>
+      <a href="dienmayxanh.html">
+        <span class="k">E-commerce giant</span>
+        <h3>Dienmayxanh</h3>
+        <p class="s">1M+ daily visits · 3 years</p>
+        <span class="go">View case study →</span>
+      </a>
+      <a href="tinhocngoisao.html">
+        <span class="k">Education</span>
+        <h3>Tinhocngoisao</h3>
+        <p class="s">0 → 11K daily · 2 months</p>
+        <span class="go">View case study →</span>
+      </a>
+    </div>
+  </div>
+
 </main>
 
 <footer>

@@ -50,7 +50,7 @@ h1.title{ font-family:'Space Grotesk',sans-serif; font-size:2.9rem; font-weight:
 .meta .k{ font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; color:#7f9dc9; margin-bottom:3px; }
 .meta .v{ font-weight:600; font-size:.96rem; }
 .artbox{ background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:18px; }
-.artbox img{ width:100%; height:auto; display:block; border-radius:9px; }
+.artbox img,.artbox svg{ width:100%; height:auto; display:block; border-radius:9px; }
 .artbox .cap{ font-size:.78rem; color:#7f9dc9; margin-top:12px; }
 
 .kpis{ display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:1px; background:var(--line);
@@ -119,6 +119,17 @@ footer a{ color:#fff; text-decoration:none; }
   .g-2,.g-3{ grid-template-columns:1fr; }
   .kpis{ margin-top:-18px; }
 }
+
+.morelinks{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; }
+.morelinks a{ display:block; text-decoration:none; border:1px solid var(--line); border-radius:11px;
+              padding:16px 18px; background:#fbfcfe; transition:transform .16s ease, box-shadow .16s ease; }
+.morelinks a:hover{ transform:translateY(-3px); box-shadow:0 6px 16px rgba(10,31,68,.10); border-color:var(--blue); }
+.morelinks .k{ font-size:.64rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:#1557c7; }
+.morelinks h3{ font-size:.98rem; color:var(--navy); margin:6px 0 3px; font-weight:700; }
+.morelinks .s{ font-size:.78rem; color:var(--muted); }
+.morelinks .go{ display:block; margin-top:11px; font-size:.8rem; font-weight:700; color:var(--blue); }
+@media (max-width:1080px){ .morelinks{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:600px){ .morelinks{ grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -140,8 +151,8 @@ footer a{ color:#fff; text-decoration:none; }
         </div>
       </div>
       <div class="artbox">
-        <img src="assets/card-dienmayxanh.webp" alt="A dense grid of squares, a few filled" width="600" height="200">
-        <p class="cap">Scale was the whole problem: thousands of pages, a handful moving at a time.</p>
+        <svg viewBox="0 0 560 200" role="img" aria-label="A wide lattice of many cells with a scattered handful filled solid" xmlns="http://www.w3.org/2000/svg"><g stroke="rgba(255,255,255,.10)" stroke-width="1"><line x1="26.0" y1="30" x2="26.0" y2="158.0"/><line x1="40.9" y1="30" x2="40.9" y2="158.0"/><line x1="55.9" y1="30" x2="55.9" y2="158.0"/><line x1="70.8" y1="30" x2="70.8" y2="158.0"/><line x1="85.8" y1="30" x2="85.8" y2="158.0"/><line x1="100.7" y1="30" x2="100.7" y2="158.0"/><line x1="115.6" y1="30" x2="115.6" y2="158.0"/><line x1="130.6" y1="30" x2="130.6" y2="158.0"/><line x1="145.5" y1="30" x2="145.5" y2="158.0"/><line x1="160.5" y1="30" x2="160.5" y2="158.0"/><line x1="175.4" y1="30" x2="175.4" y2="158.0"/><line x1="190.4" y1="30" x2="190.4" y2="158.0"/><line x1="205.3" y1="30" x2="205.3" y2="158.0"/><line x1="220.2" y1="30" x2="220.2" y2="158.0"/><line x1="235.2" y1="30" x2="235.2" y2="158.0"/><line x1="250.1" y1="30" x2="250.1" y2="158.0"/><line x1="265.1" y1="30" x2="265.1" y2="158.0"/><line x1="280.0" y1="30" x2="280.0" y2="158.0"/><line x1="294.9" y1="30" x2="294.9" y2="158.0"/><line x1="309.9" y1="30" x2="309.9" y2="158.0"/><line x1="324.8" y1="30" x2="324.8" y2="158.0"/><line x1="339.8" y1="30" x2="339.8" y2="158.0"/><line x1="354.7" y1="30" x2="354.7" y2="158.0"/><line x1="369.6" y1="30" x2="369.6" y2="158.0"/><line x1="384.6" y1="30" x2="384.6" y2="158.0"/><line x1="399.5" y1="30" x2="399.5" y2="158.0"/><line x1="414.5" y1="30" x2="414.5" y2="158.0"/><line x1="429.4" y1="30" x2="429.4" y2="158.0"/><line x1="444.4" y1="30" x2="444.4" y2="158.0"/><line x1="459.3" y1="30" x2="459.3" y2="158.0"/><line x1="474.2" y1="30" x2="474.2" y2="158.0"/><line x1="489.2" y1="30" x2="489.2" y2="158.0"/><line x1="504.1" y1="30" x2="504.1" y2="158.0"/><line x1="519.1" y1="30" x2="519.1" y2="158.0"/><line x1="534.0" y1="30" x2="534.0" y2="158.0"/><line x1="26" y1="30.0" x2="534" y2="30.0"/><line x1="26" y1="44.2" x2="534" y2="44.2"/><line x1="26" y1="58.4" x2="534" y2="58.4"/><line x1="26" y1="72.7" x2="534" y2="72.7"/><line x1="26" y1="86.9" x2="534" y2="86.9"/><line x1="26" y1="101.1" x2="534" y2="101.1"/><line x1="26" y1="115.3" x2="534" y2="115.3"/><line x1="26" y1="129.6" x2="534" y2="129.6"/><line x1="26" y1="143.8" x2="534" y2="143.8"/><line x1="26" y1="158.0" x2="534" y2="158.0"/></g><rect x="27.0" y="31.0" width="12.9" height="12.2" fill="#7ab4ff"/><rect x="310.9" y="31.0" width="12.9" height="12.2" fill="#7ab4ff"/><rect x="206.3" y="45.2" width="12.9" height="12.2" fill="#7ab4ff"/><rect x="490.2" y="45.2" width="12.9" height="12.2" fill="#7ab4ff"/><rect x="101.7" y="59.4" width="12.9" height="12.2" fill="#7ab4ff"/><rect x="385.6" y="59.4" width="12.9" height="12.2" fill="#7ab4ff"/><rect x="281.0" y="73.7" width="12.9" height="12.2" fill="#7ab4ff"/><rect x="176.4" y="87.9" width="12.9" height="12.2" fill="#7ab4ff"/><rect x="460.3" y="87.9" width="12.9" height="12.2" fill="#7ab4ff"/><rect x="71.8" y="102.1" width="12.9" height="12.2" fill="#7ab4ff"/><rect x="355.7" y="102.1" width="12.9" height="12.2" fill="#7ab4ff"/><rect x="251.1" y="116.3" width="12.9" height="12.2" fill="#7ab4ff"/><rect x="146.5" y="130.6" width="12.9" height="12.2" fill="#7ab4ff"/><rect x="430.4" y="130.6" width="12.9" height="12.2" fill="#7ab4ff"/><rect x="41.9" y="144.8" width="12.9" height="12.2" fill="#7ab4ff"/><rect x="325.8" y="144.8" width="12.9" height="12.2" fill="#7ab4ff"/></svg>
+        <p class="cap">Thousands of pages, a narrow band moving at any one time. Scale was the problem, not growth.</p>
       </div>
     </div>
   </div>
@@ -195,6 +206,37 @@ footer a{ color:#fff; text-decoration:none; }
       <div><h3>Competitive position</h3><p>#1-2 against direct competitors.</p></div>
     </div>
   </div>
+  <div class="card">
+    <h2>More case studies</h2>
+    <p class="lede">Four other projects, from a one million visit retailer to a two month freelance sprint.</p>
+    <div class="morelinks">
+      <a href="bitjoy.html">
+        <span class="k">E-commerce</span>
+        <h3>BitJoy Global eSIM</h3>
+        <p class="s">54K+ keywords · +459% organic</p>
+        <span class="go">View case study →</span>
+      </a>
+      <a href="siam-thailand.html">
+        <span class="k">Healthcare</span>
+        <h3>SIAM Thailand</h3>
+        <p class="s">0 → 45K+ daily · 110% of KPI</p>
+        <span class="go">View case study →</span>
+      </a>
+      <a href="avakid.html">
+        <span class="k">Retail</span>
+        <h3>AVAKid &amp; AVASport</h3>
+        <p class="s">60K+ combined · 5 PBNs</p>
+        <span class="go">View case study →</span>
+      </a>
+      <a href="tinhocngoisao.html">
+        <span class="k">Education</span>
+        <h3>Tinhocngoisao</h3>
+        <p class="s">0 → 11K daily · 2 months</p>
+        <span class="go">View case study →</span>
+      </a>
+    </div>
+  </div>
+
 </main>
 
 <footer>

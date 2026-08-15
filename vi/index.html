@@ -3,13 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nguyễn Minh Hiếu - Chuyên viên SEO</title>
-<meta name="description" content="Chuyên viên SEO 6 năm kinh nghiệm cho thương mại điện tử, bán lẻ và y tế. Case study kèm số liệu thật từ Search Console và Shopify.">
+<title>Nguyễn Minh Hiếu - SEO Lead, Technical SEO</title>
+<meta name="description" content="SEO Lead làm organic cho các catalog thương mại điện tử lớn. Store 1.769 SKU, 11 ngôn ngữ, automation bằng Python. Case study kèm số liệu thật từ Search Console và Shopify.">
 <link rel="canonical" href="https://hieumn24.github.io/porfolia/vi/">
 <link rel="alternate" hreflang="en" href="https://hieumn24.github.io/porfolia/">
 <link rel="alternate" hreflang="vi" href="https://hieumn24.github.io/porfolia/vi/">
 <link rel="alternate" hreflang="x-default" href="https://hieumn24.github.io/porfolia/">
 
+<link rel="alternate" hreflang="en" href="https://hieumn24.github.io/porfolia/">
+<link rel="alternate" hreflang="vi" href="https://hieumn24.github.io/porfolia/vi/">
+<link rel="alternate" hreflang="x-default" href="https://hieumn24.github.io/porfolia/">
 
 <link rel="icon" href="../assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/icon-32.png">
@@ -17,14 +20,14 @@
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hieumn24.github.io/porfolia/vi/">
-<meta property="og:title" content="Nguyễn Minh Hiếu - Chuyên viên SEO">
-<meta property="og:description" content="6 năm tăng trưởng organic cho thương mại điện tử, bán lẻ và y tế. Case study kèm số liệu thật từ Search Console và Shopify.">
+<meta property="og:title" content="Nguyễn Minh Hiếu - SEO Lead, Technical SEO">
+<meta property="og:description" content="Làm organic cho các catalog thương mại điện tử lớn, bằng technical SEO, hệ thống nội dung và automation.">
 <meta property="og:image" content="https://hieumn24.github.io/porfolia/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Nguyễn Minh Hiếu - Chuyên viên SEO">
-<meta name="twitter:description" content="6 năm tăng trưởng organic cho thương mại điện tử, bán lẻ và y tế. Case study kèm số liệu thật từ Search Console và Shopify.">
+<meta name="twitter:title" content="Nguyễn Minh Hiếu - SEO Lead, Technical SEO">
+<meta name="twitter:description" content="Làm organic cho các catalog thương mại điện tử lớn, bằng technical SEO, hệ thống nội dung và automation.">
 <meta name="twitter:image" content="https://hieumn24.github.io/porfolia/assets/og.jpg">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -34,6 +37,7 @@
 :root{
   --navy:#0a1f44; --navy-3:#17356a;
   --blue:#1f6feb; --blue-2:#1557c7; --blue-pale:#e8f0fe;
+  --lime:#C5E10E;
   --ink:#0f172a; --muted:#5b6b85; --line:#e3e8f0;
   --bg:#f3f6fb; --card:#fff;
   --shadow:0 1px 3px rgba(10,31,68,.07), 0 8px 24px rgba(10,31,68,.06);
@@ -42,7 +46,8 @@
 body{ font-family:'Inter',sans-serif; background:var(--bg); color:var(--ink); line-height:1.6; }
 html{ scroll-behavior:smooth; }
 .wrap{ max-width:1240px; margin:0 auto; padding:0 22px; }
-section{ padding:70px 0; }
+section{ padding:64px 0; }
+section.tight{ padding:48px 0; }
 
 /* ---------- nav ---------- */
 nav{ position:sticky; top:0; z-index:60; background:rgba(255,255,255,.94); backdrop-filter:blur(14px);
@@ -54,7 +59,7 @@ nav .wrap{ display:flex; align-items:center; gap:26px; height:66px; }
        font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:.95rem; letter-spacing:.02em; }
 .brand b{ display:block; font-size:.95rem; color:var(--ink); font-weight:700; line-height:1.25; }
 .brand span{ display:block; font-size:.76rem; color:var(--muted); }
-.navlinks{ display:flex; gap:26px; list-style:none; }
+.navlinks{ display:flex; gap:24px; list-style:none; }
 .navlinks a{ text-decoration:none; color:var(--muted); font-size:.9rem; font-weight:500; padding:4px 0;
              border-bottom:2px solid transparent; }
 .navlinks a:hover{ color:var(--blue); border-bottom-color:var(--blue); }
@@ -65,96 +70,139 @@ nav .wrap{ display:flex; align-items:center; gap:26px; height:66px; }
 .btn-ghost{ background:#fff; color:var(--blue); border:1px solid var(--line); }
 .btn-ghost:hover{ border-color:var(--blue); }
 
+.langsw{ display:inline-flex; border-radius:8px; overflow:hidden; flex:none; border:1px solid var(--line); }
+.langsw a{ padding:5px 11px; font-size:.76rem; font-weight:800; letter-spacing:.06em;
+           text-decoration:none; line-height:1.5; color:var(--muted); }
+.langsw a.on{ background:var(--blue); color:#fff; }
+.langsw a:hover{ color:var(--blue); }
+.langsw a.on:hover{ color:#fff; }
+
 /* ---------- hero ---------- */
-.hero{ background:linear-gradient(180deg,#fff 0%,var(--bg) 100%); padding:66px 0 60px;
+.hero{ background:linear-gradient(180deg,#fff 0%,var(--bg) 100%); padding:60px 0 54px;
        position:relative; overflow:hidden; }
-.hero::before{ content:''; position:absolute; inset:0; pointer-events:none; opacity:.55;
+.hero::before{ content:''; position:absolute; inset:0; pointer-events:none; opacity:.5;
                background:url(../assets/hero-bg.webp) right top / auto 100% no-repeat; }
 .hero .wrap{ position:relative; z-index:1; }
-.hero-grid{ display:grid; grid-template-columns:1fr 1fr; gap:52px; align-items:center; }
-.pill{ display:inline-block; background:var(--blue-pale); color:var(--blue-2); font-size:.72rem; font-weight:700;
-       letter-spacing:.12em; text-transform:uppercase; padding:6px 15px; border-radius:100px; margin-bottom:20px; }
-h1{ font-family:'Space Grotesk',sans-serif; font-size:3.5rem; line-height:1.04; font-weight:700;
-    color:var(--navy); letter-spacing:-.02em; margin-bottom:14px; }
-.tagline{ font-size:1.35rem; font-weight:600; color:var(--blue); line-height:1.35; margin-bottom:16px; }
-.lede{ color:var(--muted); max-width:46ch; margin-bottom:28px; }
+.hero-grid{ display:grid; grid-template-columns:1.25fr .75fr; gap:52px; align-items:center; }
+h1{ font-family:'Space Grotesk',sans-serif; font-size:3.6rem; line-height:1.02; font-weight:700;
+    color:var(--navy); letter-spacing:-.025em; margin-bottom:12px; }
+.rolebar{ display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-bottom:18px; }
+.rolebar span{ font-family:'Space Grotesk',sans-serif; font-size:1.02rem; font-weight:700;
+               color:var(--blue-2); letter-spacing:.01em; }
+.rolebar i{ width:5px; height:5px; border-radius:50%; background:var(--line); display:block; }
+.lede{ color:#33415c; max-width:54ch; margin-bottom:22px; font-size:1.01rem; }
+.lede b{ color:var(--navy); font-weight:700; }
+.proofs{ display:flex; flex-wrap:wrap; gap:0; border:1px solid var(--line); border-radius:12px;
+         overflow:hidden; background:var(--line); margin-bottom:26px; max-width:560px; }
+.proofs div{ flex:1 1 150px; background:#fff; padding:14px 16px; }
+.proofs .n{ font-family:'Space Grotesk',sans-serif; font-size:1.5rem; font-weight:700; color:var(--navy); line-height:1.1; }
+.proofs .l{ font-size:.75rem; color:var(--muted); margin-top:2px; }
 .hero-btns{ display:flex; gap:12px; flex-wrap:wrap; }
 
-.tiles{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line);
+.tiles{ display:grid; grid-template-columns:1fr; gap:1px; background:var(--line);
         border:1px solid var(--line); border-radius:16px; overflow:hidden; box-shadow:var(--shadow); }
-.tile{ background:#fff; padding:22px 18px; }
-.tile .ic{ width:34px; height:34px; border-radius:8px; background:var(--blue-pale); color:var(--blue-2);
-           display:flex; align-items:center; justify-content:center; font-size:1rem; margin-bottom:12px; }
-.tile .n{ font-family:'Space Grotesk',sans-serif; font-size:1.7rem; font-weight:700; color:var(--navy); line-height:1.1; }
-.tile .t{ font-size:.92rem; font-weight:700; color:var(--navy); line-height:1.25; }
-.tile .l{ font-size:.78rem; color:var(--muted); margin-top:3px; line-height:1.4; }
+.tile{ background:#fff; padding:18px 20px; }
+.tile .t{ font-size:.7rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+          color:var(--blue-2); margin-bottom:5px; }
+.tile .l{ font-size:.9rem; color:#33415c; line-height:1.45; }
 
-/* ---------- headings ---------- */
-.head{ text-align:center; margin-bottom:38px; }
+/* ---------- section heads ---------- */
+.head{ text-align:center; margin-bottom:36px; }
 .head h2{ font-family:'Space Grotesk',sans-serif; font-size:2rem; font-weight:700; color:var(--navy); }
 .head h2::after{ content:''; display:block; width:52px; height:3px; background:var(--blue);
                  border-radius:2px; margin:12px auto 0; }
 .head p{ color:var(--muted); font-size:.95rem; margin-top:14px; }
+.head.left{ text-align:left; }
+.head.left h2::after{ margin:12px 0 0; }
 
-/* ---------- achievements ---------- */
-.ach{ display:grid; grid-template-columns:repeat(auto-fit,minmax(178px,1fr)); gap:16px; }
-.ach > div{ background:var(--card); border:1px solid var(--line); border-radius:13px; padding:26px 18px;
-          text-align:center; box-shadow:var(--shadow); }
-.ach .n{ font-family:'Space Grotesk',sans-serif; font-size:2.1rem; font-weight:700; color:var(--blue); }
-.ach .l{ font-size:.84rem; color:var(--muted); margin-top:6px; line-height:1.45; }
+/* ---------- selected impact (navy) ---------- */
+.impact{ background:linear-gradient(160deg,var(--navy) 0%,var(--navy-3) 100%); color:#fff; }
+.impact .head h2{ color:#fff; }
+.impact .head p{ color:#9fbbe4; }
+.impact .head h2::after{ background:var(--lime); }
+.imp{ display:grid; grid-template-columns:repeat(6,1fr); gap:16px; }
+.imp a{ display:block; text-decoration:none; background:rgba(255,255,255,.055);
+        border:1px solid rgba(255,255,255,.13); border-radius:14px; padding:22px 24px;
+        transition:background .16s ease, transform .16s ease; }
+.imp a:hover{ background:rgba(255,255,255,.1); transform:translateY(-3px); }
+.imp .n{ font-family:'Space Grotesk',sans-serif; font-weight:700; color:#fff; line-height:1; letter-spacing:-.02em; }
+.imp .l{ font-size:.82rem; font-weight:700; color:#e3ecfa; margin-top:10px;
+         text-transform:uppercase; letter-spacing:.08em; }
+.imp .s{ font-size:.8rem; color:#8fb0dd; margin-top:4px; }
+.imp .lg{ grid-column:span 3; }
+.imp .lg .n{ font-size:4.4rem; color:var(--lime); }
+.imp .md{ grid-column:span 3; }
+.imp .md .n{ font-size:3rem; }
+.imp .sm{ grid-column:span 2; }
+.imp .sm .n{ font-size:2.1rem; }
+.impact .note{ font-size:.82rem; color:#7f9dc9; margin-top:20px; text-align:center; }
+
+/* ---------- flagship case studies ---------- */
+.flags{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.flag{ display:block; text-decoration:none; background:var(--card); border:1px solid var(--line);
+       border-radius:14px; overflow:hidden; box-shadow:var(--shadow);
+       transition:transform .18s ease, box-shadow .18s ease; }
+.flag:hover{ transform:translateY(-4px); box-shadow:0 8px 18px rgba(10,31,68,.11), 0 20px 44px rgba(10,31,68,.1); }
+.flag .strip{ display:block; width:100%; height:auto; aspect-ratio:6/1; object-fit:cover;
+              border-bottom:1px solid var(--line); }
+.flag .body{ padding:22px 24px 24px; }
+.flag .kind{ font-size:.66rem; font-weight:800; letter-spacing:.11em; text-transform:uppercase;
+             color:var(--blue-2); }
+.flag h3{ font-family:'Space Grotesk',sans-serif; font-size:1.3rem; color:var(--navy);
+          margin:7px 0 4px; font-weight:700; }
+.flag .type{ font-size:.83rem; color:var(--muted); margin-bottom:16px; }
+.flag .figs{ display:flex; gap:26px; padding:14px 0; border-top:1px solid var(--line);
+             border-bottom:1px solid var(--line); margin-bottom:14px; }
+.flag .figs div .v{ font-family:'Space Grotesk',sans-serif; font-size:1.35rem; font-weight:700; color:var(--navy); line-height:1.1; }
+.flag .figs div .k{ font-size:.72rem; color:var(--muted); margin-top:2px; }
+.flag p{ font-size:.87rem; color:#33415c; margin-bottom:14px; }
+.flag .more{ font-size:.87rem; font-weight:700; color:var(--blue); }
+
+/* ---------- other work ---------- */
+.others{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.other{ display:block; text-decoration:none; background:var(--card); border:1px solid var(--line);
+        border-radius:12px; overflow:hidden; box-shadow:var(--shadow);
+        transition:transform .16s ease, border-color .16s ease; }
+.other:hover{ transform:translateY(-3px); border-color:var(--blue); }
+.other .strip{ display:block; width:100%; height:auto; aspect-ratio:6/1; object-fit:cover;
+               border-bottom:1px solid var(--line); }
+.other .body{ padding:16px 18px 18px; display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+.other h3{ font-size:1rem; color:var(--navy); font-weight:700; }
+.other .s{ font-size:.8rem; color:var(--muted); }
+.other .go{ display:block; width:100%; font-size:.8rem; font-weight:700; color:var(--blue); margin-top:8px; }
 
 /* ---------- timeline ---------- */
-.tl{ display:flex; flex-direction:column; gap:18px; }
-.job{ display:grid; grid-template-columns:132px 1fr; gap:22px; align-items:start; }
-.when{ text-align:right; padding-top:22px; padding-right:12px; }
-.when b{ display:block; font-size:.88rem; color:var(--navy); font-weight:700; }
-.when span{ font-size:.82rem; color:var(--muted); }
-.jobcard{ background:var(--card); border:1px solid var(--line); border-radius:13px; padding:22px 26px;
+.tl{ display:flex; flex-direction:column; gap:16px; }
+.job{ display:grid; grid-template-columns:128px minmax(0,1fr); gap:22px; align-items:start; }
+.when{ text-align:right; padding-top:20px; padding-right:12px; }
+.when b{ display:block; font-size:.86rem; color:var(--navy); font-weight:700; }
+.when span{ font-size:.8rem; color:var(--muted); }
+.jobcard{ background:var(--card); border:1px solid var(--line); border-radius:13px; padding:20px 24px;
           box-shadow:var(--shadow); position:relative; }
-.jobcard::before{ content:''; position:absolute; left:-22px; top:28px; width:9px; height:9px; border-radius:50%;
-                  background:var(--blue); box-shadow:0 0 0 3px #fff, 0 0 0 5px var(--blue-pale); }
-.jobcard h3{ font-size:1.06rem; font-weight:700; color:var(--navy); }
-.co{ font-size:.92rem; color:var(--blue); font-weight:600; margin-bottom:14px; }
-.tag{ display:inline-block; margin-left:8px; background:var(--blue-pale); color:var(--blue-2); font-size:.7rem;
+.jobcard::before{ content:''; position:absolute; left:-22px; top:26px; width:9px; height:9px; border-radius:50%;
+                  background:var(--blue); box-shadow:0 0 0 3px var(--bg), 0 0 0 5px var(--blue-pale); }
+.jobcard h3{ font-size:1.02rem; font-weight:700; color:var(--navy); }
+.co{ font-size:.9rem; color:var(--blue); font-weight:600; margin-bottom:11px; }
+.tag{ display:inline-block; margin-left:8px; background:var(--blue-pale); color:var(--blue-2); font-size:.68rem;
       font-weight:700; padding:3px 10px; border-radius:100px; vertical-align:middle; }
-.jobcard ul{ list-style:none; columns:2; column-gap:32px; }
-.jobcard li{ position:relative; padding:0 0 9px 17px; font-size:.87rem; color:#33415c; break-inside:avoid; }
+.jobcard ul{ list-style:none; }
+.jobcard li{ position:relative; padding:0 0 7px 17px; font-size:.87rem; color:#33415c; }
+.jobcard li:last-child{ padding-bottom:0; }
 .jobcard li::before{ content:''; position:absolute; left:0; top:8px; width:5px; height:5px;
                      border-radius:50%; background:var(--blue); }
 
-/* ---------- skills ---------- */
-.skills{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-.skill{ background:var(--card); border:1px solid var(--line); border-radius:13px; padding:24px 26px; box-shadow:var(--shadow); }
-.skill h3{ font-size:1.02rem; font-weight:700; color:var(--navy); margin-bottom:15px; }
-.skill ul{ list-style:none; }
-.skill li{ position:relative; padding:0 0 9px 24px; font-size:.87rem; color:#33415c; }
-.skill li::before{ content:'✓'; position:absolute; left:0; top:-1px; color:var(--blue); font-weight:700; }
-.tags{ display:flex; flex-wrap:wrap; gap:8px; }
-.tags span{ background:var(--blue-pale); color:var(--blue-2); font-size:.8rem; font-weight:600;
-            padding:6px 13px; border-radius:8px; }
-
-/* ---------- projects ---------- */
-.projs{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-.proj{ display:block; text-decoration:none; background:var(--card); border:1px solid var(--line);
-       border-radius:13px; padding:24px 26px; box-shadow:var(--shadow); transition:transform .18s ease, box-shadow .18s ease; }
-.proj:hover{ transform:translateY(-4px); box-shadow:0 6px 14px rgba(10,31,68,.1), 0 18px 40px rgba(10,31,68,.1); }
-.proj .banner{ display:block; width:calc(100% + 52px); height:auto; aspect-ratio:3/1; object-fit:cover;
-               margin:-24px -26px 18px; border-radius:12px 12px 0 0; border-bottom:1px solid var(--line); }
-.cat{ display:inline-block; background:var(--blue-pale); color:var(--blue-2); font-size:.66rem; font-weight:800;
-      letter-spacing:.1em; text-transform:uppercase; padding:4px 11px; border-radius:6px; margin-bottom:13px; }
-.cat.cur{ background:#e6f5ec; color:#0f7a44; }
-.proj h3{ font-size:1.14rem; font-weight:700; color:var(--navy); }
-.proj .type{ font-size:.84rem; color:var(--muted); margin-bottom:15px; }
-.pstats{ display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line);
-         border:1px solid var(--line); border-radius:10px; overflow:hidden; margin-bottom:14px; }
-.pstats > div{ background:#fbfcfe; padding:12px 14px; }
-.pstats .v{ font-family:'Space Grotesk',sans-serif; font-size:1.12rem; font-weight:700; color:var(--navy); }
-.pstats .k{ font-size:.72rem; color:var(--muted); }
-.proj p{ font-size:.86rem; color:#33415c; margin-bottom:14px; }
-.more{ font-size:.87rem; font-weight:700; color:var(--blue); }
+/* ---------- capabilities ---------- */
+.caps{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.cap{ background:var(--card); border:1px solid var(--line); border-radius:13px; padding:24px 26px;
+      box-shadow:var(--shadow); border-top:3px solid var(--blue); }
+.cap h3{ font-family:'Space Grotesk',sans-serif; font-size:1.05rem; font-weight:700; color:var(--navy); margin-bottom:6px; }
+.cap .sub{ font-size:.8rem; color:var(--muted); margin-bottom:14px; }
+.cap .tags{ display:flex; flex-wrap:wrap; gap:7px; }
+.cap .tags span{ background:var(--blue-pale); color:var(--blue-2); font-size:.79rem; font-weight:600;
+                 padding:5px 11px; border-radius:7px; }
 
 /* ---------- footer ---------- */
-footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:20px; }
+footer{ background:var(--navy); color:#c3d4ec; padding:50px 0 32px; }
 .foot{ display:grid; grid-template-columns:1.1fr 1fr auto; gap:40px; align-items:center; }
 .foot h3{ font-family:'Space Grotesk',sans-serif; color:#fff; font-size:1.3rem; margin-bottom:8px; }
 .foot p{ font-size:.9rem; max-width:40ch; }
@@ -162,34 +210,39 @@ footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:2
 .contact li{ padding:5px 0; }
 .contact a{ color:#c3d4ec; text-decoration:none; word-break:break-word; }
 .contact a:hover{ color:#fff; text-decoration:underline; }
-.copy{ text-align:center; font-size:.82rem; color:#7f9dc9; margin-top:36px;
+.copy{ text-align:center; font-size:.82rem; color:#7f9dc9; margin-top:34px;
        padding-top:22px; border-top:1px solid rgba(255,255,255,.12); }
 
 @media (max-width:1000px){
-  .hero-grid{ grid-template-columns:minmax(0,1fr); gap:38px; }
-  h1{ font-size:2.6rem; }
-  .skills,.projs{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .hero-grid{ grid-template-columns:minmax(0,1fr); gap:34px; }
+  h1{ font-size:2.7rem; }
   .navlinks{ display:none; }
   .foot{ grid-template-columns:minmax(0,1fr); gap:26px; }
+  .imp{ grid-template-columns:repeat(4,1fr); }
+  .imp .lg,.imp .md{ grid-column:span 4; }
+  .imp .sm{ grid-column:span 2; }
+  .flags,.others,.caps{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .tiles{ grid-template-columns:repeat(3,minmax(0,1fr)); }
 }
 @media (max-width:700px){
-  .tiles{ grid-template-columns:repeat(2,minmax(0,1fr)); }
-  .skills,.projs{ grid-template-columns:minmax(0,1fr); }
-  .job{ grid-template-columns:minmax(0,1fr); gap:8px; }
-  .when{ text-align:left; padding-top:0; }
-  .when b, .when span{ display:inline; }
-  .jobcard::before{ display:none; }
-  .jobcard ul{ columns:1; }
-  /* eight achievement cards stacked one per row was most of the scroll depth */
-  .ach{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
-  .ach > div{ padding:18px 12px; }
-  .ach .n{ font-size:1.6rem; }
-  .ach .l{ font-size:.78rem; }
   section{ padding:44px 0; }
   h1{ font-size:2.1rem; }
-  .tile{ padding:16px 14px; }
-  .jobcard, .proj, .skill{ padding:20px 18px; }
-  .proj .banner{ width:calc(100% + 36px); margin:-20px -18px 16px; }
+  .imp{ grid-template-columns:repeat(2,1fr); }
+  .imp .lg,.imp .md,.imp .sm{ grid-column:span 2; }
+  .imp .lg .n{ font-size:3.2rem; }
+  .imp .md .n{ font-size:2.4rem; }
+  .flags,.others,.caps,.tiles{ grid-template-columns:minmax(0,1fr); }
+  .job{ grid-template-columns:minmax(0,1fr); gap:8px; }
+  .when{ text-align:left; padding-top:0; padding-right:0; }
+  .when b, .when span{ display:inline; }
+  .jobcard::before{ display:none; }
+  .jobcard, .cap{ padding:18px 18px; }
+  .flag .body{ padding:18px 18px 20px; }
+}
+@media (max-width:520px){
+  .langsw a{ padding:4px 8px; font-size:.68rem; }
+  .brand span span{ display:none; }
+  nav .wrap{ gap:10px; } nav .btn{ padding:9px 13px; font-size:.82rem; }
 }
 
 .langsw{ display:inline-flex; border-radius:8px; overflow:hidden; flex:none; }
@@ -201,8 +254,7 @@ footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:2
 .langsw a.on{ background:var(--blue); color:#fff; }
 .langsw a:hover{ color:var(--blue); }
 .langsw a.on:hover{ color:#fff; }
-@media (max-width:520px){ .langsw a{ padding:4px 8px; font-size:.68rem; } .brand span span{ display:none; }
-  nav .wrap{ gap:10px; } nav .btn{ padding:9px 13px; font-size:.82rem; } }
+@media (max-width:520px){ .langsw{ display:none; } }
 </style>
 </head>
 <body>
@@ -211,14 +263,15 @@ footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:2
   <div class="wrap">
     <a href="#hero" class="brand">
       <span class="mark">MH</span>
-      <span><b>Nguyễn Minh Hiếu</b><span>Chuyên viên SEO</span></span>
+      <span><b>Nguyễn Minh Hiếu</b><span>SEO Lead</span></span>
     </a>
     <ul class="navlinks">
-      <li><a href="#achievements">Kết quả</a></li>
+      <li><a href="#impact">Kết quả</a></li>
+      <li><a href="#work">Case study</a></li>
       <li><a href="#experience">Kinh nghiệm</a></li>
-      <li><a href="#projects">Dự án</a></li>
-      <li><a href="#skills">Kỹ năng</a></li>
+      <li><a href="#capabilities">Năng lực</a></li>
     </ul>
+    <span class="langsw"><a href="./" hreflang="en" class="on">EN</a><a href="vi/" hreflang="vi">VI</a></span>
     <span class="langsw"><a href="../" hreflang="en">EN</a><a href="./" hreflang="vi" class="on">VI</a></span>
       <a href="mailto:hieumn24@gmail.com" class="btn btn-fill">Liên hệ</a>
   </div>
@@ -228,45 +281,154 @@ footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:2
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <span class="pill">SEO &amp; Tăng trưởng Organic</span>
         <h1>NGUYỄN<br>MINH HIẾU</h1>
-        <p class="tagline">Tăng trưởng organic bằng chiến lược SEO dựa trên dữ liệu</p>
-        <p class="lede">Sáu năm làm SEO cho thương mại điện tử, bán lẻ và y tế. Quen với việc đưa một website
-          từ con số không lên hàng triệu lượt truy cập mỗi ngày, và quen với việc kiểm lại xem con số đó
-          có thật hay không trước khi đưa vào báo cáo.</p>
+        <div class="rolebar">
+          <span>SEO Lead</span><i></i><span>Technical SEO</span><i></i><span>Tăng trưởng Organic</span>
+        </div>
+        <p class="lede">Tôi làm organic cho <b>các catalog thương mại điện tử lớn</b>, bằng technical SEO,
+          hệ thống nội dung và automation viết bằng Python. Tôi cũng kiểm xem con số có thật không trước khi
+          ai đó tiêu tiền dựa vào nó: <b>1,2 triệu impression giả</b> gỡ khỏi báo cáo của một khách,
+          <b>57% đơn hàng</b> không về tới GA4 ở một khách khác.</p>
+        <div class="proofs">
+          <div><div class="n">6+</div><div class="l">Năm làm SEO</div></div>
+          <div><div class="n">1M+</div><div class="l">Lượt truy cập/ngày từng vận hành</div></div>
+          <div><div class="n">+459%</div><div class="l">Tăng trưởng organic, 7 tháng</div></div>
+        </div>
         <div class="hero-btns">
-          <a href="#projects" class="btn btn-fill">Xem dự án →</a>
-          <a href="#achievements" class="btn btn-ghost">Kết quả nổi bật</a>
+          <a href="#work" class="btn btn-fill">Xem case study →</a>
+          <a href="#impact" class="btn btn-ghost">Kết quả nổi bật</a>
         </div>
       </div>
 
       <div class="tiles">
-        <div class="tile"><div class="ic">📅</div><div class="n">6+</div><div class="l">Năm kinh nghiệm</div></div>
-        <div class="tile"><div class="ic">📈</div><div class="n">1M+</div><div class="l">Lượt truy cập/ngày từng vận hành</div></div>
-        <div class="tile"><div class="ic">📁</div><div class="n">6</div><div class="l">Case study có số liệu</div></div>
-        <div class="tile"><div class="ic">🔧</div><div class="t">Công cụ &amp; Dữ liệu</div><div class="l">GSC · GA4 · Looker · Python</div></div>
-        <div class="tile"><div class="ic">🌏</div><div class="t">Thị trường</div><div class="l">Việt Nam · Úc · Toàn cầu</div></div>
-        <div class="tile"><div class="ic">💬</div><div class="n">11</div><div class="l">Ngôn ngữ trong một dự án</div></div>
+        <div class="tile"><div class="t">Quy mô</div><div class="l">1.769 SKU · 11 ngôn ngữ · hơn 5.000 trang sản phẩm</div></div>
+        <div class="tile"><div class="t">Kỹ thuật</div><div class="l">Python · Search Console API · GA4 · Shopify GraphQL</div></div>
+        <div class="tile"><div class="t">Thị trường</div><div class="l">Việt Nam · Úc · Toàn cầu</div></div>
       </div>
     </div>
   </div>
 </header>
 
-<section id="achievements">
+<section class="impact" id="impact">
   <div class="wrap">
     <div class="head">
       <h2>Kết quả nổi bật</h2>
-      <p>Những con số đo được, kéo từ Search Console, GA4 và API của chính website.</p>
+      <p>Mọi con số đều kéo từ Search Console, GA4 hoặc admin API của chính website.</p>
     </div>
-    <div class="ach">
-      <div><div class="n">1M+</div><div class="l">Lượt truy cập/ngày ở Điện máy XANH</div></div>
-      <div><div class="n">45K+</div><div class="l">Lượt truy cập/ngày ở SIAM Thailand</div></div>
-      <div><div class="n">110%</div><div class="l">KPI dự án SIAM (11 tháng)</div></div>
-      <div><div class="n">30%</div><div class="l">Từ khóa vào top 10 (ngành thẩm mỹ)</div></div>
-      <div><div class="n">54K+</div><div class="l">Từ khóa có thứ hạng ở BitJoy eSIM</div></div>
-      <div><div class="n">+459%</div><div class="l">Tăng trưởng organic BitJoy (7 tháng)</div></div>
-      <div><div class="n">+571%</div><div class="l">Click organic Cedora (5 tháng)</div></div>
-      <div><div class="n">1.2M</div><div class="l">Impression giả bắt được trước khi vào báo cáo khách</div></div>
+    <div class="imp">
+      <a href="bitjoy.html" class="lg">
+        <div class="n">+459%</div>
+        <div class="l">Click organic</div>
+        <div class="s">BitJoy · 7 tháng, từ 5.400 lên 29.900 mỗi tháng</div>
+      </a>
+      <a href="siam-thailand.html" class="md">
+        <div class="n">45K+</div>
+        <div class="l">Lượt organic mỗi ngày</div>
+        <div class="s">SIAM Thailand · từ 0 trong 11 tháng, đạt 110% KPI</div>
+      </a>
+      <a href="bitjoy.html" class="sm">
+        <div class="n">54,258</div>
+        <div class="l">Từ khóa có thứ hạng</div>
+        <div class="s">BitJoy · 39.941 từ nằm top 10</div>
+      </a>
+      <a href="dien-may-xanh.html" class="sm">
+        <div class="n">1M+</div>
+        <div class="l">Lượt truy cập/ngày giữ được</div>
+        <div class="s">Điện máy XANH · suốt ba năm</div>
+      </a>
+      <a href="cedora.html" class="sm">
+        <div class="n">1.2M</div>
+        <div class="l">Impression giả đã gỡ</div>
+        <div class="s">Cedora · một query, trước khi kịp vào báo cáo</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="head">
+      <h2>Case study tiêu biểu</h2>
+      <p>Viết đầy đủ: cách làm, nguồn số liệu, và phần chưa giải quyết được.</p>
+    </div>
+    <div class="flags">
+
+      <a href="cedora.html" class="flag">
+        <img class="strip" src="../assets/card-cedora.webp" alt="Cedora Furniture" width="600" height="100" loading="lazy">
+        <div class="body">
+          <span class="kind">Thương mại điện tử · Úc</span>
+          <h3>Cedora Furniture</h3>
+          <p class="type">Bán lẻ nội thất Shopify, chỉ thị trường Úc</p>
+          <div class="figs">
+            <div><div class="v">14,331</div><div class="k">Từ khóa có thứ hạng</div></div>
+            <div><div class="v">+571%</div><div class="k">Click organic</div></div>
+          </div>
+          <p>Từ 272 lên 14.331 từ khóa trong năm tháng, sau khi đã lọc 1,2 triệu impression bot.</p>
+          <span class="more">Xem case study →</span>
+        </div>
+      </a>
+
+      <a href="bitjoy.html" class="flag">
+        <img class="strip" src="../assets/card-bitjoy.webp" alt="BitJoy" width="600" height="100" loading="lazy">
+        <div class="body">
+          <span class="kind">Đa ngôn ngữ · Toàn cầu</span>
+          <h3>BitJoy Global eSIM</h3>
+          <p class="type">1.769 SKU trải trên 11 ngôn ngữ</p>
+          <div class="figs">
+            <div><div class="v">54,258</div><div class="k">Từ khóa có thứ hạng</div></div>
+            <div><div class="v">+459%</div><div class="k">Click organic</div></div>
+          </div>
+          <p>Organic là kênh duy nhất. Toàn bộ catalog vận hành bằng Python.</p>
+          <span class="more">Xem case study →</span>
+        </div>
+      </a>
+
+      <a href="siam-thailand.html" class="flag">
+        <img class="strip" src="../assets/card-siam.webp" alt="SIAM Thailand" width="600" height="100" loading="lazy">
+        <div class="body">
+          <span class="kind">Y tế · Hồi phục sau sự cố</span>
+          <h3>SIAM Thailand</h3>
+          <p class="type">Bệnh viện thẩm mỹ Việt Nam</p>
+          <div class="figs">
+            <div><div class="v">0 → 45K+</div><div class="k">Lượt truy cập/ngày</div></div>
+            <div><div class="v">110%</div><div class="k">So với KPI</div></div>
+          </div>
+          <p>Từ 0 đến đạt KPI trong 11 tháng, rồi năm tháng hồi phục sau khi site bị xâm nhập.</p>
+          <span class="more">Xem case study →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <div class="head left">
+      <h2>Các dự án khác</h2>
+    </div>
+    <div class="others">
+      <a href="dien-may-xanh.html" class="other">
+        <img class="strip" src="../assets/card-dienmayxanh.webp" alt="Dien may XANH" width="600" height="100" loading="lazy">
+        <div class="body">
+          <h3>Điện máy XANH</h3><span class="s">1 triệu lượt/ngày · 3 năm</span>
+          <span class="go">Xem case study →</span>
+        </div>
+      </a>
+      <a href="avakids.html" class="other">
+        <img class="strip" src="../assets/card-avakids.webp" alt="AVAKids" width="600" height="100" loading="lazy">
+        <div class="body">
+          <h3>AVAKids &amp; AVASport</h3><span class="s">Hơn 60.000 lượt/ngày cộng lại</span>
+          <span class="go">Xem case study →</span>
+        </div>
+      </a>
+      <a href="tin-hoc-ngoi-sao.html" class="other">
+        <img class="strip" src="../assets/card-tinhocngoisao.webp" alt="Tin Hoc Ngoi Sao" width="600" height="100" loading="lazy">
+        <div class="body">
+          <h3>Tin Học Ngôi Sao</h3><span class="s">1.700 → 11.000 lượt/ngày · 2 tháng</span>
+          <span class="go">Xem case study →</span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -274,8 +436,7 @@ footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:2
 <section id="experience">
   <div class="wrap">
     <div class="head">
-      <h2>Kinh nghiệm làm việc</h2>
-      <p>Từ thực tập nội dung ở MWG đến vận hành SEO độc lập cho khách nước ngoài.</p>
+      <h2>Kinh nghiệm</h2>
     </div>
     <div class="tl">
 
@@ -285,11 +446,8 @@ footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:2
           <h3>SEO Consultant (Freelance)</h3>
           <p class="co">Cedora Furniture <span class="tag">Case study</span></p>
           <ul>
-            <li>Website nội thất Shopify tại Úc: 128 sản phẩm, 61 collection, 180 bài viết</li>
-            <li>Từ khóa có thứ hạng từ 272 lên 14.331, click organic +571% từ tháng 2 đến tháng 7/2026</li>
-            <li>Vị trí trung bình từ 13,76 lên 7,14, có 9.533 từ khóa nằm top 10</li>
-            <li>Phát hiện và trừ khỏi báo cáo một query bot bơm 1,2 triệu impression mỗi tháng</li>
-            <li>Dựng lại toàn bộ pipeline báo cáo GA4 và Search Console bằng Python</li>
+            <li>Từ 272 lên 14.331 từ khóa có thứ hạng, click organic +571% trong năm tháng</li>
+            <li>Phát hiện và gỡ khỏi mọi báo cáo một query bot đáng 1,2 triệu impression mỗi tháng</li>
           </ul>
         </div>
       </div>
@@ -301,10 +459,7 @@ footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:2
           <p class="co">BitJoy Global eSIM <span class="tag">Case study</span></p>
           <ul>
             <li>Phụ trách toàn bộ SEO cho store Shopify 1.769 SKU, 11 ngôn ngữ</li>
-            <li>Click organic +459%, từ 5.400 lên 29.900 mỗi tháng</li>
-            <li>Hơn 54.000 từ khóa có thứ hạng, 39.941 từ nằm top 10, 99,98% là non-brand</li>
-            <li>Technical SEO: hệ schema, truy nguyên nhân tụt hạng, tối ưu tốc độ</li>
-            <li>Viết automation Python + Shopify GraphQL để sửa SEO ở quy mô cả catalog</li>
+            <li>54.258 từ khóa có thứ hạng, 39.941 từ top 10, 99,98% là non-brand</li>
           </ul>
         </div>
       </div>
@@ -315,10 +470,8 @@ footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:2
           <h3>SEO Leader</h3>
           <p class="co">XMARS Agency <span class="tag">SIAM Thailand</span></p>
           <ul>
-            <li>Quản lý toàn bộ website: chiến lược và vận hành SEO</li>
-            <li>Đưa traffic từ 0 lên hơn 45.000 lượt/ngày, đạt 110% KPI</li>
-            <li>Xây được nguồn khách organic, giảm chi phí quảng cáo</li>
-            <li>Xử lý khủng hoảng: blackhat, bị hack, report DMCA</li>
+            <li>Dựng organic từ 0 lên hơn 45.000 lượt/ngày, đạt 110% KPI</li>
+            <li>Lấy lại toàn bộ thứ hạng sau khi site bị xâm nhập, vượt cả mức trước sự cố</li>
           </ul>
         </div>
       </div>
@@ -327,29 +480,25 @@ footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:2
         <div class="when"><b>Jan 2024</b><span>– Mar 2024</span></div>
         <div class="jobcard">
           <h3>SEO Freelancer</h3>
-          <p class="co">Tinhocngoisao, Timecons</p>
+          <p class="co">Tin Học Ngôi Sao, Timecons</p>
           <ul>
-            <li>Tin Học Ngôi Sao (bán lẻ linh kiện PC): 1.700 lên 11.000 lượt/ngày, +550% trong hai tháng</li>
-            <li>Timecons: 1.800 lượt mỗi tháng, trong 2 tháng</li>
-            <li>Audit website, tối ưu UX và triển khai nội dung</li>
-          </ul>
-        </div>
-      </div>
-      <div class="job">
-        <div class="when"><b>Jun 2021</b><span>– Mar 2024</span></div>
-        <div class="jobcard">
-          <h3>Chuyên viên Content SEO</h3>
-          <p class="co">The Gioi Di Dong (MWG)</p>
-          <ul>
-            <li>Phụ trách 3 website lớn: Điện máy XANH, AVAKids, AVASport</li>
-            <li>Điện máy XANH: 1 triệu lượt truy cập mỗi ngày</li>
-            <li>AVAKids 45.000, AVASport 15.000 lượt mỗi ngày</li>
-            <li>Vận hành 5 PBN, audit website và tối ưu tốc độ</li>
-            <li>Triển khai chiến lược entity off-page</li>
+            <li>Tin Học Ngôi Sao: 1.700 lên 11.000 lượt/ngày trong hợp đồng hai tháng</li>
+            <li>Audit kỹ thuật, sửa UX và làm nội dung nhắm nhóm truy vấn thắng nhanh</li>
           </ul>
         </div>
       </div>
 
+      <div class="job">
+        <div class="when"><b>Jun 2021</b><span>– Mar 2024</span></div>
+        <div class="jobcard">
+          <h3>Chuyên viên Content SEO</h3>
+          <p class="co">Thế Giới Di Động (MWG)</p>
+          <ul>
+            <li>Vận hành SEO cho Điện máy XANH, AVAKids và AVASport</li>
+            <li>Giữ hơn 1 triệu lượt organic mỗi ngày suốt ba năm, tối ưu hơn 5.000 trang sản phẩm</li>
+          </ul>
+        </div>
+      </div>
 
       <div class="job">
         <div class="when"><b>Jan 2020</b><span>– Jun 2021</span></div>
@@ -357,9 +506,7 @@ footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:2
           <h3>Thực tập Content</h3>
           <p class="co">MWG - Game/App Division</p>
           <ul>
-            <li>Sản xuất 35 bài mỗi tuần về công nghệ và game</li>
-            <li>Chuyên mục ĐTCL: 14.000 phiên mỗi ngày</li>
-            <li>Backlink, internal link, cập nhật nội dung</li>
+            <li>35 bài mỗi tuần về công nghệ và game; chuyên mục ĐTCL chạy 14.000 phiên mỗi ngày</li>
           </ul>
         </div>
       </div>
@@ -368,137 +515,34 @@ footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:2
   </div>
 </section>
 
-<section id="projects">
+<section id="capabilities">
   <div class="wrap">
     <div class="head">
-      <h2>Dự án tiêu biểu</h2>
-      <p>Sáu dự án, mỗi dự án một trang riêng có số liệu và cả phần chưa làm được.</p>
+      <h2>Năng lực</h2>
     </div>
-    <div class="projs">
-
-      <a href="cedora.html" class="proj">
-        <img class="banner" src="../assets/card-cedora.webp" alt="Cedora Furniture logo" width="600" height="200" loading="lazy">
-        <span class="cat cur">Đang làm</span>
-        <h3>Cedora Furniture</h3>
-        <p class="type">Bán lẻ nội thất tại Úc</p>
-        <div class="pstats">
-          <div><div class="v">272 → 14,331</div><div class="k">Từ khóa có thứ hạng</div></div>
-          <div><div class="v">+571%</div><div class="k">Click organic</div></div>
-        </div>
-        <p>Store nội thất Shopify chỉ bán ở Úc. Năm tháng tăng trưởng từ khóa, và 1,2 triệu
-          impression bot bị lọc ra trước khi bất cứ con số nào vào báo cáo.</p>
-        <span class="more">Xem case study →</span>
-      </a>
-
-      <a href="bitjoy.html" class="proj">
-        <img class="banner" src="../assets/card-bitjoy.webp" alt="BitJoy logo" width="600" height="200" loading="lazy">
-        <span class="cat cur">Đang làm</span>
-        <h3>BitJoy Global eSIM</h3>
-        <p class="type">Thương mại điện tử eSIM toàn cầu</p>
-        <div class="pstats">
-          <div><div class="v">54K+</div><div class="k">Từ khóa có thứ hạng</div></div>
-          <div><div class="v">+459%</div><div class="k">Tăng trưởng organic</div></div>
-        </div>
-        <p>Technical SEO đa ngôn ngữ cho store Shopify 1.769 SKU, 11 locale.
-          39.941 từ khóa top 10, trong đó 99,98% là non-brand.</p>
-        <span class="more">Xem case study →</span>
-      </a>
-
-      <a href="siam-thailand.html" class="proj">
-        <img class="banner" src="../assets/card-siam.webp" alt="Benh vien tham my SIAM Thailand logo" width="600" height="200" loading="lazy">
-        <span class="cat cur">Đang làm</span>
-        <h3>SIAM Thailand</h3>
-        <p class="type">Bệnh viện thẩm mỹ</p>
-        <div class="pstats">
-          <div><div class="v">0 → 45K+</div><div class="k">Lượt truy cập/ngày</div></div>
-          <div><div class="v">110%</div><div class="k">Mức đạt KPI</div></div>
-        </div>
-        <p>Chiến lược SEO trọn gói cho một bệnh viện thẩm mỹ Việt Nam.
-          Tăng trưởng mạnh và đi qua nhiều đợt khủng hoảng, gồm cả một lần bị hack sạch thứ hạng.</p>
-        <span class="more">Xem case study →</span>
-      </a>
-
-      <a href="dien-may-xanh.html" class="proj">
-        <img class="banner" src="../assets/card-dienmayxanh.webp" alt="Dien may XANH logo" width="600" height="200" loading="lazy">
-        <span class="cat">Tiêu biểu</span>
-        <h3>Dienmayxanh</h3>
-        <p class="type">Ông lớn thương mại điện tử</p>
-        <div class="pstats">
-          <div><div class="v">1M+</div><div class="k">Lượt truy cập/ngày</div></div>
-          <div><div class="v">3 năm</div><div class="k">Thời gian</div></div>
-        </div>
-        <p>Vận hành SEO cho nhà bán lẻ điện máy lớn nhất Việt Nam.
-          Giữ và tăng trên nền 1 triệu lượt organic mỗi ngày.</p>
-        <span class="more">Xem case study →</span>
-      </a>
-
-      <a href="avakids.html" class="proj">
-        <img class="banner" src="../assets/card-avakids.webp" alt="AVAKids logo" width="600" height="200" loading="lazy">
-        <span class="cat">Bán lẻ</span>
-        <h3>AVAKids &amp; AVASport</h3>
-        <p class="type">Website bán lẻ</p>
-        <div class="pstats">
-          <div><div class="v">60K+</div><div class="k">Tổng traffic/ngày</div></div>
-          <div><div class="v">5 PBNs</div><div class="k">Vận hành</div></div>
-        </div>
-        <p>Vận hành SEO song song hai website mẹ và bé, đồ thể thao.
-          Chiến lược entity và quản lý hệ PBN.</p>
-        <span class="more">Xem case study →</span>
-      </a>
-
-      <a href="tin-hoc-ngoi-sao.html" class="proj">
-        <img class="banner" src="../assets/card-tinhocngoisao.webp" alt="Tin Hoc Ngoi Sao (STAR) logo" width="600" height="200" loading="lazy">
-        <span class="cat">Bán lẻ máy tính</span>
-        <h3>Tinhocngoisao</h3>
-        <p class="type">Linh kiện PC và laptop</p>
-        <div class="pstats">
-          <div><div class="v">1.7K → 11K</div><div class="k">Lượt truy cập/ngày</div></div>
-          <div><div class="v">2 tháng</div><div class="k">Thời gian</div></div>
-        </div>
-        <p>Tăng trưởng nhanh cho một cửa hàng linh kiện PC và laptop.
-          1.700 lên 11.000 lượt/ngày trong đúng hai tháng hợp đồng.</p>
-        <span class="more">Xem case study →</span>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<section id="skills">
-  <div class="wrap">
-    <div class="head">
-      <h2>Kỹ năng chuyên môn</h2>
-      <p>Công cụ và kỹ năng dùng hằng ngày, không phải danh sách cho đẹp hồ sơ.</p>
-    </div>
-    <div class="skills">
-      <div class="skill">
-        <h3>SEO Kỹ thuật</h3>
-        <ul>
-          <li>Thuật toán Google và các core update</li>
-          <li>Audit website và tối ưu hiệu năng</li>
-          <li>Technical SEO (HTML, CSS)</li>
-          <li>Phát triển trên WordPress</li>
-          <li>Tối ưu UX/UI</li>
-          <li>Xử lý khủng hoảng SEO</li>
-        </ul>
-      </div>
-      <div class="skill">
-        <h3>Công cụ &amp; Tự động hóa</h3>
-        <ul>
-          <li>Ahrefs, SEMrush, Google Trends</li>
-          <li>Screaming Frog</li>
-          <li>Search Console, GA4, Looker Studio</li>
-          <li>Python, Shopify GraphQL API</li>
-          <li>Tích hợp AI và tự động hóa quy trình</li>
-          <li>Excel, Google Sheets, Haravan</li>
-        </ul>
-      </div>
-      <div class="skill">
-        <h3>Kỹ năng khác</h3>
+    <div class="caps">
+      <div class="cap">
+        <h3>Technical SEO</h3>
+        <p class="sub">Site lớn, nơi vấn đề là quy mô chứ không phải thiếu ý tưởng.</p>
         <div class="tags">
-          <span>Làm việc nhóm</span><span>Nghiên cứu thị trường</span><span>Hoạch định dài hạn</span>
-          <span>Tư duy UX/UI</span><span>Chịu áp lực</span><span>Tự học</span>
-          <span>English - Basic</span>
+          <span>Kiến trúc site lớn</span><span>Crawl &amp; index</span><span>SEO đa quốc gia</span>
+          <span>Shopify</span><span>Schema</span><span>Core Web Vitals</span><span>Xử lý khủng hoảng</span>
+        </div>
+      </div>
+      <div class="cap">
+        <h3>Kỹ thuật &amp; dữ liệu</h3>
+        <p class="sub">Báo cáo tôi bảo vệ được từng dòng, dựng bằng code.</p>
+        <div class="tags">
+          <span>Python</span><span>Search Console API</span><span>GA4 API</span><span>Shopify GraphQL</span>
+          <span>Screaming Frog</span><span>Looker Studio</span><span>Kiểm bot &amp; chất lượng dữ liệu</span>
+        </div>
+      </div>
+      <div class="cap">
+        <h3>Hệ thống tăng trưởng</h3>
+        <p class="sub">Cấu trúc vẫn chạy tốt sau khi tôi bàn giao.</p>
+        <div class="tags">
+          <span>Kiến trúc từ khóa</span><span>Hệ thống nội dung</span><span>Programmatic SEO</span>
+          <span>Internal link</span><span>Đo lường &amp; attribution</span>
         </div>
       </div>
     </div>
@@ -510,8 +554,7 @@ footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:2
     <div class="foot">
       <div>
         <h3>Liên hệ</h3>
-        <p>Luôn sẵn sàng trao đổi về cơ hội mới và những dự án thú vị.
-          Nhắn email hoặc gọi trực tiếp đều được.</p>
+        <p>Đang mở với vị trí SEO Lead và technical SEO senior. Sẵn sàng giải thích mọi con số ở đây.</p>
       </div>
       <ul class="contact">
         <li>✉️ <a href="mailto:hieumn24@gmail.com">hieumn24@gmail.com</a></li>

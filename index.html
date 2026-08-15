@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nguyen Minh Hieu - SEO Specialist</title>
-<meta name="description" content="SEO specialist with 6+ years scaling organic traffic for e-commerce, retail and healthcare. Case studies with real Search Console and Shopify data.">
+<title>Nguyen Minh Hieu - SEO Lead, Technical SEO</title>
+<meta name="description" content="SEO Lead scaling organic search for large e-commerce catalogues. 1,769-SKU stores, 11 locales, Python automation. Case studies with real Search Console and Shopify data.">
 <link rel="canonical" href="https://hieumn24.github.io/porfolia/">
 <link rel="alternate" hreflang="en" href="https://hieumn24.github.io/porfolia/">
 <link rel="alternate" hreflang="vi" href="https://hieumn24.github.io/porfolia/vi/">
@@ -16,14 +16,14 @@
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hieumn24.github.io/porfolia/">
-<meta property="og:title" content="Nguyen Minh Hieu - SEO Specialist">
-<meta property="og:description" content="6+ years scaling organic traffic for e-commerce, retail and healthcare. Case studies with real Search Console and Shopify data.">
+<meta property="og:title" content="Nguyen Minh Hieu - SEO Lead, Technical SEO">
+<meta property="og:description" content="Scaling organic search for large e-commerce catalogues through technical SEO, content systems and automation.">
 <meta property="og:image" content="https://hieumn24.github.io/porfolia/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Nguyen Minh Hieu - SEO Specialist">
-<meta name="twitter:description" content="6+ years scaling organic traffic for e-commerce, retail and healthcare.">
+<meta name="twitter:title" content="Nguyen Minh Hieu - SEO Lead, Technical SEO">
+<meta name="twitter:description" content="Scaling organic search for large e-commerce catalogues through technical SEO, content systems and automation.">
 <meta name="twitter:image" content="https://hieumn24.github.io/porfolia/assets/og.jpg">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -33,6 +33,7 @@
 :root{
   --navy:#0a1f44; --navy-3:#17356a;
   --blue:#1f6feb; --blue-2:#1557c7; --blue-pale:#e8f0fe;
+  --lime:#C5E10E;
   --ink:#0f172a; --muted:#5b6b85; --line:#e3e8f0;
   --bg:#f3f6fb; --card:#fff;
   --shadow:0 1px 3px rgba(10,31,68,.07), 0 8px 24px rgba(10,31,68,.06);
@@ -41,7 +42,8 @@
 body{ font-family:'Inter',sans-serif; background:var(--bg); color:var(--ink); line-height:1.6; }
 html{ scroll-behavior:smooth; }
 .wrap{ max-width:1240px; margin:0 auto; padding:0 22px; }
-section{ padding:70px 0; }
+section{ padding:64px 0; }
+section.tight{ padding:48px 0; }
 
 /* ---------- nav ---------- */
 nav{ position:sticky; top:0; z-index:60; background:rgba(255,255,255,.94); backdrop-filter:blur(14px);
@@ -53,7 +55,7 @@ nav .wrap{ display:flex; align-items:center; gap:26px; height:66px; }
        font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:.95rem; letter-spacing:.02em; }
 .brand b{ display:block; font-size:.95rem; color:var(--ink); font-weight:700; line-height:1.25; }
 .brand span{ display:block; font-size:.76rem; color:var(--muted); }
-.navlinks{ display:flex; gap:26px; list-style:none; }
+.navlinks{ display:flex; gap:24px; list-style:none; }
 .navlinks a{ text-decoration:none; color:var(--muted); font-size:.9rem; font-weight:500; padding:4px 0;
              border-bottom:2px solid transparent; }
 .navlinks a:hover{ color:var(--blue); border-bottom-color:var(--blue); }
@@ -64,96 +66,139 @@ nav .wrap{ display:flex; align-items:center; gap:26px; height:66px; }
 .btn-ghost{ background:#fff; color:var(--blue); border:1px solid var(--line); }
 .btn-ghost:hover{ border-color:var(--blue); }
 
+.langsw{ display:inline-flex; border-radius:8px; overflow:hidden; flex:none; border:1px solid var(--line); }
+.langsw a{ padding:5px 11px; font-size:.76rem; font-weight:800; letter-spacing:.06em;
+           text-decoration:none; line-height:1.5; color:var(--muted); }
+.langsw a.on{ background:var(--blue); color:#fff; }
+.langsw a:hover{ color:var(--blue); }
+.langsw a.on:hover{ color:#fff; }
+
 /* ---------- hero ---------- */
-.hero{ background:linear-gradient(180deg,#fff 0%,var(--bg) 100%); padding:66px 0 60px;
+.hero{ background:linear-gradient(180deg,#fff 0%,var(--bg) 100%); padding:60px 0 54px;
        position:relative; overflow:hidden; }
-.hero::before{ content:''; position:absolute; inset:0; pointer-events:none; opacity:.55;
+.hero::before{ content:''; position:absolute; inset:0; pointer-events:none; opacity:.5;
                background:url(assets/hero-bg.webp) right top / auto 100% no-repeat; }
 .hero .wrap{ position:relative; z-index:1; }
-.hero-grid{ display:grid; grid-template-columns:1fr 1fr; gap:52px; align-items:center; }
-.pill{ display:inline-block; background:var(--blue-pale); color:var(--blue-2); font-size:.72rem; font-weight:700;
-       letter-spacing:.12em; text-transform:uppercase; padding:6px 15px; border-radius:100px; margin-bottom:20px; }
-h1{ font-family:'Space Grotesk',sans-serif; font-size:3.5rem; line-height:1.04; font-weight:700;
-    color:var(--navy); letter-spacing:-.02em; margin-bottom:14px; }
-.tagline{ font-size:1.35rem; font-weight:600; color:var(--blue); line-height:1.35; margin-bottom:16px; }
-.lede{ color:var(--muted); max-width:46ch; margin-bottom:28px; }
+.hero-grid{ display:grid; grid-template-columns:1.25fr .75fr; gap:52px; align-items:center; }
+h1{ font-family:'Space Grotesk',sans-serif; font-size:3.6rem; line-height:1.02; font-weight:700;
+    color:var(--navy); letter-spacing:-.025em; margin-bottom:12px; }
+.rolebar{ display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-bottom:18px; }
+.rolebar span{ font-family:'Space Grotesk',sans-serif; font-size:1.02rem; font-weight:700;
+               color:var(--blue-2); letter-spacing:.01em; }
+.rolebar i{ width:5px; height:5px; border-radius:50%; background:var(--line); display:block; }
+.lede{ color:#33415c; max-width:54ch; margin-bottom:22px; font-size:1.01rem; }
+.lede b{ color:var(--navy); font-weight:700; }
+.proofs{ display:flex; flex-wrap:wrap; gap:0; border:1px solid var(--line); border-radius:12px;
+         overflow:hidden; background:var(--line); margin-bottom:26px; max-width:560px; }
+.proofs div{ flex:1 1 150px; background:#fff; padding:14px 16px; }
+.proofs .n{ font-family:'Space Grotesk',sans-serif; font-size:1.5rem; font-weight:700; color:var(--navy); line-height:1.1; }
+.proofs .l{ font-size:.75rem; color:var(--muted); margin-top:2px; }
 .hero-btns{ display:flex; gap:12px; flex-wrap:wrap; }
 
-.tiles{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line);
+.tiles{ display:grid; grid-template-columns:1fr; gap:1px; background:var(--line);
         border:1px solid var(--line); border-radius:16px; overflow:hidden; box-shadow:var(--shadow); }
-.tile{ background:#fff; padding:22px 18px; }
-.tile .ic{ width:34px; height:34px; border-radius:8px; background:var(--blue-pale); color:var(--blue-2);
-           display:flex; align-items:center; justify-content:center; font-size:1rem; margin-bottom:12px; }
-.tile .n{ font-family:'Space Grotesk',sans-serif; font-size:1.7rem; font-weight:700; color:var(--navy); line-height:1.1; }
-.tile .t{ font-size:.92rem; font-weight:700; color:var(--navy); line-height:1.25; }
-.tile .l{ font-size:.78rem; color:var(--muted); margin-top:3px; line-height:1.4; }
+.tile{ background:#fff; padding:18px 20px; }
+.tile .t{ font-size:.7rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+          color:var(--blue-2); margin-bottom:5px; }
+.tile .l{ font-size:.9rem; color:#33415c; line-height:1.45; }
 
-/* ---------- headings ---------- */
-.head{ text-align:center; margin-bottom:38px; }
+/* ---------- section heads ---------- */
+.head{ text-align:center; margin-bottom:36px; }
 .head h2{ font-family:'Space Grotesk',sans-serif; font-size:2rem; font-weight:700; color:var(--navy); }
 .head h2::after{ content:''; display:block; width:52px; height:3px; background:var(--blue);
                  border-radius:2px; margin:12px auto 0; }
 .head p{ color:var(--muted); font-size:.95rem; margin-top:14px; }
+.head.left{ text-align:left; }
+.head.left h2::after{ margin:12px 0 0; }
 
-/* ---------- achievements ---------- */
-.ach{ display:grid; grid-template-columns:repeat(auto-fit,minmax(178px,1fr)); gap:16px; }
-.ach > div{ background:var(--card); border:1px solid var(--line); border-radius:13px; padding:26px 18px;
-          text-align:center; box-shadow:var(--shadow); }
-.ach .n{ font-family:'Space Grotesk',sans-serif; font-size:2.1rem; font-weight:700; color:var(--blue); }
-.ach .l{ font-size:.84rem; color:var(--muted); margin-top:6px; line-height:1.45; }
+/* ---------- selected impact (navy) ---------- */
+.impact{ background:linear-gradient(160deg,var(--navy) 0%,var(--navy-3) 100%); color:#fff; }
+.impact .head h2{ color:#fff; }
+.impact .head p{ color:#9fbbe4; }
+.impact .head h2::after{ background:var(--lime); }
+.imp{ display:grid; grid-template-columns:repeat(6,1fr); gap:16px; }
+.imp a{ display:block; text-decoration:none; background:rgba(255,255,255,.055);
+        border:1px solid rgba(255,255,255,.13); border-radius:14px; padding:22px 24px;
+        transition:background .16s ease, transform .16s ease; }
+.imp a:hover{ background:rgba(255,255,255,.1); transform:translateY(-3px); }
+.imp .n{ font-family:'Space Grotesk',sans-serif; font-weight:700; color:#fff; line-height:1; letter-spacing:-.02em; }
+.imp .l{ font-size:.82rem; font-weight:700; color:#e3ecfa; margin-top:10px;
+         text-transform:uppercase; letter-spacing:.08em; }
+.imp .s{ font-size:.8rem; color:#8fb0dd; margin-top:4px; }
+.imp .lg{ grid-column:span 3; }
+.imp .lg .n{ font-size:4.4rem; color:var(--lime); }
+.imp .md{ grid-column:span 3; }
+.imp .md .n{ font-size:3rem; }
+.imp .sm{ grid-column:span 2; }
+.imp .sm .n{ font-size:2.1rem; }
+.impact .note{ font-size:.82rem; color:#7f9dc9; margin-top:20px; text-align:center; }
+
+/* ---------- flagship case studies ---------- */
+.flags{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.flag{ display:block; text-decoration:none; background:var(--card); border:1px solid var(--line);
+       border-radius:14px; overflow:hidden; box-shadow:var(--shadow);
+       transition:transform .18s ease, box-shadow .18s ease; }
+.flag:hover{ transform:translateY(-4px); box-shadow:0 8px 18px rgba(10,31,68,.11), 0 20px 44px rgba(10,31,68,.1); }
+.flag .strip{ display:block; width:100%; height:auto; aspect-ratio:6/1; object-fit:cover;
+              border-bottom:1px solid var(--line); }
+.flag .body{ padding:22px 24px 24px; }
+.flag .kind{ font-size:.66rem; font-weight:800; letter-spacing:.11em; text-transform:uppercase;
+             color:var(--blue-2); }
+.flag h3{ font-family:'Space Grotesk',sans-serif; font-size:1.3rem; color:var(--navy);
+          margin:7px 0 4px; font-weight:700; }
+.flag .type{ font-size:.83rem; color:var(--muted); margin-bottom:16px; }
+.flag .figs{ display:flex; gap:26px; padding:14px 0; border-top:1px solid var(--line);
+             border-bottom:1px solid var(--line); margin-bottom:14px; }
+.flag .figs div .v{ font-family:'Space Grotesk',sans-serif; font-size:1.35rem; font-weight:700; color:var(--navy); line-height:1.1; }
+.flag .figs div .k{ font-size:.72rem; color:var(--muted); margin-top:2px; }
+.flag p{ font-size:.87rem; color:#33415c; margin-bottom:14px; }
+.flag .more{ font-size:.87rem; font-weight:700; color:var(--blue); }
+
+/* ---------- other work ---------- */
+.others{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.other{ display:block; text-decoration:none; background:var(--card); border:1px solid var(--line);
+        border-radius:12px; overflow:hidden; box-shadow:var(--shadow);
+        transition:transform .16s ease, border-color .16s ease; }
+.other:hover{ transform:translateY(-3px); border-color:var(--blue); }
+.other .strip{ display:block; width:100%; height:auto; aspect-ratio:6/1; object-fit:cover;
+               border-bottom:1px solid var(--line); }
+.other .body{ padding:16px 18px 18px; display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+.other h3{ font-size:1rem; color:var(--navy); font-weight:700; }
+.other .s{ font-size:.8rem; color:var(--muted); }
+.other .go{ display:block; width:100%; font-size:.8rem; font-weight:700; color:var(--blue); margin-top:8px; }
 
 /* ---------- timeline ---------- */
-.tl{ display:flex; flex-direction:column; gap:18px; }
-.job{ display:grid; grid-template-columns:132px 1fr; gap:22px; align-items:start; }
-.when{ text-align:right; padding-top:22px; padding-right:12px; }
-.when b{ display:block; font-size:.88rem; color:var(--navy); font-weight:700; }
-.when span{ font-size:.82rem; color:var(--muted); }
-.jobcard{ background:var(--card); border:1px solid var(--line); border-radius:13px; padding:22px 26px;
+.tl{ display:flex; flex-direction:column; gap:16px; }
+.job{ display:grid; grid-template-columns:128px minmax(0,1fr); gap:22px; align-items:start; }
+.when{ text-align:right; padding-top:20px; padding-right:12px; }
+.when b{ display:block; font-size:.86rem; color:var(--navy); font-weight:700; }
+.when span{ font-size:.8rem; color:var(--muted); }
+.jobcard{ background:var(--card); border:1px solid var(--line); border-radius:13px; padding:20px 24px;
           box-shadow:var(--shadow); position:relative; }
-.jobcard::before{ content:''; position:absolute; left:-22px; top:28px; width:9px; height:9px; border-radius:50%;
-                  background:var(--blue); box-shadow:0 0 0 3px #fff, 0 0 0 5px var(--blue-pale); }
-.jobcard h3{ font-size:1.06rem; font-weight:700; color:var(--navy); }
-.co{ font-size:.92rem; color:var(--blue); font-weight:600; margin-bottom:14px; }
-.tag{ display:inline-block; margin-left:8px; background:var(--blue-pale); color:var(--blue-2); font-size:.7rem;
+.jobcard::before{ content:''; position:absolute; left:-22px; top:26px; width:9px; height:9px; border-radius:50%;
+                  background:var(--blue); box-shadow:0 0 0 3px var(--bg), 0 0 0 5px var(--blue-pale); }
+.jobcard h3{ font-size:1.02rem; font-weight:700; color:var(--navy); }
+.co{ font-size:.9rem; color:var(--blue); font-weight:600; margin-bottom:11px; }
+.tag{ display:inline-block; margin-left:8px; background:var(--blue-pale); color:var(--blue-2); font-size:.68rem;
       font-weight:700; padding:3px 10px; border-radius:100px; vertical-align:middle; }
-.jobcard ul{ list-style:none; columns:2; column-gap:32px; }
-.jobcard li{ position:relative; padding:0 0 9px 17px; font-size:.87rem; color:#33415c; break-inside:avoid; }
+.jobcard ul{ list-style:none; }
+.jobcard li{ position:relative; padding:0 0 7px 17px; font-size:.87rem; color:#33415c; }
+.jobcard li:last-child{ padding-bottom:0; }
 .jobcard li::before{ content:''; position:absolute; left:0; top:8px; width:5px; height:5px;
                      border-radius:50%; background:var(--blue); }
 
-/* ---------- skills ---------- */
-.skills{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-.skill{ background:var(--card); border:1px solid var(--line); border-radius:13px; padding:24px 26px; box-shadow:var(--shadow); }
-.skill h3{ font-size:1.02rem; font-weight:700; color:var(--navy); margin-bottom:15px; }
-.skill ul{ list-style:none; }
-.skill li{ position:relative; padding:0 0 9px 24px; font-size:.87rem; color:#33415c; }
-.skill li::before{ content:'✓'; position:absolute; left:0; top:-1px; color:var(--blue); font-weight:700; }
-.tags{ display:flex; flex-wrap:wrap; gap:8px; }
-.tags span{ background:var(--blue-pale); color:var(--blue-2); font-size:.8rem; font-weight:600;
-            padding:6px 13px; border-radius:8px; }
-
-/* ---------- projects ---------- */
-.projs{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-.proj{ display:block; text-decoration:none; background:var(--card); border:1px solid var(--line);
-       border-radius:13px; padding:24px 26px; box-shadow:var(--shadow); transition:transform .18s ease, box-shadow .18s ease; }
-.proj:hover{ transform:translateY(-4px); box-shadow:0 6px 14px rgba(10,31,68,.1), 0 18px 40px rgba(10,31,68,.1); }
-.proj .banner{ display:block; width:calc(100% + 52px); height:auto; aspect-ratio:3/1; object-fit:cover;
-               margin:-24px -26px 18px; border-radius:12px 12px 0 0; border-bottom:1px solid var(--line); }
-.cat{ display:inline-block; background:var(--blue-pale); color:var(--blue-2); font-size:.66rem; font-weight:800;
-      letter-spacing:.1em; text-transform:uppercase; padding:4px 11px; border-radius:6px; margin-bottom:13px; }
-.cat.cur{ background:#e6f5ec; color:#0f7a44; }
-.proj h3{ font-size:1.14rem; font-weight:700; color:var(--navy); }
-.proj .type{ font-size:.84rem; color:var(--muted); margin-bottom:15px; }
-.pstats{ display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line);
-         border:1px solid var(--line); border-radius:10px; overflow:hidden; margin-bottom:14px; }
-.pstats > div{ background:#fbfcfe; padding:12px 14px; }
-.pstats .v{ font-family:'Space Grotesk',sans-serif; font-size:1.12rem; font-weight:700; color:var(--navy); }
-.pstats .k{ font-size:.72rem; color:var(--muted); }
-.proj p{ font-size:.86rem; color:#33415c; margin-bottom:14px; }
-.more{ font-size:.87rem; font-weight:700; color:var(--blue); }
+/* ---------- capabilities ---------- */
+.caps{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.cap{ background:var(--card); border:1px solid var(--line); border-radius:13px; padding:24px 26px;
+      box-shadow:var(--shadow); border-top:3px solid var(--blue); }
+.cap h3{ font-family:'Space Grotesk',sans-serif; font-size:1.05rem; font-weight:700; color:var(--navy); margin-bottom:6px; }
+.cap .sub{ font-size:.8rem; color:var(--muted); margin-bottom:14px; }
+.cap .tags{ display:flex; flex-wrap:wrap; gap:7px; }
+.cap .tags span{ background:var(--blue-pale); color:var(--blue-2); font-size:.79rem; font-weight:600;
+                 padding:5px 11px; border-radius:7px; }
 
 /* ---------- footer ---------- */
-footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:20px; }
+footer{ background:var(--navy); color:#c3d4ec; padding:50px 0 32px; }
 .foot{ display:grid; grid-template-columns:1.1fr 1fr auto; gap:40px; align-items:center; }
 .foot h3{ font-family:'Space Grotesk',sans-serif; color:#fff; font-size:1.3rem; margin-bottom:8px; }
 .foot p{ font-size:.9rem; max-width:40ch; }
@@ -161,47 +206,40 @@ footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:2
 .contact li{ padding:5px 0; }
 .contact a{ color:#c3d4ec; text-decoration:none; word-break:break-word; }
 .contact a:hover{ color:#fff; text-decoration:underline; }
-.copy{ text-align:center; font-size:.82rem; color:#7f9dc9; margin-top:36px;
+.copy{ text-align:center; font-size:.82rem; color:#7f9dc9; margin-top:34px;
        padding-top:22px; border-top:1px solid rgba(255,255,255,.12); }
 
 @media (max-width:1000px){
-  .hero-grid{ grid-template-columns:minmax(0,1fr); gap:38px; }
-  h1{ font-size:2.6rem; }
-  .skills,.projs{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .hero-grid{ grid-template-columns:minmax(0,1fr); gap:34px; }
+  h1{ font-size:2.7rem; }
   .navlinks{ display:none; }
   .foot{ grid-template-columns:minmax(0,1fr); gap:26px; }
+  .imp{ grid-template-columns:repeat(4,1fr); }
+  .imp .lg,.imp .md{ grid-column:span 4; }
+  .imp .sm{ grid-column:span 2; }
+  .flags,.others,.caps{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .tiles{ grid-template-columns:repeat(3,minmax(0,1fr)); }
 }
 @media (max-width:700px){
-  .tiles{ grid-template-columns:repeat(2,minmax(0,1fr)); }
-  .skills,.projs{ grid-template-columns:minmax(0,1fr); }
-  .job{ grid-template-columns:minmax(0,1fr); gap:8px; }
-  .when{ text-align:left; padding-top:0; }
-  .when b, .when span{ display:inline; }
-  .jobcard::before{ display:none; }
-  .jobcard ul{ columns:1; }
-  /* eight achievement cards stacked one per row was most of the scroll depth */
-  .ach{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
-  .ach > div{ padding:18px 12px; }
-  .ach .n{ font-size:1.6rem; }
-  .ach .l{ font-size:.78rem; }
   section{ padding:44px 0; }
   h1{ font-size:2.1rem; }
-  .tile{ padding:16px 14px; }
-  .jobcard, .proj, .skill{ padding:20px 18px; }
-  .proj .banner{ width:calc(100% + 36px); margin:-20px -18px 16px; }
+  .imp{ grid-template-columns:repeat(2,1fr); }
+  .imp .lg,.imp .md,.imp .sm{ grid-column:span 2; }
+  .imp .lg .n{ font-size:3.2rem; }
+  .imp .md .n{ font-size:2.4rem; }
+  .flags,.others,.caps,.tiles{ grid-template-columns:minmax(0,1fr); }
+  .job{ grid-template-columns:minmax(0,1fr); gap:8px; }
+  .when{ text-align:left; padding-top:0; padding-right:0; }
+  .when b, .when span{ display:inline; }
+  .jobcard::before{ display:none; }
+  .jobcard, .cap{ padding:18px 18px; }
+  .flag .body{ padding:18px 18px 20px; }
 }
-
-.langsw{ display:inline-flex; border-radius:8px; overflow:hidden; flex:none; }
-.langsw a{ padding:5px 11px; font-size:.76rem; font-weight:800; letter-spacing:.06em;
-           text-decoration:none; line-height:1.5; }
-
-.langsw{ border:1px solid var(--line); }
-.langsw a{ color:var(--muted); }
-.langsw a.on{ background:var(--blue); color:#fff; }
-.langsw a:hover{ color:var(--blue); }
-.langsw a.on:hover{ color:#fff; }
-@media (max-width:520px){ .langsw a{ padding:4px 8px; font-size:.68rem; } .brand span span{ display:none; }
-  nav .wrap{ gap:10px; } nav .btn{ padding:9px 13px; font-size:.82rem; } }
+@media (max-width:520px){
+  .langsw a{ padding:4px 8px; font-size:.68rem; }
+  .brand span span{ display:none; }
+  nav .wrap{ gap:10px; } nav .btn{ padding:9px 13px; font-size:.82rem; }
+}
 </style>
 </head>
 <body>
@@ -210,16 +248,16 @@ footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:2
   <div class="wrap">
     <a href="#hero" class="brand">
       <span class="mark">MH</span>
-      <span><b>Nguyen Minh Hieu</b><span>SEO Specialist</span></span>
+      <span><b>Nguyen Minh Hieu</b><span>SEO Lead</span></span>
     </a>
     <ul class="navlinks">
-      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#work">Case studies</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
+      <li><a href="#capabilities">Capabilities</a></li>
     </ul>
     <span class="langsw"><a href="./" hreflang="en" class="on">EN</a><a href="vi/" hreflang="vi">VI</a></span>
-      <a href="mailto:hieumn24@gmail.com" class="btn btn-fill">Let's Connect</a>
+    <a href="mailto:hieumn24@gmail.com" class="btn btn-fill">Let's Connect</a>
   </div>
 </nav>
 
@@ -227,44 +265,154 @@ footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:2
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <span class="pill">SEO &amp; Digital Growth</span>
         <h1>NGUYEN<br>MINH HIEU</h1>
-        <p class="tagline">Driving Digital Growth Through Strategic SEO</p>
-        <p class="lede">Transforming businesses with data-driven SEO strategies. Specialized in scaling traffic
-          from zero to millions with measurable, sustainable results.</p>
+        <div class="rolebar">
+          <span>SEO Lead</span><i></i><span>Technical SEO</span><i></i><span>Organic Growth</span>
+        </div>
+        <p class="lede">I scale organic search for <b>large e-commerce catalogues</b> through technical SEO,
+          content systems and Python automation. I also check whether the numbers are real before anyone
+          spends money on them: <b>1.2 million fake impressions</b> pulled out of one client's reporting,
+          <b>57% of purchases</b> found missing from GA4 at another.</p>
+        <div class="proofs">
+          <div><div class="n">6+</div><div class="l">Years in SEO</div></div>
+          <div><div class="n">1M+</div><div class="l">Daily visits managed</div></div>
+          <div><div class="n">+459%</div><div class="l">Organic growth, 7 months</div></div>
+        </div>
         <div class="hero-btns">
-          <a href="#projects" class="btn btn-fill">View My Work →</a>
-          <a href="#achievements" class="btn btn-ghost">Key Achievements</a>
+          <a href="#work" class="btn btn-fill">View case studies →</a>
+          <a href="#impact" class="btn btn-ghost">Selected impact</a>
         </div>
       </div>
 
       <div class="tiles">
-        <div class="tile"><div class="ic">📅</div><div class="n">6+</div><div class="l">Years of experience</div></div>
-        <div class="tile"><div class="ic">📈</div><div class="n">1M+</div><div class="l">Peak daily visits managed</div></div>
-        <div class="tile"><div class="ic">📁</div><div class="n">6</div><div class="l">Documented case studies</div></div>
-        <div class="tile"><div class="ic">🔧</div><div class="t">Tech &amp; Data</div><div class="l">GSC · GA4 · Looker · Python</div></div>
-        <div class="tile"><div class="ic">🌏</div><div class="t">Markets</div><div class="l">Vietnam · Australia · Global</div></div>
-        <div class="tile"><div class="ic">💬</div><div class="n">11</div><div class="l">Locales in one live project</div></div>
+        <div class="tile"><div class="t">Scale</div><div class="l">1,769 SKUs · 11 locales · 5,000+ product pages</div></div>
+        <div class="tile"><div class="t">Engineering</div><div class="l">Python · Search Console API · GA4 · Shopify GraphQL</div></div>
+        <div class="tile"><div class="t">Markets</div><div class="l">Vietnam · Australia · Global</div></div>
       </div>
     </div>
   </div>
 </header>
 
-<section id="achievements">
+<section class="impact" id="impact">
   <div class="wrap">
     <div class="head">
-      <h2>Key Achievements</h2>
-      <p>Measurable results that demonstrate proven expertise in SEO and digital growth.</p>
+      <h2>Selected impact</h2>
+      <p>Every figure pulled from Search Console, GA4 or the store's own admin API.</p>
     </div>
-    <div class="ach">
-      <div><div class="n">1M+</div><div class="l">Daily visits for Dienmayxanh</div></div>
-      <div><div class="n">45K+</div><div class="l">Daily traffic SIAM Thailand</div></div>
-      <div><div class="n">110%</div><div class="l">SIAM project KPI (11 months)</div></div>
-      <div><div class="n">30%</div><div class="l">Keywords in top 10 (Beauty industry)</div></div>
-      <div><div class="n">54K+</div><div class="l">Ranking keywords for BitJoy eSIM</div></div>
-      <div><div class="n">+459%</div><div class="l">Organic growth BitJoy (7 months)</div></div>
-      <div><div class="n">+571%</div><div class="l">Organic clicks Cedora (5 months)</div></div>
-      <div><div class="n">1.2M</div><div class="l">Fake impressions caught before they reached a client report</div></div>
+    <div class="imp">
+      <a href="bitjoy.html" class="lg">
+        <div class="n">+459%</div>
+        <div class="l">Organic clicks</div>
+        <div class="s">BitJoy · 7 months, 5.4K to 29.9K a month</div>
+      </a>
+      <a href="siam-thailand.html" class="md">
+        <div class="n">45K+</div>
+        <div class="l">Daily organic visits</div>
+        <div class="s">SIAM Thailand · from zero in 11 months, 110% of KPI</div>
+      </a>
+      <a href="bitjoy.html" class="sm">
+        <div class="n">54,258</div>
+        <div class="l">Ranking keywords</div>
+        <div class="s">BitJoy · 39,941 in the top 10</div>
+      </a>
+      <a href="dienmayxanh.html" class="sm">
+        <div class="n">1M+</div>
+        <div class="l">Daily visits held</div>
+        <div class="s">Dien may XANH · three years</div>
+      </a>
+      <a href="cedora.html" class="sm">
+        <div class="n">1.2M</div>
+        <div class="l">Fake impressions removed</div>
+        <div class="s">Cedora · one query, before it reached a report</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="head">
+      <h2>Featured case studies</h2>
+      <p>Written up in full: method, data source, and what is still unsolved.</p>
+    </div>
+    <div class="flags">
+
+      <a href="cedora.html" class="flag">
+        <img class="strip" src="assets/card-cedora.webp" alt="Cedora Furniture" width="600" height="100" loading="lazy">
+        <div class="body">
+          <span class="kind">E-commerce · Australia</span>
+          <h3>Cedora Furniture</h3>
+          <p class="type">Shopify furniture retail, AU market only</p>
+          <div class="figs">
+            <div><div class="v">14,331</div><div class="k">Ranking keywords</div></div>
+            <div><div class="v">+571%</div><div class="k">Organic clicks</div></div>
+          </div>
+          <p>272 to 14,331 keywords in five months, with 1.2M bot impressions stripped out first.</p>
+          <span class="more">View case study →</span>
+        </div>
+      </a>
+
+      <a href="bitjoy.html" class="flag">
+        <img class="strip" src="assets/card-bitjoy.webp" alt="BitJoy" width="600" height="100" loading="lazy">
+        <div class="body">
+          <span class="kind">Multilingual · Global</span>
+          <h3>BitJoy Global eSIM</h3>
+          <p class="type">1,769 SKUs across 11 language locales</p>
+          <div class="figs">
+            <div><div class="v">54,258</div><div class="k">Ranking keywords</div></div>
+            <div><div class="v">+459%</div><div class="k">Organic clicks</div></div>
+          </div>
+          <p>Organic is the only channel. The catalogue is maintained entirely in Python.</p>
+          <span class="more">View case study →</span>
+        </div>
+      </a>
+
+      <a href="siam-thailand.html" class="flag">
+        <img class="strip" src="assets/card-siam.webp" alt="SIAM Thailand" width="600" height="100" loading="lazy">
+        <div class="body">
+          <span class="kind">Healthcare · Recovery</span>
+          <h3>SIAM Thailand</h3>
+          <p class="type">Vietnamese cosmetic surgery hospital</p>
+          <div class="figs">
+            <div><div class="v">0 → 45K+</div><div class="k">Daily visits</div></div>
+            <div><div class="v">110%</div><div class="k">Of KPI</div></div>
+          </div>
+          <p>Zero to KPI in 11 months, then five months recovering from a full site compromise.</p>
+          <span class="more">View case study →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <div class="head left">
+      <h2>Selected clients and work</h2>
+    </div>
+    <div class="others">
+      <a href="dienmayxanh.html" class="other">
+        <img class="strip" src="assets/card-dienmayxanh.webp" alt="Dien may XANH" width="600" height="100" loading="lazy">
+        <div class="body">
+          <h3>Dien may XANH</h3><span class="s">1M+ daily visits · 3 years</span>
+          <span class="go">View case study →</span>
+        </div>
+      </a>
+      <a href="avakids.html" class="other">
+        <img class="strip" src="assets/card-avakids.webp" alt="AVAKids" width="600" height="100" loading="lazy">
+        <div class="body">
+          <h3>AVAKids &amp; AVASport</h3><span class="s">60K+ combined daily</span>
+          <span class="go">View case study →</span>
+        </div>
+      </a>
+      <a href="tinhocngoisao.html" class="other">
+        <img class="strip" src="assets/card-tinhocngoisao.webp" alt="Tin Hoc Ngoi Sao" width="600" height="100" loading="lazy">
+        <div class="body">
+          <h3>Tin Hoc Ngoi Sao</h3><span class="s">1.7K → 11K daily · 2 months</span>
+          <span class="go">View case study →</span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -272,8 +420,7 @@ footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:2
 <section id="experience">
   <div class="wrap">
     <div class="head">
-      <h2>Work Experience</h2>
-      <p>A journey of continuous growth and impactful results in SEO and digital marketing.</p>
+      <h2>Experience</h2>
     </div>
     <div class="tl">
 
@@ -283,11 +430,8 @@ footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:2
           <h3>SEO Consultant (Freelance)</h3>
           <p class="co">Cedora Furniture <span class="tag">Case study</span></p>
           <ul>
-            <li>Australian furniture Shopify store: 128 products, 61 collections, 180 articles</li>
-            <li>Ranking keywords 272 to 14,331, organic clicks +571% from Feb to Jul 2026</li>
-            <li>Average position 13.76 to 7.14, with 9,533 keywords in the top 10</li>
-            <li>Found and subtracted a bot query worth 1.2M monthly impressions from all reporting</li>
-            <li>Rebuilt the GA4 and Search Console reporting pipeline in Python</li>
+            <li>272 to 14,331 ranking keywords, organic clicks +571% in five months</li>
+            <li>Found and removed a bot query worth 1.2M monthly impressions from all reporting</li>
           </ul>
         </div>
       </div>
@@ -299,10 +443,7 @@ footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:2
           <p class="co">BitJoy Global eSIM <span class="tag">Case study</span></p>
           <ul>
             <li>Sole SEO owner of a 1,769-SKU Shopify store across 11 language locales</li>
-            <li>Organic clicks +459%: 5.4K to 29.9K per month</li>
-            <li>54K+ ranking keywords, 39,941 in top 10, 99.98% non-branded</li>
-            <li>Technical SEO: schema stack, ranking-drop root cause, site performance</li>
-            <li>Built Python + Shopify GraphQL automation for catalog-scale SEO</li>
+            <li>54,258 ranking keywords, 39,941 in the top 10, 99.98% non-branded</li>
           </ul>
         </div>
       </div>
@@ -313,10 +454,8 @@ footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:2
           <h3>SEO Leader</h3>
           <p class="co">XMARS Agency <span class="tag">SIAM Thailand</span></p>
           <ul>
-            <li>Full website management: strategy and SEO operations</li>
-            <li>Grew traffic 0 to 45K+ visits per day, achieved 110% of KPI</li>
-            <li>Built an organic customer base, reduced paid ad spend</li>
-            <li>Crisis management: blackhat, hacking, DMCA reports</li>
+            <li>Built organic from zero to 45,000+ daily visits, 110% of KPI</li>
+            <li>Recovered every ranking after a full site compromise, past the pre-incident peak</li>
           </ul>
         </div>
       </div>
@@ -325,29 +464,25 @@ footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:2
         <div class="when"><b>Jan 2024</b><span>– Mar 2024</span></div>
         <div class="jobcard">
           <h3>SEO Freelancer</h3>
-          <p class="co">Tinhocngoisao, Timecons</p>
+          <p class="co">Tin Hoc Ngoi Sao, Timecons</p>
           <ul>
-            <li>Tin Hoc Ngoi Sao (PC parts retail): 1.7K to 11K visits per day, +550% in two months</li>
-            <li>Timecons: 1.8K traffic per month over 2 months</li>
-            <li>Audited websites, optimized UX and deployed content</li>
+            <li>Tin Hoc Ngoi Sao: 1,700 to 11,000 daily visits inside a two month contract</li>
+            <li>Technical audits, UX fixes and content against quick-win queries</li>
           </ul>
         </div>
       </div>
+
       <div class="job">
         <div class="when"><b>Jun 2021</b><span>– Mar 2024</span></div>
         <div class="jobcard">
           <h3>Content SEO Specialist</h3>
           <p class="co">The Gioi Di Dong (MWG)</p>
           <ul>
-            <li>Managed 3 major websites: Dienmayxanh, AVAKids, AVASport</li>
-            <li>Dienmayxanh: 1M visits per day</li>
-            <li>AVAKids 45K, AVASport 15K traffic per day</li>
-            <li>Managed 5 PBNs, website audits and speed optimization</li>
-            <li>Implemented off-page entity strategies</li>
+            <li>SEO operations across Dienmayxanh, AVAKids and AVASport</li>
+            <li>Held 1M+ daily organic visits for three years, 5,000+ product pages optimised</li>
           </ul>
         </div>
       </div>
-
 
       <div class="job">
         <div class="when"><b>Jan 2020</b><span>– Jun 2021</span></div>
@@ -355,9 +490,7 @@ footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:2
           <h3>Content Intern</h3>
           <p class="co">MWG - Game/App Division</p>
           <ul>
-            <li>Produced 35 articles per week on tech and gaming</li>
-            <li>DTCL section: 14K sessions per day</li>
-            <li>Backlinking, internal linking, content updates</li>
+            <li>35 articles a week on tech and gaming; the DTCL section ran at 14K sessions a day</li>
           </ul>
         </div>
       </div>
@@ -366,137 +499,34 @@ footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:2
   </div>
 </section>
 
-<section id="projects">
+<section id="capabilities">
   <div class="wrap">
     <div class="head">
-      <h2>Featured Projects</h2>
-      <p>Deep dive into my most impactful SEO projects with detailed case studies.</p>
+      <h2>Capabilities</h2>
     </div>
-    <div class="projs">
-
-      <a href="cedora.html" class="proj">
-        <img class="banner" src="assets/card-cedora.webp" alt="Cedora Furniture logo" width="600" height="200" loading="lazy">
-        <span class="cat cur">Current project</span>
-        <h3>Cedora Furniture</h3>
-        <p class="type">Australian furniture retail</p>
-        <div class="pstats">
-          <div><div class="v">272 → 14,331</div><div class="k">Ranking keywords</div></div>
-          <div><div class="v">+571%</div><div class="k">Organic clicks</div></div>
-        </div>
-        <p>Shopify furniture store selling in Australia only. Five months of keyword growth,
-          and 1.2 million bot impressions stripped out before any of it was reported.</p>
-        <span class="more">View Case Study →</span>
-      </a>
-
-      <a href="bitjoy.html" class="proj">
-        <img class="banner" src="assets/card-bitjoy.webp" alt="BitJoy logo" width="600" height="200" loading="lazy">
-        <span class="cat cur">Current project</span>
-        <h3>BitJoy Global eSIM</h3>
-        <p class="type">Global eSIM e-commerce</p>
-        <div class="pstats">
-          <div><div class="v">54K+</div><div class="k">Ranking keywords</div></div>
-          <div><div class="v">+459%</div><div class="k">Organic growth</div></div>
-        </div>
-        <p>Multilingual technical SEO for a 1,769-SKU Shopify store across 11 locales.
-          39,941 keywords in the top 10, 99.98% of them non-branded.</p>
-        <span class="more">View Case Study →</span>
-      </a>
-
-      <a href="siam-thailand.html" class="proj">
-        <img class="banner" src="assets/card-siam.webp" alt="Benh vien tham my SIAM Thailand logo" width="600" height="200" loading="lazy">
-        <span class="cat cur">Current project</span>
-        <h3>SIAM Thailand</h3>
-        <p class="type">Aesthetic hospital</p>
-        <div class="pstats">
-          <div><div class="v">0 → 45K+</div><div class="k">Daily visits</div></div>
-          <div><div class="v">110%</div><div class="k">KPI achievement</div></div>
-        </div>
-        <p>Complete SEO strategy for a Vietnamese cosmetic surgery hospital.
-          Achieved exceptional growth and overcame multiple crisis situations.</p>
-        <span class="more">View Case Study →</span>
-      </a>
-
-      <a href="dienmayxanh.html" class="proj">
-        <img class="banner" src="assets/card-dienmayxanh.webp" alt="Dien may XANH logo" width="600" height="200" loading="lazy">
-        <span class="cat">Featured</span>
-        <h3>Dienmayxanh</h3>
-        <p class="type">E-commerce giant</p>
-        <div class="pstats">
-          <div><div class="v">1M+</div><div class="k">Daily visits</div></div>
-          <div><div class="v">3 Years</div><div class="k">Duration</div></div>
-        </div>
-        <p>Managing SEO for Vietnam's largest electronics retailer.
-          Maintaining and growing 1 million daily organic visits.</p>
-        <span class="more">View Case Study →</span>
-      </a>
-
-      <a href="avakids.html" class="proj">
-        <img class="banner" src="assets/card-avakids.webp" alt="AVAKids logo" width="600" height="200" loading="lazy">
-        <span class="cat">Retail</span>
-        <h3>AVAKids &amp; AVASport</h3>
-        <p class="type">Retail websites</p>
-        <div class="pstats">
-          <div><div class="v">60K+</div><div class="k">Combined daily traffic</div></div>
-          <div><div class="v">5 PBNs</div><div class="k">Managed</div></div>
-        </div>
-        <p>Dual-website SEO management for kids and sports retail.
-          Entity strategies and comprehensive PBN management.</p>
-        <span class="more">View Case Study →</span>
-      </a>
-
-      <a href="tinhocngoisao.html" class="proj">
-        <img class="banner" src="assets/card-tinhocngoisao.webp" alt="Tin Hoc Ngoi Sao (STAR) logo" width="600" height="200" loading="lazy">
-        <span class="cat">Computer retail</span>
-        <h3>Tinhocngoisao</h3>
-        <p class="type">PC parts and laptops</p>
-        <div class="pstats">
-          <div><div class="v">1.7K → 11K</div><div class="k">Daily visits</div></div>
-          <div><div class="v">2 Months</div><div class="k">Duration</div></div>
-        </div>
-        <p>Rapid SEO growth for a PC components and laptop retailer.
-          1,700 to 11,000 daily visits inside a two month contract.</p>
-        <span class="more">View Case Study →</span>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<section id="skills">
-  <div class="wrap">
-    <div class="head">
-      <h2>Professional Skills</h2>
-      <p>Comprehensive toolkit for delivering exceptional SEO results.</p>
-    </div>
-    <div class="skills">
-      <div class="skill">
-        <h3>SEO Technical</h3>
-        <ul>
-          <li>Google algorithm and core updates</li>
-          <li>Website audit and performance</li>
-          <li>Technical SEO (HTML, CSS)</li>
-          <li>WordPress development</li>
-          <li>UX/UI optimization</li>
-          <li>SEO crisis management</li>
-        </ul>
-      </div>
-      <div class="skill">
-        <h3>Tools &amp; Automation</h3>
-        <ul>
-          <li>Ahrefs, SEMrush, Google Trends</li>
-          <li>Screaming Frog</li>
-          <li>Search Console, GA4, Looker Studio</li>
-          <li>Python, Shopify GraphQL API</li>
-          <li>AI integration and workflow automation</li>
-          <li>Excel, Google Sheets, Haravan</li>
-        </ul>
-      </div>
-      <div class="skill">
-        <h3>Additional Skills</h3>
+    <div class="caps">
+      <div class="cap">
+        <h3>Technical SEO</h3>
+        <p class="sub">Large sites where the problem is scale, not ideas.</p>
         <div class="tags">
-          <span>Team Collaboration</span><span>Market Research</span><span>Long-term Planning</span>
-          <span>UX/UI Thinking</span><span>High Pressure Tolerance</span><span>Self-learning</span>
-          <span>English - Basic</span>
+          <span>Large-site architecture</span><span>Crawl &amp; indexation</span><span>International SEO</span>
+          <span>Shopify</span><span>Schema</span><span>Core Web Vitals</span><span>Crisis recovery</span>
+        </div>
+      </div>
+      <div class="cap">
+        <h3>SEO engineering &amp; data</h3>
+        <p class="sub">Reporting I can defend line by line, built in code.</p>
+        <div class="tags">
+          <span>Python</span><span>Search Console API</span><span>GA4 API</span><span>Shopify GraphQL</span>
+          <span>Screaming Frog</span><span>Looker Studio</span><span>Bot &amp; data QA</span>
+        </div>
+      </div>
+      <div class="cap">
+        <h3>Growth systems</h3>
+        <p class="sub">Structures that keep working after I hand them over.</p>
+        <div class="tags">
+          <span>Keyword architecture</span><span>Content systems</span><span>Programmatic SEO</span>
+          <span>Internal linking</span><span>Measurement &amp; attribution</span>
         </div>
       </div>
     </div>
@@ -508,8 +538,7 @@ footer{ background:var(--navy); color:#c3d4ec; padding:52px 0 34px; margin-top:2
     <div class="foot">
       <div>
         <h3>Let's Connect</h3>
-        <p>Building digital success through strategic SEO. Always open to discussing new opportunities
-          and interesting projects.</p>
+        <p>Open to SEO Lead and senior technical SEO roles. Happy to walk through any number here.</p>
       </div>
       <ul class="contact">
         <li>✉️ <a href="mailto:hieumn24@gmail.com">hieumn24@gmail.com</a></li>
